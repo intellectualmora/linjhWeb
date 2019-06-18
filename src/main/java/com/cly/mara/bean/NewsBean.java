@@ -9,16 +9,27 @@ public class NewsBean implements Serializable {
     private String content;
     private String title;
     private int uid;
-    private Date date;
+    private String date;
+    private int day;
+    public NewsBean(){
+    }
+    public NewsBean(int nid,int uid,String imgSrc,String content,String title, String date){
+        this.nid = nid;
+        this.uid = uid;
+        this.content = content;
+        this.title = title;
+        this.imgSrc = imgSrc;
+        this.date = date;
+        this.day = day;
+    }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
-
 
     public int getNid() {
         return nid;
@@ -58,5 +69,12 @@ public class NewsBean implements Serializable {
 
     public void setUid(int uid) {
         this.uid = uid;
+    }
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
     }
 }

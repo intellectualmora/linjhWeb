@@ -123,82 +123,6 @@ html,body{
 	cursor: pointer;
 }
 
-/*移动端*/
-.phone-header{
-	width: 100%;
-	height:49px;
-	display: none;
-	align-items: center;
-	justify-content: center;
-	box-sizing: border-box;
-	position: relative;
-}
-.phone-header .nav-logo{
-	position: absolute;
-	left: 20px;
-	top: 10px;
-}
-.phone-header .logo img{
-	width:65px;
-}
-.phone-nav{
-	position: fixed;
-	top: 49px;
-	left: 0;
-	z-index: 5;
-	background:#003f43;
-	height: 100%;
-	width: 100%;
-	box-sizing: border-box;
-	padding-top:20px;
-	transition: all .5s;
-	opacity: 0;
-	transform: translateY(-110%);
-	display: none;
-}
-.phone-nav.active{
-	opacity: 1;
-	transform: translateY(0%);
-}
-.phone-nav ul li a{
-	display: block;
-	width: 100%;
-	height: 50px;
-	line-height: 50px;
-	text-align: left;
-	color: #fff;
-	box-sizing: border-box;
-	padding-left: 30px;
-}
-.phone-nav .search{
-	width: 264px;
-	height: 32px;
-	border: 2px solid #fff;
-	border-radius:20px ;
-	margin: 20px;
-	overflow: hidden;
-}
-.phone-nav .search form{
-	width: 100%;
-	height: 100%;
-}
-.phone-nav .search form input[type=text]{
-	width: 80%;
-	height: 100%;
-	box-sizing: border-box;
-	padding-left: 10px;
-	font-size: 14px;
-	color: #fff;
-	background: rgba(0,0,0,0);
-}
-
-.phone-nav .search input[type=submit]{
-	width: 36px;
-	height: 100%;
-	background: url(../images/search.png) no-repeat center;
-	cursor: pointer;
-}
-
 .footer{
 	width: 100%;
 /*	height: 36px;*/
@@ -219,43 +143,6 @@ html,body{
 	display: none;
 	z-index: 5;
 }
-
-
-
-
-/*@media screen and (max-width:1200px){
-	
-	.header-wrapper{
-		display: none;
-	}
-	.nav-wrapper{
-		display: none;
-	}
-	.phone-header{
-		display: flex;
-	}
-	.phone-nav{
-		display: block;
-	}
-	.gotop{
-		right: 0;
-		bottom: 5vw;
-	}
-}
-@media screen and (max-width:768px){
-    .gotop{
-		display: none !important;
-	}
-}
-@media screen and (max-width:375px){
-	.footer a{
-		color: #fff;
-		font-size:1rem;
-	}
-}*/
-
-
-
 
 
 

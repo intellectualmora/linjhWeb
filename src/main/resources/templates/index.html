@@ -209,18 +209,18 @@
             <li th:each="newsBean:${newsBeanList}">
                 <a href="/index?id=6">
                     <div class="data">
-                        <i>30</i>
+                        <i th:text="${newsBean.getDay()}"></i>
                         <span th:text="${newsBean.getDate()}"></span>
                     </div>
                     <p th:text="${newsBean.getContent()}"> </p>
-                    <img src="/images/201901071725309099.jpg">
+                    <img th:src="${newsBean.getImgSrc()}">
                 </a>
             </li>
 
 
         </ul>
         <h5>
-            <a href="http://jqhphy.sustech.edu.cn/portal/list/index.html?id=93">
+            <a href="/index?id=5">
                 <span style="color: #003F43;">Read More</span>
                 <img src="/images/more.png">
             </a>
@@ -230,7 +230,7 @@
 
 <!--底部-->
 <div class="footer">
-    <a href="/index">Copyright</a> | <a href="http://www.baidu.com/">XXXXXX号-1</a>
+    <a href="/">Copyright</a> | <a href="http://www.baidu.com/">XXXXXX号-1</a>
 </div>
 
 <div class="gotop">

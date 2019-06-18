@@ -32,9 +32,11 @@ public class NewsDaoImpl implements NewsDao {
             String content = resultSet.getString("content");
             String title = resultSet.getString("title");
             String date = resultSet.getString("date");
+            int day = resultSet.getInt("day");
             NewsBean newsBean = new NewsBean();
             newsBean.setContent(content);
             newsBean.setImgSrc(imgSrc);
+            newsBean.setDay(day);
             newsBeanList.add(newsBean);
         }
         dbutil.closeDBResource(connection, preparedStatement, resultSet);
@@ -42,7 +44,7 @@ public class NewsDaoImpl implements NewsDao {
     }
 
     @Override
-    public NewsBean fetchNews(int aid) throws Exception {
+    public NewsBean fetchNews(int nid) throws Exception {
         return null;
     }
 

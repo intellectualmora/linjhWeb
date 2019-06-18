@@ -16,4 +16,11 @@ public class NewsServiceImpl implements NewsService {
         }
         return newsBeans;
     }
+
+    @Override
+    public List<NewsBean> getNewsList() throws Exception {
+        List<NewsBean> newsBeans = newsDao.fetchNewsList();
+        return newsBeans;
+    }
+
 }

@@ -14,14 +14,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class IndexController {
     /**
      *
-     * @param name
+     * @param id
      * @param model
      * @return
      */
-    @RequestMapping("/index")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
-        return "greeting";
+    @GetMapping("/index")
+    public void getId (@RequestParam(name="id", required=false, defaultValue="0") int id, Model model) {
+        System.out.println(id);
     }
 
 }

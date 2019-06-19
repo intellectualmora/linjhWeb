@@ -14,12 +14,169 @@
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/news.css">
     <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
     <script src="/js/swiper.min.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/common.js"></script>
 </head>
 <body>
+
+<div class="nav-wrapper">
+    <div class="nav">
+        <div class="pc-nav">
+            <ul>
+                <li class="">
+                    <a href="/index?id=0">Home</a>
+                </li>
+                <li class="dropdown">
+
+                    <a href="/index?id=1">
+                        Group </a>
+                    <ul class="dropdown-menu">
+                        <li class="">
+
+                            <a href="/index?id=11">The group leader</a>
+
+                        </li>
+                        <li class="">
+
+                            <a href="/index?id=12">Current Members</a>
+
+                        </li>
+                        <li class="">
+
+                            <a href="/index?id=13">Group pictures</a>
+
+                        </li>
+                        <li class="">
+
+                            <a href="/index?id=14">Alumni</a>
+
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+
+                    <a href="/index.html?id=2">Research</a>
+
+                </li>
+                <li class="">
+
+                    <a href="/index?id=3">Publications</a>
+
+                </li>
+                <li class="">
+
+                    <a href="/index?id=4">Lab Resources</a>
+
+                </li>
+                <li class="">
+
+                    <a href="/index?id=5">News</a>
+
+                </li>
+                <li class="">
+
+                    <a href="/index?id=6">Contact us</a>
+
+                </li>
+                <li class="">
+                    <a href="/index?id=7">Login</a>
+                </li>
+            </ul>
+        </div>
+        <div class="search">
+            <form action="./index?id=" method="post">
+                <input type="text" placeholder="Enter keyword here..." name="key">
+                <input type="submit" value="">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="main-wrapper">
+    <div class="main">
+        <div class="center">
+            <div class="left">
+                <h4>News<i>+</i></h4>
+                <ul>
+
+                    <li class="">
+                        <a href="/news?year=2019">2019</a>
+                    </li>
+
+
+                    <li class="">
+                        <a href="/news?year=2018">2018</a>
+                    </li>
+
+
+                    <li class="">
+                        <a href="/news?year=2017">2017</a>
+                    </li>
+
+
+                    <li class="">
+                        <a href="/news?year=2016">2016</a>
+                    </li>
+
+
+                    <li class="">
+                        <a href="/news?year=2015">2015</a>
+                    </li>
+
+
+                    <li class="">
+                        <a href="/news?year=2014">2014</a>
+                    </li>
+
+
+                    <li class="">
+                        <a href="/news?year=2013">2013</a>
+                    </li>
+
+
+                    <li class="">
+                        <a href="/news?year=2012">2012</a>
+                    </li>
+
+
+                    <li class="">
+                        <a href="/news?year=2011">2011</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="right">
+                <div class="all">
+                    <ul>
+                        <li th:each="newsBean:${newsBeanList}">
+                            <a th:href="'/newsInfo?nid='+${newsBean.getNid()}"><div class="pic">
+                                <img th:src="${newsBean.getImgSrc()}" th:alt="${newsBean.getTitle()}">
+                            </div>
+                                <div class="word">
+                                    <p>
+                                        <i th:text="${newsBean.getYear()}+'.'+${newsBean.getMonth()}+'.'+${newsBean.getDay()}"></i>
+                                        <p th:text="${newsBean.getContent()}"></p>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="page">
+                        <span>&lt;</span>
+                        <span th:each="num:${pageList}">
+                            <span th:if="${page} ne ${num}"><a th:href="'/newsPage?page='+${num}" th:text="${num}"></a></span>
+                            <span th:if="${page} eq ${num}" class="active"><a th:text="${num}"></a></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

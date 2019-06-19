@@ -112,7 +112,7 @@
 
 					<span>
 						<img src="/themes/nfkj/public/assets/images/home.png" alt="">
-                                                <i><a href="/portal/list/index.html?id=74" style="color: #666666">Home</a> &gt;&gt;</i>
+                                                <i><a href="/" style="color: #666666">Home</a> &gt;&gt;</i>
 					</span>
             <span>The group leader</span>
 
@@ -121,16 +121,16 @@
             <div class="lefto">
                 <ul>
                     <li class="active">
-                        <a href="/portal/list/index.html?id=76">The group leader</a>
+                        <a href="/index?id=11">The group leader</a>
                     </li>
                     <li>
-                        <a href="/portal/list/index.html?id=77">Current  Members</a>
+                        <a href="/index?id=12">Current  Members</a>
                     </li>
                     <li>
-                        <a href="/portal/list/index.html?id=78">Group pictures</a>
+                        <a href="/index?id=13">Group pictures</a>
                     </li>
                     <li>
-                        <a href="/portal/list/index.html?id=79">Alumni</a>
+                        <a href="/index?id=14">Alumni</a>
                     </li>
 
                 </ul>
@@ -139,7 +139,7 @@
                 <div class="person">
                     <div class="left">
                         <div class="top">
-                            <img src="http://jqhphy.sustech.edu.cn/upload/portal/20181229/201812291049134823.png" alt="Prof. Dr. Jiaqing HE,">
+                            <img th:src="${userInfoBean.getImgSrc()}" th:alt="'Prof. Dr.' + ${userInfoBean.getRealName() +','}">
                         </div>
                         <div class="bottom">
                             <ul>
@@ -148,7 +148,6 @@
                                 </li>
                                 <li>
                                     Research Interests
-
                                 </li>
                                 <li>
                                     Educational Background
@@ -159,9 +158,7 @@
 
                                 <li>
                                     Honors &amp; Awards
-
                                 </li>
-
                                 <li>
                                     Selected Publication
                                 </li>
@@ -170,11 +167,11 @@
                     </div>
                     <div class="right">
                         <div class="top">
-                            <h4><i>Prof. Dr. Jiaqing HE,</i> </h4>
+                            <h4><i th:text="'Prof. Dr. ' + ${userInfoBean.getRealName()} +','"></i> </h4>
                             <ul>
                                 <li>
                                     <span>Office:</span>
-                                    <i>The reaserch buiding 2 room 210</i>
+                                    <i th:text="${userInfoBean.getOffice()}"></i>
                                 </li>
                                 <!--<li>
                                     <span>Telephone:</span>
@@ -182,19 +179,19 @@
                                 </li>-->
                                 <li>
                                     <span>Email:</span>
-                                    <i>hejq@sustc.edu.cn</i>
+                                    <i th:text="${userInfoBean.getEmail()}"></i>
                                 </li>
                                 <li>
-                                    <span>Mail Address:</span>
-                                    <i>The reaserch buiding 2,1088 Xueyuan Blvd., Nanshan District,ShenzhenGuangdong, P.R.China</i>
+                                    <span>Address:</span>
+                                    <i th:text="${userInfoBean.getAddress()}"></i>
                                 </li>
                             </ul>
                         </div>
                         <div class="bot_list">
                             <div class="bottom">
-                                <p style="text-align: justify; margin-top: 5px; margin-bottom: 5px; line-height: 2em;"><span style="background-color: rgb(255, 255, 255); font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);">Jiaqing He is a full professor at Southern University of Science and Technology. He received his joint Ph.D. degree in physics from both Juelich Research Center and Wuhan University in 2004. He was a post-doctor at Brookhaven National Laboratory (2004–2008), research associate (2008– 2010) and research assistant professor (2010–2012) at Northwestern University, and a professor at Xi'an Jiaotong University (2012–2013). His research interests include transmission electron microscopy, thermoelectric materials, and structure and property relationship.&nbsp;</span><br></p>									</div>
+                                <!-- 简介 -->
+                                <p style="text-align: justify; margin-top: 5px; margin-bottom: 5px; line-height: 2em;"><span style="background-color: rgb(255, 255, 255); font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"><p th:text="${userInfoBean.getBrief()}"></p></span><br></p>									</div>
                             <div class="bottom">
-
                                 <p style="line-height: 2em; text-align: justify;"><span style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);">◆ Transmission Electron Microscopy</span></p>
                                 <p style="line-height: 2em; text-align: justify;"><span style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);">◆ Thermoelctric Materials</span></p>
                                 <p style="line-height: 2em; text-align: justify;"><span style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);">◆ Structure and property relationship</span></p>
@@ -274,6 +271,17 @@
                 clickable: true
             }
         });
+    })
+</script>
+<script type="text/javascript">
+    $(function(){
+
+        $(".main .center .righto .person .left .bottom ul li").click(function(){
+            var m = $(this).index();
+            $(".main .center .righto .person .right .bot_list .bottom").eq(m).show().siblings().hide();
+        })
+
+
     })
 </script>
 </body>

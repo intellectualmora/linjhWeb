@@ -191,7 +191,7 @@
     margin:0.5rem 0;
 }
 .main .center .righto .person .right .top ul li span{
-    width:17%;
+    width:40%;
     display: inline-block;
     font-weight: bold;
     font-size: 14px;
@@ -200,10 +200,10 @@
 }
 .main .center .righto .person .right .top ul li i{
     display: inline-block;
-    width:80%;
+    width:50%;
     font-size: 14px;
     color: #fff;
-    float: left;
+    float: right;
 }
 .main .center .righto .person .right .bottom{
     width: 690px;

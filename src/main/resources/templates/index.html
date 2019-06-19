@@ -210,7 +210,7 @@
                 <a href="/index?id=6">
                     <div class="data">
                         <i th:text="${newsBean.getDay()}"></i>
-                        <span th:text="${newsBean.getDate()}"></span>
+                        <span th:text="${newsBean.getYear()}+'.'+${newsBean.getMonth()}"></span>
                     </div>
                     <p th:text="${newsBean.getContent()}"> </p>
                     <img th:src="${newsBean.getImgSrc()}">

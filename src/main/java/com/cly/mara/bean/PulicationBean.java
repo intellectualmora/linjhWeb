@@ -2,18 +2,37 @@ package com.cly.mara.bean;
 
 import java.io.Serializable;
 
-public class ArticleBean implements Serializable {
-    private int aid;
+public class PulicationBean implements Serializable {
+    private int pid;
     private String imgSrc;
     private String aName;
     private int uid;
+    private int year;
+    private String content;
 
-    public int getAid() {
-        return aid;
+
+    public int getYear() {
+        return year;
     }
 
-    public void setAid(int aid) {
-        this.aid = aid;
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public int getAid() {
+        return pid;
+    }
+
+    public void setAid(int pid) {
+        this.pid = pid;
     }
 
     public String getImgSrc() {

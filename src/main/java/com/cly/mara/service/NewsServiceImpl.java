@@ -19,8 +19,23 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public List<NewsBean> getNewsList() throws Exception {
-        List<NewsBean> newsBeans = newsDao.fetchNewsList();
-        return newsBeans;
+        return newsDao.fetchNewsList();
     }
+
+    @Override
+    public NewsBean getNews(int nid) throws Exception {
+        return newsDao.fetchNews(nid);
+    }
+
+    @Override
+    public boolean addNews(NewsBean newsBean) {
+        return newsDao.addNews(newsBean);
+    }
+
+    @Override
+    public boolean updateNews(NewsBean newsBean) {
+        return newsDao.updateNews(newsBean);
+    }
+
 
 }

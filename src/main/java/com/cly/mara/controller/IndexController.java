@@ -1,9 +1,6 @@
 package com.cly.mara.controller;
 
-import com.cly.mara.bean.PublicationBean;
-import com.cly.mara.bean.NewsBean;
-import com.cly.mara.bean.PictureBean;
-import com.cly.mara.bean.UserInfoBean;
+import com.cly.mara.bean.*;
 import com.cly.mara.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,13 +27,20 @@ public class IndexController {
     UserInfoService userInfoService = new UserInfoServiceImpl();
     PictureService pictureService = new PictureServiceImpl();
     PublicationService publicationService = new PublicationServiceImpl();
-
+    EducationService educationService = new EducationServiceImpl();
+    ExperienceService experienceService = new ExperienceServiceImpl();
+    AwardService awardService = new AwardServiceImpl();
+    InterestService interestService = new InterestServiceImpl();
 
     List<NewsBean> newsBeanList = null;
     UserInfoBean userInfoBean = null;
     List<UserInfoBean> userInfoBeanList = null;
     List<PublicationBean> publicationBeanList = null;
     List<PictureBean> pictureBeanList = null;
+    List<EducationBean> educationBeanList = null;
+    List<ExperienceBean> experienceBeanList = null;
+    List<InterestBean> interestBeanList = null;
+    List<AwardBean> awardBeanList = null;
 
     int pageNumber;
     int[] pageList;
@@ -54,26 +58,24 @@ public class IndexController {
                     model.addAttribute("newsBeanList", newsBeanList);
                     model.addAttribute("publicationBeanList",publicationBeanList);
                     return "index";
-                case 1:   //group
+                case 1:  //1==11
+                case 11:  //leader
                     try {
                         userInfoBean =userInfoService.getUserInfo(leaderUid);
                         publicationBeanList = publicationService.getPublicationListByUid(leaderUid);
+                        educationBeanList = educationService.getEducationList(leaderUid);
+                        experienceBeanList = experienceService.getExperienceBeanList(leaderUid);
+                        awardBeanList = awardService.getAwardBeanList(leaderUid);
+                        interestBeanList = interestService.getInterestBeanList(leaderUid);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     model.addAttribute("userInfoBean", userInfoBean);
                     model.addAttribute("publicationBeanList", publicationBeanList);
-                    return "leader";
-                case 11:  //leader
-                    try {
-                        userInfoBean =userInfoService.getUserInfo(leaderUid);
-                        publicationBeanList = publicationService.getPublicationListByUid(leaderUid);
-                    } catch (Exception e) {
-                    e.printStackTrace();
-                    }
-
-                    model.addAttribute("userInfoBean", userInfoBean);
-                    model.addAttribute("publicationBeanList", publicationBeanList);
+                    model.addAttribute("educationBeanList",educationBeanList);
+                    model.addAttribute("experienceBeanList",experienceBeanList);
+                    model.addAttribute("awardBeanList",awardBeanList);
+                    model.addAttribute("interestBeanList",interestBeanList);
                     return "leader";
                 case 12:  // member
                     try {
@@ -109,6 +111,7 @@ public class IndexController {
                     model.addAttribute("publicationBeanList", publicationBeanList);
                     model.addAttribute("page", 1);
                     model.addAttribute("pageList",pageList);
+                    model.addAttribute("year",0);
                     return "publication";
                 case 4:  //resources
                     return "resources";
@@ -126,6 +129,7 @@ public class IndexController {
                     model.addAttribute("newsBeanList", newsBeanList.subList(0,Math.min(7,newsBeanList.size())));
                     model.addAttribute("page", 1);
                     model.addAttribute("pageList",pageList);
+                    model.addAttribute("year",0);
                     return "news";
                 case 6:  //contact
 

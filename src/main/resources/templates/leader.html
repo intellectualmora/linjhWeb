@@ -196,28 +196,28 @@
                                 <p><br></p>
                             </div>
                             <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;">
+                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;" th:each="interestBean:${interestBeanList}">
                                     <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
-                                          th:text="${userInfoBean.getInterest()}"></span></p>
+                                          th:text="'◆ '+${interestBean.getInterest()}"></span></p>
                                 <p><br></p>
                             </div>
                             <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em; margin-bottom: 10px;">
+                                <p style="box-sizing: border-box; margin-top: 0px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em; margin-bottom: 10px;" th:each="educationBean:${educationBeanList}">
                                     <span style="color: rgb(89, 89, 89); box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px;"
-                                          th:text="${userInfoBean.getEducation()}"></span></p>
+                                          th:text="'◆ '+${educationBean.getEducation()}"></span></p>
                                 <p><br></p>
                             </div>
                             <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;">
+                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;" th:each="experienceBean:${experienceBeanList}">
                                     <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
-                                          th:text="${userInfoBean.getExperience()}"></span></p>
+                                          th:text="'◆ '+${experienceBean.getExperience()}"></span></p>
                                 <p><br></p>
                             </div>
 
                             <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;">
+                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;" th:each="awardBean:${awardBeanList}">
                                     <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
-                                          th:text="${userInfoBean.getAward()}"></span></p>
+                                          th:text="'◆ '+${awardBean.getAward()}"></span></p>
                                 <p><br></p>
                             </div>
 

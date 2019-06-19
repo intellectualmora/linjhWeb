@@ -26,7 +26,7 @@ public class NewsDaoImpl implements NewsDao {
         resultSet=preparedStatement.executeQuery();
 
         while(resultSet.next()){
-            int _nid = resultSet.getInt("nid");
+            int nid = resultSet.getInt("nid");
             String imgSrc = resultSet.getString("imgSrc");
             String content = resultSet.getString("content");
             String title = resultSet.getString("title");
@@ -36,6 +36,42 @@ public class NewsDaoImpl implements NewsDao {
             int uid = resultSet.getInt("uid");
 
             NewsBean newsBean = new NewsBean();
+            newsBean.setNid(nid);
+            newsBean.setContent(content);
+            newsBean.setImgSrc(imgSrc);
+            newsBean.setDay(day);
+            newsBean.setTitle(title);
+            newsBean.setYear(year);
+            newsBean.setMonth(month);
+            newsBean.setUid(uid);
+
+            newsBeanList.add(newsBean);
+
+        }
+        dbutil.closeDBResource(connection, preparedStatement, resultSet);
+        return newsBeanList;
+    }
+
+    @Override
+    public List<NewsBean> fetchNewsList(int year) throws Exception {
+        List<NewsBean> newsBeanList=new ArrayList<>();
+        connection = dbutil.getConnection();
+        String sql="select * from News n where year = ? order by nid desc";
+        preparedStatement=connection.prepareStatement(sql);
+        preparedStatement.setInt(1,year);
+        resultSet=preparedStatement.executeQuery();
+
+        while(resultSet.next()){
+            int nid = resultSet.getInt("nid");
+            String imgSrc = resultSet.getString("imgSrc");
+            String content = resultSet.getString("content");
+            String title = resultSet.getString("title");
+            int month = resultSet.getInt("month");
+            int day = resultSet.getInt("day");
+            int uid = resultSet.getInt("uid");
+
+            NewsBean newsBean = new NewsBean();
+            newsBean.setNid(nid);
             newsBean.setContent(content);
             newsBean.setImgSrc(imgSrc);
             newsBean.setDay(day);
@@ -69,6 +105,7 @@ public class NewsDaoImpl implements NewsDao {
             int day = resultSet.getInt("day");
             int uid = resultSet.getInt("uid");
 
+            newsBean.setNid(nid);
             newsBean.setContent(content);
             newsBean.setImgSrc(imgSrc);
             newsBean.setDay(day);

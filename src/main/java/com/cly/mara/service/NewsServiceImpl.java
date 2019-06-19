@@ -23,6 +23,11 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
+    public List<NewsBean> getNewsList(int year) throws Exception {
+        return newsDao.fetchNewsList(year);
+    }
+
+    @Override
     public NewsBean getNews(int nid) throws Exception {
         return newsDao.fetchNews(nid);
     }

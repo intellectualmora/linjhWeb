@@ -35,10 +35,6 @@ public class UserInfoDaoImpl implements UserInfoDao {
             String address = resultSet.getString("address");
             String brief = resultSet.getString("brief");
             boolean isAdmin  = resultSet.getBoolean("isAdmin");
-            String interest = resultSet.getString("interest");
-            String education = resultSet.getString("education");
-            String award  = resultSet.getString("award");
-            String experience  = resultSet.getString("experience");
             String realName = resultSet.getString("realName");
 
             UserInfoBean userInfoBean = new UserInfoBean();
@@ -53,10 +49,6 @@ public class UserInfoDaoImpl implements UserInfoDao {
             userInfoBean.setOffice(office);
             userInfoBean.setBrief(brief);
             userInfoBean.setAddress(address);
-            userInfoBean.setInterest(interest);
-            userInfoBean.setEducation(education);
-            userInfoBean.setAward(award);
-            userInfoBean.setExperience(experience);
             userInfoBean.setRealName(realName);
 
             userInfoBeanList.add(userInfoBean);
@@ -85,10 +77,6 @@ public class UserInfoDaoImpl implements UserInfoDao {
             String address = resultSet.getString("address");
             String brief = resultSet.getString("brief");
             boolean isAdmin  = resultSet.getBoolean("isAdmin");
-            String interest = resultSet.getString("interest");
-            String education = resultSet.getString("education");
-            String award  = resultSet.getString("award");
-            String experience  = resultSet.getString("experience");
             String realName = resultSet.getString("realName");
 
             userInfoBean.setUid(uid);
@@ -102,10 +90,6 @@ public class UserInfoDaoImpl implements UserInfoDao {
             userInfoBean.setOffice(office);
             userInfoBean.setBrief(brief);
             userInfoBean.setAddress(address);
-            userInfoBean.setInterest(interest);
-            userInfoBean.setEducation(education);
-            userInfoBean.setAward(award);
-            userInfoBean.setExperience(experience);
             userInfoBean.setRealName(realName);
 
 

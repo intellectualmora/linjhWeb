@@ -14,20 +14,14 @@ import java.util.List;
 public class PublicationController {
     PublicationService publicationService = new PublicationServiceImpl();
     List<PublicationBean> publicationBeanList = null;
-    @GetMapping(value = "/publication")
-    public String getPublicationList(@RequestParam(name = "year", required = false, defaultValue = "0") int year, Model model) {
-        try {
-            publicationBeanList = publicationService.getPublicationList(year);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        model.addAttribute("publicationBeanList",publicationBeanList);
-        return "publication";
-    }
     @GetMapping(value = "/publicationPage")
-    public String getNewsPage(@RequestParam(name = "page", required = false, defaultValue = "1") int page, Model model) {
+    public String getPublicationPage(@RequestParam(name = "page", required = false, defaultValue = "1") int page,@RequestParam(name = "year", required = false, defaultValue = "0") int year, Model model) {
         try {
-            publicationBeanList = publicationService.getPublicationList();
+            if(year ==0) {
+                publicationBeanList = publicationService.getPublicationList();
+            }else{
+                publicationBeanList = publicationService.getPublicationList(year);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -36,9 +30,10 @@ public class PublicationController {
         for(int i =0;i<pageNumber;i++){
             pageList[i] = i+1;
         }
-        model.addAttribute("newsBeanList", publicationBeanList.subList((page-1)*20,Math.min(page*20,publicationBeanList.size())));
+        model.addAttribute("publicationBeanList", publicationBeanList.subList((page-1)*20,Math.min(page*20,publicationBeanList.size())));
         model.addAttribute("page",page);
         model.addAttribute("pageList",pageList);
+        model.addAttribute("year",year);
         return "publication";
     }
 

@@ -14,6 +14,11 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
+    public List<UserInfoBean> getUserInfoBeanList(String post) throws Exception {
+        return userInfoDao.fetchUserInfoList(post);
+    }
+
+    @Override
     public UserInfoBean getUserInfo(int uid) throws Exception {
         return userInfoDao.fetchUserInfo(uid);
     }

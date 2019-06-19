@@ -6,6 +6,15 @@ public class PictureBean implements Serializable {
     private int pid;
     private String imgSrc;
     private String pName;
+    private int year;
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
 
     public int getPid() {
         return pid;

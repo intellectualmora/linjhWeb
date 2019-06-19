@@ -58,6 +58,11 @@ public class UserInfoDaoImpl implements UserInfoDao {
     }
 
     @Override
+    public List<UserInfoBean> fetchUserInfoList(String post) throws Exception {
+        return null;
+    }
+
+    @Override
     public UserInfoBean fetchUserInfo(int uid) throws Exception {
         UserInfoBean userInfoBean = new UserInfoBean();
         connection = dbutil.getConnection();

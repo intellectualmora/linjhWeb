@@ -21,7 +21,7 @@ public class NewsDaoImpl implements NewsDao {
     public List<NewsBean> fetchNewsList() throws Exception {
         List<NewsBean> newsBeanList=new ArrayList<>();
         connection = dbutil.getConnection();
-        String sql="select * from News n ";
+        String sql="select * from News n  order by nid desc";
         preparedStatement=connection.prepareStatement(sql);
         resultSet=preparedStatement.executeQuery();
 

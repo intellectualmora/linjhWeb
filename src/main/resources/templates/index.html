@@ -165,30 +165,16 @@
 
                 <div class="swiper-wrapper"
                      style="transform: translate3d(-4752px, 0px, 0px); transition-duration: 0ms;">
-                    <div class="swiper-slide" style="width: 1188px;">
+                    <div class="swiper-slide" style="width: 1188px;" th:each="publicationBean:${publicationBeanList}">
                         <div class="left">
-                            <a href="http://jqhphy.sustech.edu.cn/"><img src="/images/201812191132297635.png"></a>
+                            <a href="/"><img th:src="${publicationBean.getImgSrc()}"></a>
                         </div>
                         <div class="right">
                             <p></p>
-                            <p style="text-align: justify;"><span
-                                    style="font-family: &quot;times new roman&quot;; font-size: 18px;">III.&nbsp; D. Wu, L.-D. Zhao, F.S. Zheng, M.G. Kanatzidis and <strong>J. Q. He</strong>. Understanding the Process of Nanostructuring in Thermoelectrics and its Effects on Lattice Thermal Conductivity, <span
-                                    style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(255, 0, 0);"><em><strong>Advanced Materials</strong></em></span>, 28(2016)2737.</span>
-                            </p><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/adma.201505638"
-                                   target="_blank" style="color:#ed6c00">(PDF)</a>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" style="width: 1188px;">
-                        <div class="left">
-                            <a href="http://jqhphy.sustech.edu.cn/"><img src="/images/201812191132297635.png"></a>
-                        </div>
-                        <div class="right">
-                            <p></p>
-                            <p style="text-align: justify;"><span
-                                    style="font-family: &quot;times new roman&quot;; font-size: 18px;">III.&nbsp; D. Wu, L.-D. Zhao, F.S. Zheng, M.G. Kanatzidis and <strong>J. Q. He</strong>. Understanding the Process of Nanostructuring in Thermoelectrics and its Effects on Lattice Thermal Conductivity, <span
-                                    style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(255, 0, 0);"><em><strong>Advanced Materials</strong></em></span>, 28(2016)2737.</span>
-                            </p><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/adma.201505638"
+                            <p style="text-align: justify;">
+                                <span style="font-family: &quot;times new roman&quot;; font-size: 18px;" th:text="${publicationBean.getContent()}">
+                                </span>
+                            </p><a href="/"
                                    target="_blank" style="color:#ed6c00">(PDF)</a>
                             <p></p>
                         </div>
@@ -212,7 +198,7 @@
                         <i th:text="${newsBean.getDay()}"></i>
                         <span th:text="${newsBean.getYear()}+'.'+${newsBean.getMonth()}"></span>
                     </div>
-                    <p th:text="${newsBean.getContent()}"> </p>
+                    <p th:text="${newsBean.getContent()}"></p>
                     <img th:src="${newsBean.getImgSrc()}">
                 </a>
             </li>

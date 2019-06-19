@@ -1,6 +1,6 @@
 package com.cly.mara.controller;
 
-import com.cly.mara.bean.PulicationBean;
+import com.cly.mara.bean.PublicationBean;
 import com.cly.mara.bean.NewsBean;
 import com.cly.mara.bean.PictureBean;
 import com.cly.mara.bean.UserInfoBean;
@@ -34,9 +34,11 @@ public class IndexController {
     List<NewsBean> newsBeanList = null;
     UserInfoBean userInfoBean = null;
     List<UserInfoBean> userInfoBeanList = null;
-    List<PulicationBean> pulicationBeanList = null;
+    List<PublicationBean> publicationBeanList = null;
     List<PictureBean> pictureBeanList = null;
 
+    int pageNumber;
+    int[] pageList;
 
     @GetMapping(value = "/index")
     public String getId (@RequestParam(name="id", required=false, defaultValue="0") int id, Model model) {
@@ -44,14 +46,16 @@ public class IndexController {
                 case 0:   //home
                     try {
                         newsBeanList = newsService.getRecentNews();
+                        publicationBeanList = publicationService.getRecentPublicationList();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     model.addAttribute("newsBeanList", newsBeanList);
+                    model.addAttribute("publicationBeanList",publicationBeanList);
                     return "index";
                 case 1:   //group
                     try {
-                        UserInfoBean userInfoBean =userInfoService.getUserInfo(0);
+                        userInfoBean =userInfoService.getUserInfo(1);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -59,7 +63,7 @@ public class IndexController {
                     return "leader";
                 case 11:  //leader
                     try {
-                        userInfoBean =userInfoService.getUserInfo(0);
+                        userInfoBean =userInfoService.getUserInfo(1);
                     } catch (Exception e) {
                     e.printStackTrace();
                     }
@@ -88,11 +92,18 @@ public class IndexController {
                     return "research";
                 case 3:  //publication
                     try {
-                        pulicationBeanList = publicationService.getArticleList();
+                        publicationBeanList = publicationService.getPublicationList();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    model.addAttribute("articleBeanList", pulicationBeanList);
+                    pageNumber = (int)Math.ceil(publicationBeanList.size()/20.0);
+                    pageList = new int[pageNumber];
+                    for(int i =0;i<pageNumber;i++){
+                        pageList[i] = i+1;
+                    }
+                    model.addAttribute("publicationBeanList", publicationBeanList);
+                    model.addAttribute("page", 1);
+                    model.addAttribute("pageList",pageList);
                     return "publication";
                 case 4:  //resources
 
@@ -103,8 +114,8 @@ public class IndexController {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    int pageNumber = (int)Math.ceil(newsBeanList.size()/7.0);
-                    int[] pageList = new int[pageNumber];
+                    pageNumber = (int)Math.ceil(newsBeanList.size()/7.0);
+                    pageList = new int[pageNumber];
                     for(int i =0;i<pageNumber;i++){
                         pageList[i] = i+1;
                     }
@@ -121,10 +132,12 @@ public class IndexController {
                 default:
                     try {
                         newsBeanList = newsService.getRecentNews();
+                        publicationBeanList = publicationService.getRecentPublicationList();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     model.addAttribute("newsBeanList", newsBeanList);
+                    model.addAttribute("publicationBeanList",publicationBeanList);
                     return "index";
             }
     }

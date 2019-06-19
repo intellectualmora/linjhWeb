@@ -1,14 +1,14 @@
 package com.cly.mara.service;
 
-import com.cly.mara.bean.PulicationBean;
+import com.cly.mara.bean.PublicationBean;
 
 import java.util.List;
 
 public interface PublicationService {
-    List<PulicationBean> getPublicationList()throws Exception;
-    List<PulicationBean> getPublicationList(int year)throws Exception;
-    List<PulicationBean> getRecentPublicationList() throws Exception;
-    PulicationBean getPublication(int aid)throws Exception;
-    boolean addPublication(PulicationBean article);
-    boolean updatePublication(PulicationBean article);
+    List<PublicationBean> getPublicationList()throws Exception;
+    List<PublicationBean> getPublicationList(int year)throws Exception;
+    List<PublicationBean> getRecentPublicationList() throws Exception;
+    PublicationBean getPublication(int pid)throws Exception;
+    boolean addPublication(PublicationBean article);
+    boolean updatePublication(PublicationBean article);
 }

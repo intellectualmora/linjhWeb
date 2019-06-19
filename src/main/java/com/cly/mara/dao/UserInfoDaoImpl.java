@@ -35,6 +35,10 @@ public class UserInfoDaoImpl implements UserInfoDao {
             String address = resultSet.getString("address");
             String brief = resultSet.getString("brief");
             boolean isAdmin  = resultSet.getBoolean("isAdmin");
+            String interest = resultSet.getString("interest");
+            String education = resultSet.getString("education");
+            String award  = resultSet.getString("award");
+            String experience  = resultSet.getString("experience");
 
             UserInfoBean userInfoBean = new UserInfoBean();
             userInfoBean.setUid(uid);
@@ -48,6 +52,10 @@ public class UserInfoDaoImpl implements UserInfoDao {
             userInfoBean.setOffice(office);
             userInfoBean.setBrief(brief);
             userInfoBean.setAddress(address);
+            userInfoBean.setInterest(interest);
+            userInfoBean.setEducation(education);
+            userInfoBean.setAward(award);
+            userInfoBean.setExperience(experience);
 
             userInfoBeanList.add(userInfoBean);
         }
@@ -64,6 +72,7 @@ public class UserInfoDaoImpl implements UserInfoDao {
         preparedStatement.setInt(1, uid); //将sql段第一个？代替
         resultSet=preparedStatement.executeQuery();
         while(resultSet.next()){
+
             String imgSrc = resultSet.getString("imgSrc");
             String userName = resultSet.getString("userName");
             String password = resultSet.getString("password");
@@ -71,10 +80,13 @@ public class UserInfoDaoImpl implements UserInfoDao {
             String telephone = resultSet.getString("telephone");
             String office = resultSet.getString("office");
             String post = resultSet.getString("post");
-            String realName = resultSet.getString("realName");
             String address = resultSet.getString("address");
             String brief = resultSet.getString("brief");
             boolean isAdmin  = resultSet.getBoolean("isAdmin");
+            String interest = resultSet.getString("interest");
+            String education = resultSet.getString("education");
+            String award  = resultSet.getString("award");
+            String experience  = resultSet.getString("experience");
 
             userInfoBean.setUid(uid);
             userInfoBean.setUserName(userName);
@@ -87,7 +99,11 @@ public class UserInfoDaoImpl implements UserInfoDao {
             userInfoBean.setOffice(office);
             userInfoBean.setBrief(brief);
             userInfoBean.setAddress(address);
-            userInfoBean.setRealName(realName);
+            userInfoBean.setInterest(interest);
+            userInfoBean.setEducation(education);
+            userInfoBean.setAward(award);
+            userInfoBean.setExperience(experience);
+
         }
         dbutil.closeDBResource(connection, preparedStatement, resultSet);
         return userInfoBean;

@@ -1,0 +1,216 @@
+
+.main-wrapper{
+    width: 100%;
+    background: #f7f7f7;
+}
+.main{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+.main .title{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.main .title span{
+    color: #003f43;
+    display: flex;
+    align-items: center;
+}
+.main .title span i{
+    color: #666666;
+}
+.main .center{
+    border-top: 6px solid #003f43;
+    min-height: 2011px;
+    background: #fff;
+    box-shadow: 0 4px 30px rgba(227,232,232,0.5);
+    display: flex;
+}
+.main .center .left{
+    float: left;
+    width: 208px;
+    border-right: 2px solid #003F43;
+    box-sizing: border-box;
+    padding-top: 5px;
+}
+.main .center .left ul li{
+    box-sizing: border-box;
+    padding: 0 24px;
+}
+.main .center .left ul li:hover{
+    border-left: 4px solid #003F43;
+}
+.main .center .left ul li.active{
+    border-left: 4px solid #003F43;
+}
+.main .center .left ul li a{
+    display: block;
+    width: 100%;
+    height: 59px;
+    line-height: 59px;
+    border-bottom: 1px solid #eeeeee;
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+}
+.main .center .left ul li a:hover{
+    color: #003F43;
+}
+.main .center .right{
+    width: 989px;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+    padding: 50px 30px;
+}
+.main .center .right .one{
+    margin-bottom: 1rem ;
+}
+.main .center .right .one .title{
+    position: relative;
+    height: 14px;
+    line-height:14px;
+}
+.main .center .right .one .title span{
+    position: relative;
+    z-index: 5;
+    color: #003f43;
+    font-weight: bold;
+    font-size: 18px;
+}
+.main .center .right .one .title small{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ccc;
+    line-height: 1;
+    z-index: 0;
+}
+.main .center .right .one .all{
+    box-sizing: border-box;
+    padding-top: 1rem;
+    border-top:1px solid #99b2b4;
+    margin-top: 0.6rem;
+}
+.main .center .right .one .all ul{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.main .center .right .one .all ul li{
+    width: 50%;
+
+    margin: 0.5rem 0;
+}
+.main .center .right .one .all ul li a{
+    display: block;
+    display: flex;
+    min-height: 156px;
+    justify-content: space-between;
+}
+.main .center .right .one .all ul li a .pic{
+    border: 1px solid #eeeeee;
+    /*width:120px;
+    height: 156px;*/
+}
+.main .center .right .one .all ul li a .pic img{
+    width: 100%;
+    height:100%;
+}
+.main .center .right .one .all ul li a .word{
+    width:70%;
+}
+.main .center .right .one .all ul li a .word h5{
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+.main .center .right .one .all ul li a .word p{
+    font-size: 14px;
+    color: #333;
+}
+.main .center .right .two .all ul li a{
+    height: auto;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+}
+.main .center .right .two .all ul li a h5{
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+.main .center .right .two .all ul li a p{
+    font-size: 14px;
+    color: #333;
+}
+
+/*@media screen and (max-width:1200px) {
+	.main .center{
+		flex-direction: column;
+	}
+	.main .center .left{
+		width: 100%;
+		border: none;
+	}
+	.main .center .right{
+		width: 100%;
+	}
+	.main .center .right .one .all ul li a .pic img{
+		width: 100%;
+		height:100%;
+	}
+	.main .center .right .one .all ul li{
+		width:100%;
+		float: none;
+
+		padding-left: 2rem;
+	}
+	.main .center .right .one .all ul li a{
+		justify-content: flex-start;
+		box-sizing: border-box;
+	}
+	.main .center .right .one .all ul li a .word{
+		width: auto;
+		margin: 0 1rem;
+	}
+	.main .center .right .one .title small{
+		display: none;
+	}
+}
+
+@media screen and (max-width:681px){
+	.main .center .right .one .title{
+		height: auto;
+	}
+	.main .center .right{
+		padding: 1rem;
+	}
+	.main .center .right .one .all ul li a{
+		flex-direction: column;
+		align-items: center;
+		margin: 1rem 0;
+	}
+
+	.main .center .right .one .all ul li a .word{
+		margin: 1rem 0;
+	}
+}*/
+
+
+
+
+
+
+
+
+

@@ -15,6 +15,42 @@ public class UserInfoBean implements Serializable {
     private String address;
     private String post;
     private boolean isAdmin;
+    private String interest;
+    private String experience;
+    private String award;
+    private String education;
+
+    public String getInterest() {
+        return interest;
+    }
+
+    public void setInterest(String interest) {
+        this.interest = interest;
+    }
+
+    public String getExperience() {
+        return experience;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
+
+    public String getAward() {
+        return award;
+    }
+
+    public void setAward(String award) {
+        this.award = award;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
 
     public int getUid() {
         return uid;

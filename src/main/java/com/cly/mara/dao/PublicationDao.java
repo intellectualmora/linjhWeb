@@ -1,14 +1,14 @@
 package com.cly.mara.dao;
 
-import com.cly.mara.bean.PulicationBean;
+import com.cly.mara.bean.PublicationBean;
 
 import java.util.List;
 
 public interface PublicationDao {
-    List<PulicationBean> fetchPublicationList()throws Exception;
-    List<PulicationBean> fetchPublicationList(int year)throws Exception;
-    PulicationBean fetchPublication(int aid)throws Exception;
-    boolean addAPublication(PulicationBean article);
-    boolean updatePublication(PulicationBean article);
+    List<PublicationBean> fetchPublicationList()throws Exception;
+    List<PublicationBean> fetchPublicationList(int year)throws Exception;
+    PublicationBean fetchPublication(int pid)throws Exception;
+    boolean addAPublication(PublicationBean article);
+    boolean updatePublication(PublicationBean article);
 
 }

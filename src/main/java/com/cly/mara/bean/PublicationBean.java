@@ -2,10 +2,10 @@ package com.cly.mara.bean;
 
 import java.io.Serializable;
 
-public class PulicationBean implements Serializable {
+public class PublicationBean implements Serializable {
     private int pid;
     private String imgSrc;
-    private String aName;
+    private String pName;
     private int uid;
     private int year;
     private String content;
@@ -27,11 +27,11 @@ public class PulicationBean implements Serializable {
         this.content = content;
     }
 
-    public int getAid() {
+    public int getPid() {
         return pid;
     }
 
-    public void setAid(int pid) {
+    public void setPid(int pid) {
         this.pid = pid;
     }
 
@@ -44,11 +44,11 @@ public class PulicationBean implements Serializable {
     }
 
     public String getaName() {
-        return aName;
+        return pName;
     }
 
-    public void setaName(String aName) {
-        this.aName = aName;
+    public void setpName(String aName) {
+        this.pName = pName;
     }
 
     public int getUid() {

@@ -39,6 +39,7 @@ public class UserInfoDaoImpl implements UserInfoDao {
             String education = resultSet.getString("education");
             String award  = resultSet.getString("award");
             String experience  = resultSet.getString("experience");
+            String realName = resultSet.getString("realName");
 
             UserInfoBean userInfoBean = new UserInfoBean();
             userInfoBean.setUid(uid);
@@ -56,6 +57,7 @@ public class UserInfoDaoImpl implements UserInfoDao {
             userInfoBean.setEducation(education);
             userInfoBean.setAward(award);
             userInfoBean.setExperience(experience);
+            userInfoBean.setRealName(realName);
 
             userInfoBeanList.add(userInfoBean);
         }
@@ -87,6 +89,7 @@ public class UserInfoDaoImpl implements UserInfoDao {
             String education = resultSet.getString("education");
             String award  = resultSet.getString("award");
             String experience  = resultSet.getString("experience");
+            String realName = resultSet.getString("realName");
 
             userInfoBean.setUid(uid);
             userInfoBean.setUserName(userName);
@@ -103,6 +106,8 @@ public class UserInfoDaoImpl implements UserInfoDao {
             userInfoBean.setEducation(education);
             userInfoBean.setAward(award);
             userInfoBean.setExperience(experience);
+            userInfoBean.setRealName(realName);
+
 
         }
         dbutil.closeDBResource(connection, preparedStatement, resultSet);

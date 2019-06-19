@@ -1,0 +1,91 @@
+.main-wrapper{
+    width: 100%;
+    background: #fff;
+}
+.main{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding:30px 0;
+}
+.main .title{
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #003F43;
+}
+
+.main .center{
+    border-top: 6px solid #003f43;
+    min-height: 550px;
+    background: #fff;
+    box-sizing: border-box;
+    padding-top:48px;
+}
+.main .center .left{
+    width: 50%;
+    height: 500px;
+    position: relative;
+    float: left;
+}
+.main .center .right{
+    width: 50%;
+    height: 500px;
+    float: right;
+    position: relative;
+}
+.main .center .right h4{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    color: #f2f4f4;
+    font-size: 28px;
+    z-index: 0;
+    width: 100%;
+    text-align: center;
+}
+.main .center .right h5,.main .center .right h6{
+    text-align: center;
+    color: #003F43;
+    line-height:45px;
+    font-size: 14px
+}
+.main .center .right h5{
+    font-size: 16px;
+    font-weight: bold;
+    color: #003F43;
+}
+
+
+#mapContainer{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/*@media screen and (max-width:768px){
+	.main .center>div{
+		float: none !important;
+		width: 100% !important;
+	}
+	.main .center .left{
+		height:15rem;
+	}
+	.main .center>div.right img{
+		width: 100%;
+	}
+	.main .center .right{
+		height: auto;
+	}
+}*/
+
+
+
+
+
+
+
+

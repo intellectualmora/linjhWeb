@@ -68,7 +68,7 @@
                 </li>
                 <li class="">
 
-                    <a href="/index.html?id=2">Research</a>
+                    <a href="/index?id=2">Research</a>
 
                 </li>
                 <li class="">
@@ -124,7 +124,7 @@
                         <a href="/index?id=11">The group leader</a>
                     </li>
                     <li>
-                        <a href="/index?id=12">Current  Members</a>
+                        <a href="/index?id=12">Current Members</a>
                     </li>
                     <li>
                         <a href="/index?id=13">Group pictures</a>
@@ -139,7 +139,8 @@
                 <div class="person">
                     <div class="left">
                         <div class="top">
-                            <img th:src="${userInfoBean.getImgSrc()}" th:alt="'Prof. Dr.' + ${userInfoBean.getRealName() +','}">
+                            <img th:src="${userInfoBean.getImgSrc()}"
+                                 th:alt="'Prof. Dr.' + ${userInfoBean.getRealName() +','}">
                         </div>
                         <div class="bottom">
                             <ul>
@@ -167,7 +168,7 @@
                     </div>
                     <div class="right">
                         <div class="top">
-                            <h4><i th:text="'Prof. Dr. ' + ${userInfoBean.getRealName()} +','"></i> </h4>
+                            <h4><i th:text="'Prof. Dr. ' + ${userInfoBean.getRealName()} +','"></i></h4>
                             <ul>
                                 <li>
                                     <span>Office:</span>
@@ -189,33 +190,42 @@
                         </div>
                         <div class="bot_list">
                             <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;"><span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);" th:text="${userInfoBean.getBrief()}"></span></p>
+                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;">
+                                    <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
+                                          th:text="${userInfoBean.getBrief()}"></span></p>
                                 <p><br></p>
                             </div>
                             <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;"><span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);" th:text="${userInfoBean.getInterest()}"></span></p>
+                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;">
+                                    <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
+                                          th:text="${userInfoBean.getInterest()}"></span></p>
                                 <p><br></p>
                             </div>
                             <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em; margin-bottom: 10px;"><span style="color: rgb(89, 89, 89); box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px;" th:text="${userInfoBean.getEducation()}"></span></p>
+                                <p style="box-sizing: border-box; margin-top: 0px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em; margin-bottom: 10px;">
+                                    <span style="color: rgb(89, 89, 89); box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px;"
+                                          th:text="${userInfoBean.getEducation()}"></span></p>
                                 <p><br></p>
                             </div>
                             <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;"><span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);" th:text="${userInfoBean.getExperience()}"></span></p>
+                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;">
+                                    <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
+                                          th:text="${userInfoBean.getExperience()}"></span></p>
                                 <p><br></p>
                             </div>
 
                             <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;"><span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);" th:text="${userInfoBean.getAward()}"></span></p>
+                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;">
+                                    <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
+                                          th:text="${userInfoBean.getAward()}"></span></p>
                                 <p><br></p>
                             </div>
 
                             <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: arial, helvetica, sans-serif; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify;"><span style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);">(1) C. Chang, M. Wu, D. He, Y. Pei, C.Wu, X. Wu, H. Yu, F. Zhu, K. Wang, Y. Chen, L. Huang, J. Li,<span style="font-size: 18px; font-family: &quot;times new roman&quot;; box-sizing: border-box; font-weight: 700;">&nbsp;J. Q. He</span>*, L.D. Zhao*. 3D charge and 2D phonon transports leading to high out-of-plane<em> ZT</em> in n-type SnSe crystals,&nbsp;<span style="font-family: &quot;times new roman&quot;; font-size: 18px; background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);"><strong><em style="box-sizing: border-box;">Science</em></strong></span>, 360(2018)778.</span></p>
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: arial, helvetica, sans-serif; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify;"><span style="color: rgb(89, 89, 89);"><span style="font-family: &quot;times new roman&quot;; font-size: 18px;">(2) Q. Lu, W. Li, D. Wu, C. Chang, Y. Guo,C. Zhou, M. Wu, X. Ma, H. Qin, G.Wang, L.-D. Zhao, L. Huang,C. Liu,and</span><span style="font-size: 18px; font-family: &quot;times new roman&quot;; box-sizing: border-box; font-weight: 700;">&nbsp;J. Q. He.</span><span style="font-family: &quot;times new roman&quot;; font-size: 18px;"><span style="font-size: 16px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; box-sizing: border-box; font-weight: 700;">&nbsp;</span>Unexpected large hole effective masses in SnSe revealed by angle resolved photoemission spectroscopy,&nbsp;<span style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(255, 0, 0);"><strong><em style="box-sizing: border-box;">Physical Review Letters</em></strong></span>, 119(2017)116401.</span></span></p>
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: arial, helvetica, sans-serif; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify;"><span style="color: rgb(89, 89, 89);"><span style="font-family: &quot;times new roman&quot;; font-size: 18px;">(3) D. Wu, L.-D. Zhao,F.S. Zheng, M.G. Kanatzidis and</span><span style="font-size: 18px; font-family: &quot;times new roman&quot;; box-sizing: border-box; font-weight: 700;">&nbsp;J. Q. He<strong>.</strong></span><span style="font-family: &quot;times new roman&quot;; font-size: 18px;"><span style="font-size: 16px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; box-sizing: border-box; font-weight: 700;">&nbsp;</span>Understanding the Process of Nanostructuring in Thermoelectrics and its Effects on Lattice Thermal Conductivity,<span style="font-family: &quot;times new roman&quot;; font-size: 18px;"><strong><em style="box-sizing: border-box;">&nbsp;<span style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(255, 0, 0);">Advanced Materials</span><span style="font-family: &quot;times new roman&quot;; font-size: 18px; background-color: rgb(255, 255, 255);"></span></em></strong><span style="font-family: &quot;times new roman&quot;; font-size: 18px; background-color: rgb(255, 255, 255);">,</span><strong><em style="box-sizing: border-box;">&nbsp;</em></strong></span>28(2016)2737.</span></span></p>
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: arial, helvetica, sans-serif; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify;"><span style="color: rgb(89, 89, 89);"><span style="font-family: &quot;times new roman&quot;; font-size: 18px;">(4) D. Wu, X. Tong, L.D. Zhao, W. Li, L.J. Wu, Q, Tan, Y.L. Pei, L. Huang, J.F. Li, Y.M. Zhu, M.G. Kanatzidis and</span><span style="font-size: 18px; font-family: &quot;times new roman&quot;; box-sizing: border-box; font-weight: 700;">&nbsp;J. Q. He</span><span style="font-family: &quot;times new roman&quot;; font-size: 18px;"><span style="font-family: &quot;times new roman&quot;; font-size: 18px; background-color: rgb(255, 255, 255);">.</span> Superior Thermoelectric Performance in a PbTe-PbS Pseudo-binary: Extremely Low Thermal Conductivity and Modulated Carrier Concentration,<span style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(255, 0, 0);">&nbsp;<span style="font-family: &quot;times new roman&quot;; font-size: 18px;"><strong><em style="box-sizing: border-box;">Energy and Environmental Science</em></strong></span></span>, 8(2015)2056.</span></span></p>
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: arial, helvetica, sans-serif; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify;"><span style="color: rgb(89, 89, 89);"><span style="font-family: &quot;times new roman&quot;; font-size: 18px;">(5) H. J. Wu, L.-D. Zhao, F.S. Zheng, D. Wu, Y. L. Pei, X. Tong, Mercouri G. Kanatzidis,</span><span style="font-size: 18px; font-family: &quot;times new roman&quot;; box-sizing: border-box; font-weight: 700;">&nbsp;J. Q. He.&nbsp;</span><span style="font-family: &quot;times new roman&quot;; font-size: 18px;">Broad temperature plateau for thermoelectric figure of merit <em>ZT</em>&gt;2 in phase separated PbTe<sub>0.7</sub>S<sub>0.3</sub>,<span style="font-family: &quot;times new roman&quot;; font-size: 18px;"><strong><em style="box-sizing: border-box;">&nbsp;<span style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(255, 0, 0);">Nature Communications</span></em></strong></span>, 5(2014)4515.</span></span></p>
+                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: arial, helvetica, sans-serif; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify;" th:each="publicationBean:${publicationBeanList}">
+                                    <span style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);" th:text="'('+${publicationBeanList.indexOf(publicationBean)+1}+') '+${publicationBean.getContent()}">
+                                          </span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -258,9 +268,9 @@
     })
 </script>
 <script type="text/javascript">
-    $(function(){
+    $(function () {
 
-        $(".main .center .righto .person .left .bottom ul li").click(function(){
+        $(".main .center .righto .person .left .bottom ul li").click(function () {
             var m = $(this).index();
             $(".main .center .righto .person .right .bot_list .bottom").eq(m).show().siblings().hide();
         })

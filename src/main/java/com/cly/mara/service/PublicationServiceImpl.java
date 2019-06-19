@@ -28,6 +28,11 @@ public class PublicationServiceImpl implements PublicationService {
     }
 
     @Override
+    public List<PublicationBean> getPublicationListByUid(int uid) throws Exception {
+        return  publicationDao.fetchPublicationListByUid(uid);
+    }
+
+    @Override
     public PublicationBean getPublication(int pid) throws Exception {
         return publicationDao.fetchPublication(pid);
     }

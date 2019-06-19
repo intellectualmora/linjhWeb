@@ -25,6 +25,7 @@ public class IndexController {
      * @param model
      * @return
      */
+    int leaderUid = 1;
     NewsService newsService = new NewsServiceImpl();
     UserInfoService userInfoService = new UserInfoServiceImpl();
     PictureService pictureService = new PictureServiceImpl();
@@ -55,20 +56,24 @@ public class IndexController {
                     return "index";
                 case 1:   //group
                     try {
-                        userInfoBean =userInfoService.getUserInfo(1);
+                        userInfoBean =userInfoService.getUserInfo(leaderUid);
+                        publicationBeanList = publicationService.getPublicationListByUid(leaderUid);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     model.addAttribute("userInfoBean", userInfoBean);
+                    model.addAttribute("publicationBeanList", publicationBeanList);
                     return "leader";
                 case 11:  //leader
                     try {
-                        userInfoBean =userInfoService.getUserInfo(1);
+                        userInfoBean =userInfoService.getUserInfo(leaderUid);
+                        publicationBeanList = publicationService.getPublicationListByUid(leaderUid);
                     } catch (Exception e) {
                     e.printStackTrace();
                     }
-                    System.out.println(userInfoBean.getAddress());
+
                     model.addAttribute("userInfoBean", userInfoBean);
+                    model.addAttribute("publicationBeanList", publicationBeanList);
                     return "leader";
                 case 12:  // member
                     try {
@@ -106,7 +111,6 @@ public class IndexController {
                     model.addAttribute("pageList",pageList);
                     return "publication";
                 case 4:  //resources
-
                     return "resources";
                 case 5:  //news
                     try {

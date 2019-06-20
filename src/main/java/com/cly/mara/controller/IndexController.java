@@ -135,7 +135,7 @@ public class IndexController {
 
                     return "contact";
                 case 7:  //login
-
+                    model.addAttribute("error",false);
                     return "login";
                 default:
                     try {

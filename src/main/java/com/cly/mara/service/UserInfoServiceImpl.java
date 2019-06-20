@@ -19,6 +19,11 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
+    public UserInfoBean login(String userName, String password) throws Exception {
+        return userInfoDao.fetchUserInfo(userName,password);
+    }
+
+    @Override
     public UserInfoBean getUserInfo(int uid) throws Exception {
         return userInfoDao.fetchUserInfo(uid);
     }

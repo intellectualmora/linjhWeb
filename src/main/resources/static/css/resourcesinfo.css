@@ -1,0 +1,96 @@
+.main-wrapper{
+    width: 100%;
+    height: 844px;
+    background: url(/images/lab-bg_02.jpg) no-repeat center;
+}
+.main{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+.main .all{
+    display: flex;
+    box-sizing: border-box;
+    padding-top: 40px;
+    min-height: 682px;
+}
+.main .all>div{
+    width: 50%;
+    min-height: 682px;
+}
+.main .all .right{
+    position:relative ;
+}
+.main .all .right .close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    z-index: 5;
+}
+.main .all .right .close img{
+    display: block;
+    width: 30px;
+}
+.main .all .right .swiper-container{
+    height: 100%;
+}
+.main .all .right .swiper-slide{
+    background: #fff;
+    box-sizing: border-box;
+    padding: 1rem;
+    text-align: left;
+}
+.main .all .right .swiper-slide h4{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    line-height: 2rem;
+}
+.main .all .right .swiper-slide p{
+    font-size:14px;
+    color: #333;
+    line-height:28px;
+}
+
+/*@media screen and (max-width:1200px ) {
+	.main-wrapper{
+		height: auto;
+		background-size: cover;
+	}
+	.main .all{
+		flex-direction: column;
+		align-items: center;
+	}
+	.main .all>div{
+		width: 80%;
+		height: auto;
+		min-height: auto;
+	}
+	.main .all .left .swiper-slide{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.main .all .left .swiper-slide img{
+		width: auto;
+	}
+}
+
+@media screen and (max-width:768px){
+	.main-wrapper{
+		background: #f2f2f2;
+	}
+	.main .all>div{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width:480px){
+	.main .all .right .close img{
+		display: none;
+	}
+}*/

@@ -25,7 +25,7 @@
 <div class="header-wrapper">
     <div class="header">
         <div class="logo">
-            <a href="http://www.sustc.edu.cn/en/">
+            <a href="http://www.sustc.edu.cn/index.php">
                 <img src="./images/201809011747282038.png" alt="LOGO">
             </a>
         </div>
@@ -113,7 +113,7 @@
 
 					<span>
 						<img src="/themes/nfkj/public/assets/images/home.png" alt="">
-                                                <i><a href="/portal/list/index.html?id=74" style="color: #666666">Home</a> &gt;&gt;</i>
+                                                <i><a href="/" style="color: #666666">Home</a> &gt;&gt;</i>
 					</span>
             <span>Current  Members</span>
 
@@ -146,17 +146,16 @@
                     </div>
                     <div class="all">
                         <ul>
-
-                            <li >
-                                <a href="/portal/article/index.html?id=113&amp;cid=108">
+                            <li th:each="userInfoBean:${userInfoBeanList}"  th:if="${userInfoBean.getPost()} eq 'Research Scientists' or ${userInfoBean.getPost()} eq 'Research Professors' or  ${userInfoBean.getPost()} eq 'Visiting Scholars' ">
+                                <a th:href="'/memberInfo?uid='+${userInfoBean.getUid()}">
                                 <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20181229/201812291107246250.jpg" alt="Dr. Dongsheng  HE">
+                                    <img th:src="${userInfoBean.getImgSrc()}" th:alt="${userInfoBean.getRealName()}">
                                 </div>
                                 <div class="word">
-                                    <h5> Dr. Dongsheng  HE</h5>
+                                    <h5 th:text="${userInfoBean.getRealName()}"></h5>
                                     <p>
-                                    </p><p>Office：Rm.208, Material Characterization and Preparation Center</p>
-                                    <p>Email：heds@sustc.edu.cn</p>
+                                    </p><p th:text="'Office：'+${userInfoBean.getOffice()}"></p>
+                                    <p th:text="'Email: '+${userInfoBean.getEmail()}"></p>
                                     <p><br></p>
                                     <p><br></p>
                                     <p></p>
@@ -176,75 +175,22 @@
                     </div>
                     <div class="all">
                         <ul>
-
-                            <li><a href="/portal/article/index.html?id=154&amp;cid=109">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20180907/201809071526046674.jpg" alt="Dr. BinBin JIANG">
-                                </div>
-                                <div class="word">
-                                    <h5> Dr. BinBin JIANG</h5>
-                                    <p>
-                                    </p><p style="text-align: justify;">Office：Rm.217, Research Building 2</p>
-                                    <p>Email：jiangbb@sustc.edu.cn</p>
-                                    <p><br></p>
-                                    <p></p>
-                                </div>
-                            </a>
-
+                            <li th:each="userInfoBean:${userInfoBeanList}" th:if="${userInfoBean.getPost()} eq 'Postdocs'">
+                                <a th:href="'/memberInfo?uid='+${userInfoBean.getUid()}">
+                                    <div class="pic">
+                                        <img th:src="${userInfoBean.getImgSrc()}" th:alt="${userInfoBean.getRealName()}">
+                                    </div>
+                                    <div class="word">
+                                        <h5 th:text="${userInfoBean.getRealName()}"></h5>
+                                        <p>
+                                        </p><p th:text="'Office：'+${userInfoBean.getOffice()}"></p>
+                                        <p th:text="'Email: '+${userInfoBean.getEmail()}"></p>
+                                        <p><br></p>
+                                        <p><br></p>
+                                        <p></p>
+                                    </div>
+                                </a>
                             </li>
-
-
-                            <li><a href="/portal/article/index.html?id=153&amp;cid=109">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20180907/201809071522443580.jpg" alt="Dr. Bin ZHU">
-                                </div>
-                                <div class="word">
-                                    <h5> Dr. Bin ZHU</h5>
-                                    <p>
-                                    </p><p>Office：Rm.217, Research Building 2</p>
-                                    <p>Telephone ：15256083978</p>
-                                    <p>Email：zhub3@sustc.edu.cn</p>
-                                    <p><br></p>
-                                    <p></p>
-                                </div>
-                            </a>
-
-                            </li>
-
-
-                            <li><a href="/portal/article/index.html?id=460&amp;cid=109">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20190108/201901080954006754.jpg" alt="Dr. Jianghe FENG">
-                                </div>
-                                <div class="word">
-                                    <h5> Dr. Jianghe FENG</h5>
-                                    <p>
-                                    </p><p>Office:Rm.217, Research Building 2</p>
-                                    <p>Email: fengjh@sustc.edu.cn</p>
-                                    <p><br></p>
-                                    <p></p>
-                                </div>
-                            </a>
-
-                            </li>
-
-
-                            <li><a href="/portal/article/index.html?id=528&amp;cid=109">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20190529/201905292003011782.png" alt="Dr. Wu WANG">
-                                </div>
-                                <div class="word">
-                                    <h5> Dr. Wu WANG</h5>
-                                    <p>
-                                    </p><p style="white-space: normal; text-align: justify;">Office：Rm.217, Research Building 2</p>
-                                    <p style="white-space: normal;">wangwu@hotmail.com</p>
-                                    <p><br></p>
-                                    <p></p>
-                                </div>
-                            </a>
-
-                            </li>
-
 
                         </ul>
                     </div>
@@ -258,174 +204,22 @@
                     </div>
                     <div class="all">
                         <ul>
-
-                            <li><a href="/portal/article/index.html?id=115&amp;cid=110">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20180907/201809071529325097.jpg" alt="Xiao XU">
-                                </div>
-                                <div class="word">
-                                    <h5> Xiao XU</h5>
-                                    <p>
-                                    </p><p>Office：Rm. 224B，Research Building 2</p>
-                                    <p>Email：11649013@mail.sustc.edu.cn</p>
-                                    <p><br></p>
-                                    <p></p>
-                                </div>
-                            </a>
-
+                            <li th:each="userInfoBean:${userInfoBeanList}" th:if="${userInfoBean.getPost()} eq 'Graduate students' or ${userInfoBean.getPost()} eq 'Visiting Students' ">
+                                <a th:href="'/memberInfo?uid='+${userInfoBean.getUid()}">
+                                    <div class="pic">
+                                        <img th:src="${userInfoBean.getImgSrc()}" th:alt="${userInfoBean.getRealName()}">
+                                    </div>
+                                    <div class="word">
+                                        <h5 th:text="${userInfoBean.getRealName()}"></h5>
+                                        <p>
+                                        </p><p th:text="'Office：'+${userInfoBean.getOffice()}"></p>
+                                        <p th:text="'Email：'+${userInfoBean.getEmail()}"></p>
+                                        <p><br></p>
+                                        <p><br></p>
+                                        <p></p>
+                                    </div>
+                                </a>
                             </li>
-
-
-                            <li><a href="/portal/article/index.html?id=112&amp;cid=110">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20180907/201809071532367000.jpg" alt="Juan CUI">
-                                </div>
-                                <div class="word">
-                                    <h5> Juan CUI</h5>
-                                    <p>
-                                    </p><p>Office: Rm.217, Research Building 2</p>
-                                    <p>Email: 11750016@mail.sustc.edu.cn</p>
-                                    <p><br></p>
-                                    <p></p>
-                                </div>
-                            </a>
-
-                            </li>
-
-
-                            <li><a href="/portal/article/index.html?id=155&amp;cid=110">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20180907/201809071535261706.jpg" alt="Yong YU">
-                                </div>
-                                <div class="word">
-                                    <h5> Yong YU</h5>
-                                    <p>
-                                    </p><p>Office：Rm.217, Research Building 2</p>
-                                    <p>Email：yuyong1991bj@sina.com</p>
-                                    <p><br></p>
-                                    <p></p>
-                                </div>
-                            </a>
-
-                            </li>
-
-
-                            <li><a href="/portal/article/index.html?id=157&amp;cid=110">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20180907/201809071542258358.jpg" alt="Yi HUANG">
-                                </div>
-                                <div class="word">
-                                    <h5> Yi HUANG</h5>
-                                    <p>
-                                    </p><p>Office：Rm. 101，Research Building 2</p>
-                                    <p>Email：11849466@mail.sustc.edu.cn</p>
-                                    <p><br></p>
-                                    <p></p>
-                                </div>
-                            </a>
-
-                            </li>
-
-
-                            <li><a href="/portal/article/index.html?id=158&amp;cid=110">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20180907/201809071546501315.jpg" alt="Yi ZHOU">
-                                </div>
-                                <div class="word">
-                                    <h5> Yi ZHOU</h5>
-                                    <p>
-                                    </p><p>Office：Rm. 224B，Research Building 2</p>
-                                    <p>Email：yizhou2019@gmail.com</p>
-                                    <p><br></p>
-                                    <p></p>
-                                </div>
-                            </a>
-
-                            </li>
-
-
-                            <li><a href="/portal/article/index.html?id=527&amp;cid=110">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20190528/201905282029247594.jpg" alt="Baohai JIA">
-                                </div>
-                                <div class="word">
-                                    <h5> Baohai JIA</h5>
-                                    <p>
-                                    </p><p style="white-space: normal;">Office：Rm. 101，Research Building 2</p>
-                                    <p style="white-space: normal;">Email：jiabh@mail.sustc.edu.cn</p>
-                                    <p></p>
-                                </div>
-                            </a>
-
-                            </li>
-
-
-                            <li><a href="/portal/article/index.html?id=159&amp;cid=110">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20180907/201809071550318901.jpg" alt="Xin SUN">
-                                </div>
-                                <div class="word">
-                                    <h5> Xin SUN</h5>
-                                    <p>
-                                    </p><p>Office：Rm. 225B, Research Building 2</p>
-                                    <p>Email：11749168@mail.sustc.edu.cn</p>
-                                    <p><br></p>
-                                    <p></p>
-                                </div>
-                            </a>
-
-                            </li>
-
-
-                            <li><a href="/portal/article/index.html?id=461&amp;cid=110">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20190108/201901081646466599.jpg" alt="Xixi LIU">
-                                </div>
-                                <div class="word">
-                                    <h5> Xixi LIU</h5>
-                                    <p>
-                                    </p><p style="white-space: normal;">Office：Rm. 101，Research Building 2</p>
-                                    <p style="white-space: normal;">Email：11849273@mail.sustc.edu.cn</p>
-                                    <p><br></p>
-                                    <p></p>
-                                </div>
-                            </a>
-
-                            </li>
-
-
-                            <li><a href="/portal/article/index.html?id=462&amp;cid=110">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20190108/201901081659312507.png" alt="Zuteng GUO">
-                                </div>
-                                <div class="word">
-                                    <h5> Zuteng GUO</h5>
-                                    <p>
-                                    </p><p style="white-space: normal;">Office：Rm. 101，Research Building 2</p>
-                                    <p style="white-space: normal;">Email：GTengeng@163.com</p>
-                                    <p><br></p>
-                                    <p></p>
-                                </div>
-                            </a>
-
-                            </li>
-
-
-                            <li><a href="/portal/article/index.html?id=463&amp;cid=110">
-                                <div class="pic">
-                                    <img src="http://jqhphy.sustech.edu.cn/upload/portal/20190108/201901081708424302.png" alt="Zhong SHU">
-                                </div>
-                                <div class="word">
-                                    <h5> Zhong SHU</h5>
-                                    <p>
-                                    </p><p>office：Rm.101, research building 2</p>
-                                    <p>Email：&nbsp;11849411@mail.sustc.edu.cn&nbsp;</p>
-                                    <p></p>
-                                </div>
-                            </a>
-
-                            </li>
-
 
                         </ul>
                     </div>
@@ -434,6 +228,14 @@
             </div>
         </div>
     </div>
+</div>
+<!--底部-->
+<div class="footer">
+    <a href="/">Copyright</a> | <a href="http://www.baidu.com/">XXXXXX号-1</a>
+</div>
+
+<div class="gotop">
+    <img src="/images/gotop.png">
 </div>
 
 </body>

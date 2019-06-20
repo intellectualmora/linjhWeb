@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
     <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/leader.css">
     <script src="/js/swiper.min.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/common.js"></script>
@@ -23,7 +24,7 @@
 <div class="header-wrapper">
     <div class="header">
         <div class="logo">
-            <a href="http://www.sustc.edu.cn/en/">
+            <a href="http://www.sustc.edu.cn/index.php">
                 <img src="./images/201809011747282038.png" alt="LOGO">
             </a>
         </div>
@@ -113,7 +114,7 @@
 						<img src="/themes/nfkj/public/assets/images/home.png" alt="">
                                                 <i><a href="/" style="color: #666666">Home</a> &gt;&gt;</i>
 					</span>
-            <span>The group leader</span>
+            <span>member detail</span>
 
         </div>
         <div class="center">
@@ -233,6 +234,26 @@
         </div>
     </div>
 </div>
+<!--底部-->
+<div class="footer">
+    <a href="/">Copyright</a> | <a href="http://www.baidu.com/">XXXXXX号-1</a>
+</div>
+
+<div class="gotop">
+    <img src="/images/gotop.png">
+</div>
+
+<script type="text/javascript">
+    $(function () {
+
+        $(".main .center .righto .person .left .bottom ul li").click(function () {
+            var m = $(this).index();
+            $(".main .center .righto .person .right .bot_list .bottom").eq(m).show().siblings().hide();
+        })
+
+
+    })
+</script>
 
 </body>
 </html>

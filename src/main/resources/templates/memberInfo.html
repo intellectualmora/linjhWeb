@@ -5,7 +5,7 @@
     <link rel="icon" type="images/jpg" href="/images/favicon.jpg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">-->
-    <title>LJH Research Group </title>
+    <title>JHL Research Group </title>
     <!--     <title> 南方科技大学</title>-->
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -21,19 +21,88 @@
     <script src="/js/common.js"></script>
 </head>
 <body>
-<div class="header-wrapper">
-    <div class="header">
-        <div class="logo">
-            <a href="http://www.sustc.edu.cn/index.php">
-                <img src="./images/201809011747282038.png" alt="LOGO">
-            </a>
+<div class="banner">
+    <a href="">
+        <picture>
+            <img srcset="bg_0.jpg">
+        </picture>
+    </a>
+</div>
+
+<div class="nav-wrapper" id="navBar">
+    <div class="nav">
+        <div class="header">
+            <img src="/images/logo.png">
+            <h5>JHL Research Group</h5>
         </div>
-        <h1>LJH Research Group</h1>
+        <div class="pc-nav">
+            <ul>
+                <li class="">
+                    <a href="/index?id=0">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="/index?id=1" >
+                        People </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-element">
+                            <a href="/index?id=11">The group leader</a>
+                        </li>
+                        <li class="dropdown-element">
+                            <a href="/index?id=12">Current Members</a>
+                        </li>
+                        <li class="dropdown-element">
+                            <a href="/index?id=13">Group pictures</a>
+                        </li>
+                        <li class="dropdown-element">
+                            <a href="/index?id=14">Alumni</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+
+                    <a href="/index?id=2">Research</a>
+
+                </li>
+                <li class="">
+
+                    <a href="/index?id=3">Publications</a>
+
+                </li>
+                <li class="">
+
+                    <a href="/index?id=4">Lab Resources</a>
+
+                </li>
+                <li class="">
+
+                    <a href="/index?id=5">News</a>
+
+                </li>
+                <li class="">
+
+                    <a href="/index?id=6">Contact us</a>
+
+                </li>
+                <li class="">
+                    <a href="/index?id=7">Login</a>
+                </li>
+            </ul>
+        </div>
+        <!--<div class="search">-->
+        <!--<form action="./index?id=" method="post">-->
+        <!--<input type="text" placeholder="Enter keyword here..." name="key">-->
+        <!--<input type="submit" value="">-->
+        <!--</form>-->
+        <!--</div>-->
     </div>
 </div>
 
-<div class="nav-wrapper">
+<div class="nav-wrapper" id="navBar">
     <div class="nav">
+        <div class="header">
+            <img src="/images/logo.png">
+            <h5>LJH Research Group</h5>
+        </div>
         <div class="pc-nav">
             <ul>
                 <li class="">
@@ -96,147 +165,45 @@
                 </li>
             </ul>
         </div>
-        <div class="search">
-            <form action="./index?id=" method="post">
-                <input type="text" placeholder="Enter keyword here..." name="key">
-                <input type="submit" value="">
-            </form>
-        </div>
-    </div>
-</div>
-
-<div class="main-wrapper">
-    <div class="main">
-        <div class="title">
-
-
-					<span>
-						<img src="/themes/nfkj/public/assets/images/home.png" alt="">
-                                                <i><a href="/" style="color: #666666">Home</a> &gt;&gt;</i>
-					</span>
-            <span>member detail</span>
-
-        </div>
-        <div class="center">
-            <div class="lefto">
-                <ul>
-                    <li>
-                        <a href="/index?id=11">The group leader</a>
-                    </li>
-                    <li>
-                        <a href="/index?id=12">Current Members</a>
-                    </li>
-                    <li>
-                        <a href="/index?id=13">Group pictures</a>
-                    </li>
-                    <li>
-                        <a href="/index?id=14">Alumni</a>
-                    </li>
-
-                </ul>
-            </div>
-            <div class="righto">
-                <div class="person">
-                    <div class="left">
-                        <div class="top">
-                            <img th:src="${userInfoBean.getImgSrc()}"
-                                 th:alt="${userInfoBean.getRealName()}">
-                        </div>
-                        <div class="bottom">
-                            <ul>
-                                <li>
-                                    Brief Introduction
-                                </li>
-                                <li>
-                                    Research Interests
-                                </li>
-                                <li>
-                                    Educational Background
-                                </li>
-                                <li>
-                                    Professional Experience
-                                </li>
-
-                                <li>
-                                    Honors &amp; Awards
-                                </li>
-                                <li>
-                                    Selected Publication
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="top">
-                            <h4><i th:text="${userInfoBean.getRealName()} +','"></i></h4>
-                            <ul>
-                                <li>
-                                    <span>Office:</span>
-                                    <i th:text="${userInfoBean.getOffice()}"></i>
-                                </li>
-                                <!--<li>
-                                    <span>Telephone:</span>
-                                    <i></i>
-                                </li>-->
-                                <li>
-                                    <span>Email:</span>
-                                    <i th:text="${userInfoBean.getEmail()}"></i>
-                                </li>
-                                <li>
-                                    <span>Address:</span>
-                                    <i th:text="${userInfoBean.getAddress()}"></i>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bot_list">
-                            <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;">
-                                    <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
-                                          th:text="${userInfoBean.getBrief()}"></span></p>
-                                <p><br></p>
-                            </div>
-                            <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;" th:each="interestBean:${interestBeanList}">
-                                    <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
-                                          th:text="'◆ '+${interestBean.getInterest()}"></span></p>
-                                <p><br></p>
-                            </div>
-                            <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em; margin-bottom: 10px;" th:each="educationBean:${educationBeanList}">
-                                    <span style="color: rgb(89, 89, 89); box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px;"
-                                          th:text="'◆ '+${educationBean.getEducation()}"></span></p>
-                                <p><br></p>
-                            </div>
-                            <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;" th:each="experienceBean:${experienceBeanList}">
-                                    <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
-                                          th:text="'◆ '+${experienceBean.getExperience()}"></span></p>
-                                <p><br></p>
-                            </div>
-
-                            <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;" th:each="awardBean:${awardBeanList}">
-                                    <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
-                                          th:text="'◆ '+${awardBean.getAward()}"></span></p>
-                                <p><br></p>
-                            </div>
-
-                            <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: arial, helvetica, sans-serif; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify;" th:each="publicationBean:${publicationBeanList}">
-                                    <span style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);" th:text="'('+${publicationBeanList.indexOf(publicationBean)+1}+') '+${publicationBean.getContent()}">
-                                          </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!--<div class="search">-->
+        <!--<form action="./index?id=" method="post">-->
+        <!--<input type="text" placeholder="Enter keyword here..." name="key">-->
+        <!--<input type="submit" value="">-->
+        <!--</form>-->
+        <!--</div>-->
     </div>
 </div>
 <!--底部-->
 <div class="footer">
-    <a href="/">Copyright</a> | <a href="http://www.baidu.com/">XXXXXX号-1</a>
+    <div class="contact">
+        <p>
+            Contact
+        </p>
+        <ul>
+            <li>
+                <p>Email: linjh@sustech.edu.cn</p>
+            </li>
+            <li>
+                <p>The research building 2 room 210,Southern University of Science and Technology, No 1088, Xueyuan Rd., Xili, Nanshan District, Shenzhen, Guangdong, China</p>
+            </li>
+        </ul>
+        <span style="font-size: 13px; color: #ffffff">JunHao Lin Group © 2019</span>
+    </div>
+    <div class="link">
+        <p>
+            Links
+        </p>
+        <ul>
+            <li>
+                <a href="http://www.sustech.edu.cn">SUSTech</a>
+            </li>
+            <li>
+                <a href="http://phy.sustech.edu.cn">The Department of Physics</a>
+            </li>
+
+        </ul>
+
+    </div>
 </div>
 
 <div class="gotop">

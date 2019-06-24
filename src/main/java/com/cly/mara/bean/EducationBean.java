@@ -1,6 +1,8 @@
 package com.cly.mara.bean;
 
-public class EducationBean {
+import java.io.Serializable;
+
+public class EducationBean implements Serializable {
     int eid;
     int uid;
     String education;

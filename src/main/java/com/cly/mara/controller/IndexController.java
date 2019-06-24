@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 
@@ -31,6 +33,8 @@ public class IndexController {
     ExperienceService experienceService = new ExperienceServiceImpl();
     AwardService awardService = new AwardServiceImpl();
     InterestService interestService = new InterestServiceImpl();
+    BannerService bannerService = new BannerServiceImpl();
+    AlumniService alumniService = new AlumniServiceImpl();
 
     List<NewsBean> newsBeanList = null;
     UserInfoBean userInfoBean = null;
@@ -41,20 +45,24 @@ public class IndexController {
     List<ExperienceBean> experienceBeanList = null;
     List<InterestBean> interestBeanList = null;
     List<AwardBean> awardBeanList = null;
+    List<BannerBean> bannerBeanList = null;
+    List<AlumniBean> alumniBeanList = null;
 
     int pageNumber;
     int[] pageList;
 
     @GetMapping(value = "/index")
-    public String getId (@RequestParam(name="id", required=false, defaultValue="0") int id, Model model) {
+    public String getId (@RequestParam(name="id", required=false, defaultValue="0") int id, Model model, HttpServletRequest request) {
             switch (id){
                 case 0:   //home
                     try {
                         newsBeanList = newsService.getRecentNews();
                         publicationBeanList = publicationService.getRecentPublicationList();
+                        bannerBeanList = bannerService.getRecentBannerBeanList();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                    model.addAttribute("bannerBeanList",bannerBeanList);
                     model.addAttribute("newsBeanList", newsBeanList);
                     model.addAttribute("publicationBeanList",publicationBeanList);
                     return "index";
@@ -87,19 +95,27 @@ public class IndexController {
                     return "member";
                 case 13:  //picture
                     try {
-                        pictureBeanList =pictureService.getPictureBeanList();
+                        pictureBeanList =pictureService.getAlbumList();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     model.addAttribute("pictureBeanList", pictureBeanList);
                     return "picture";
                 case 14:   //alumni
+                    try {
+                        alumniBeanList =alumniService.getAlumniBeanList();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    model.addAttribute("alumniBeanList",alumniBeanList);
                     return "alumni";
                 case 2:  //research
                     return "research";
                 case 3:  //publication
                     try {
                         publicationBeanList = publicationService.getPublicationList();
+                        HttpSession session =request.getSession();//这就是session的创建
+                        session.setAttribute("publicationBeanList",publicationBeanList);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -108,7 +124,7 @@ public class IndexController {
                     for(int i =0;i<pageNumber;i++){
                         pageList[i] = i+1;
                     }
-                    model.addAttribute("publicationBeanList", publicationBeanList);
+                    model.addAttribute("publicationBeanList", publicationBeanList.subList(0,Math.min(20,publicationBeanList.size())));
                     model.addAttribute("page", 1);
                     model.addAttribute("pageList",pageList);
                     model.addAttribute("year",0);
@@ -118,6 +134,8 @@ public class IndexController {
                 case 5:  //news
                     try {
                         newsBeanList = newsService.getNewsList();
+                        HttpSession session =request.getSession();//这就是session的创建
+                        session.setAttribute("newsBeanList",newsBeanList);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -132,7 +150,6 @@ public class IndexController {
                     model.addAttribute("year",0);
                     return "news";
                 case 6:  //contact
-
                     return "contact";
                 case 7:  //login
                     model.addAttribute("error",false);

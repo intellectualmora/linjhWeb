@@ -1,6 +1,8 @@
 package com.cly.mara.bean;
 
-public class AwardBean {
+import java.io.Serializable;
+
+public class AwardBean implements Serializable {
     int aid;
     int uid;
     String award;

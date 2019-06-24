@@ -1,6 +1,8 @@
 package com.cly.mara.bean;
 
-public class ExperienceBean {
+import java.io.Serializable;
+
+public class ExperienceBean implements Serializable {
     int eid;
     int uid;
     String experience;

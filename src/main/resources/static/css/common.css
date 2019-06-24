@@ -1,7 +1,8 @@
-html,body{
-	font-size:12px;
-	min-width: 1200px !important;
+html, body {
+    font-size: 12px;
+    min-width: 1200px !important;
 }
+
 /*@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
 @media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
 @media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
@@ -10,138 +11,197 @@ html,body{
 @media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
 @media screen and (min-width:800px){html{font-size:25px}}*/
 
-/*头部*/
-.header-wrapper{
-	width: 100%;
-	background: #fff;
-}
-.header{
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	height: 120px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	box-sizing: border-box;
-	padding: 0 0.5rem;
-}
-.header h1{
-	font-size: 30px;
-	color: #003f43;
-	margin-top:2rem;
-}
-.nav-wrapper{
-	width: 100%;
-	background: #ed6c00;
-}
-.nav{
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	height:80px;
-	background: #ed6c00;
-	box-sizing: border-box;
-	padding: 0 0.5rem;
-}
-.nav .pc-nav{
-	float: left;
-}
-.nav .pc-nav>ul{
-	height: 80px;
-}
-.nav .pc-nav>ul>li{
-	float: left;
-	height: 80px;
-	line-height: 80px;
-	box-sizing: border-box;
-	padding-right:3.5vw;
-	position: relative;
-	cursor: pointer;
-}
-.nav .pc-nav>ul>li:hover ul{
-	display: block;
-}
-.nav .pc-nav>ul>li>a{
-	color: #fff;
-	font-size: 14px;
-}
-.nav .pc-nav>ul>li:hover>a{
-	border-bottom: 2px solid #fff;
-	box-sizing: border-box;
-	padding-bottom: 5px;
-}
-.nav .pc-nav>ul li ul{
-	position: absolute;
-	top: 100%;
-	left:0;
-	z-index: 5;
-	box-sizing: border-box;
-	width: 10vw;
-	background: rgba(0,63,67,0.5);
-	display: none;
-}
-.nav .pc-nav>ul>li ul li a{
-	display:block;
-	width: 100%;
-	height: 50px;
-	text-align: center;
-	line-height: 50px;
-	color: #fff;
-	font-size: 14px;
-} 
-.nav .pc-nav>ul>li ul li a:hover{
-	background: rgba(0,63,67,0.8);
-}
-.nav .search{
-	width: 264px;
-	height: 32px;
-	border: 2px solid #fff;
-	border-radius:20px ;
-	float: right;
-	margin-top: 20px;
-	overflow: hidden;
-}
-.nav .search form{
-	width: 100%;
-	height: 100%;
-}
-.nav .search form input[type=text]{
-	width: 80%;
-	height: 100%;
-	box-sizing: border-box;
-	padding-left: 10px;
-	font-size: 14px;
-	color: #fff;
-	background: rgba(0,0,0,0);
+/*.header-wrapper{*/
+/*width: 100%;*/
+/*background: #ed6c00;*/
+/*}*/
+/*.header{*/
+/*width: 100%;*/
+/*max-width: 1200px;*/
+/*margin: 0 auto;*/
+/*height: 120px;*/
+/*display: flex;*/
+/*justify-content: space-between;*/
+/*align-items: center;*/
+/*box-sizing: border-box;*/
+/*padding: 0 0.5rem;*/
+/*}*/
+/*.header h1{*/
+/*font-size: 30px;*/
+/*color: #003f43;*/
+/*margin-top:2rem;*/
+/*}*/
+
+.nav-wrapper {
+    width: 100%;
+    background: linear-gradient(rgba(238, 183, 36, 0.98), #ed6c00);
+    position: static;
+    top: 0;
+    left: 0;
+    z-index: 999;
 }
 
-.nav .search input[type=submit]{
-	width: 36px;
-	height: 100%;
-	background: url(/images/search.png) no-repeat center;
-	cursor: pointer;
+.nav {
+    width: 100%;
+    margin: 0 auto;
+    height: 60px;
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
 }
 
-.footer{
-	width: 100%;
-/*	height: 36px;*/
-	background: #003f43;
-	text-align: center;
-	line-height: 36px;
-	
+.nav .header {
+    width: 320px;
+    height: 60px;
+    float: left;
+    overflow: hidden;
+}
+
+.nav .header > img {
+    width: 85px;
+    margin-top: 5px;
+    height: 50px;
+    float: left;
+}
+
+.nav .header > h5 {
+    font-size: 22px;
+    margin-top: 17px;
+    color: #003f43;
+    float: right;
+    margin-right: 4px;
+}
+
+.nav .pc-nav {
+}
+
+.nav .pc-nav > ul {
+    height: 60px;
+    float: right;
+}
+
+.nav .pc-nav > ul > li {
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    box-sizing: border-box;
+    padding-right: 3.5vw;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav .pc-nav > ul > li:hover ul {
+    display: block;
+}
+.dropdown:after{
+    position: absolute;
+    top: 47%;
+    width: 0;
+    height: 0;
+    left: 68%;
+    margin-left: -15px;
+    content: " ";
+    border-top: 6px solid  #ffffff ;
+    border-left: 6px solid transparent ;
+    border-right: 6px solid transparent ;
+
+}
+
+.nav .pc-nav > ul > li > a {
+    color: #fff;
+    font-size: 14px;
+}
+
+.nav .pc-nav > ul > li:hover > a {
+    box-sizing: border-box;
+    color: #cccccc;
+}
+
+.nav .pc-nav > ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 5;
+    box-sizing: border-box;
+    width: 10vw;
+    display: none;
+}
+
+.nav .pc-nav > ul > li ul li a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    line-height: 50px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.nav .pc-nav > ul > li ul li a:hover {
+    background: rgba(237, 108, 0, 0.8);
+}
+
+.footer {
+    width: 100%;
+    bottom: 0;
+    /*	height: 36px;*/
+    background: linear-gradient(rgba(238, 183, 36, 0.98), #ed6c00);
+    line-height: 36px;
+    height: 280px;
 }
 .footer a{
-	color: #fff;
-	font-size:14px;
+    color: #fff;
+    cursor: pointer;
 }
-.gotop{
-	position: fixed;
-	bottom: 76px;
-	right:0;
-	cursor: pointer;
-	display: none;
-	z-index: 5;
+.footer a:hover{
+    color: #007aff;
+}
+.footer p{
+    color: #fff;
+}
+
+.footer div{
+    margin-top: 30px;
+    width: 550px;
+    height: 200px;
+}
+.footer .contact{
+    float: left;
+    margin-left: 50px;
+}
+.footer .link{
+    float: right;
+    margin-right: 50px;
+
+}
+.footer div>p{
+    text-align: center;
+    font-size: 20px;
+    width: fit-content;
+    border-bottom: 2px solid #ffffff;
+}
+.footer div ul li{
+    font-size: 16px;
+}
+.footer div ul{
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+.gotop {
+    position: fixed;
+    bottom: 76px;
+    right: 0;
+    cursor: pointer;
+    display: none;
+    z-index: 5;
 }
 
 

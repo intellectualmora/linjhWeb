@@ -66,7 +66,6 @@ public class UserInfoDaoImpl implements UserInfoDao {
         preparedStatement.setInt(1, uid); //将sql段第一个？代替
         resultSet=preparedStatement.executeQuery();
         while(resultSet.next()){
-
             String imgSrc = resultSet.getString("imgSrc");
             String email = resultSet.getString("email");
             String telephone = resultSet.getString("telephone");

@@ -1,12 +1,11 @@
 $(function(){
-	
-	$(window).scroll(function(){
-		// 滚动条距离顶部的距离 大于 200px时
+    var top  = document.getElementById("navBar").offsetTop;
+    $(window).scroll(function(){
 		if($(window).scrollTop() >=400){
-			$(".gotop").fadeIn(300)
+            $(".gotop").fadeIn(300);
 		} else{
-			$(".gotop").fadeOut(300)
-		}
+            $(".gotop").fadeOut(300);
+        }
 	});
 	
 	$(".gotop").click(function(){
@@ -26,7 +25,7 @@ $(function(){
 			$("body").css("overflow","hidden")
 		}
 	})
-	
+
 	
 	
 })

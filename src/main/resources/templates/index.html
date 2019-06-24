@@ -5,7 +5,7 @@
     <link rel="icon" type="images/jpg" href="./images/favicon.jpg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">-->
-    <title>LJH Research Group </title>
+    <title>JHL Research Group </title>
     <!--     <title> 南方科技大学</title>-->
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -18,51 +18,70 @@
     <script src="/js/swiper.min.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/common.js"></script>
+
 </head>
 
 <body style="">
-<div class="header-wrapper">
-    <div class="header">
-        <div class="logo">
-            <a href="http://www.sustc.edu.cn/index.php">
-                <img src="./images/201809011747282038.png" alt="LOGO">
-            </a>
+
+<!--<div class="header-wrapper" id="header">-->
+<!--<div class="header">-->
+<!--<div class="logo">-->
+<!--<a href="http://www.sustc.edu.cn/en/">-->
+<!--<img src="/images/logo.png" alt="LOGO">-->
+<!--</a>-->
+<!--</div>-->
+<!--<h1>LJH Research Group</h1>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--banner-->
+
+<div class="banner">
+    <!-- Swiper -->
+    <div class="swiper-container swiper-container1 swiper-container-horizontal" style="height: 100%;">
+        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+            <div class="swiper-slide" style="width: 1200px;" th:each="bannerBean:${bannerBeanList}">
+                <a href="/">
+                    <picture>
+                        <img th:srcset="${bannerBean.getImgSrc()}">
+                    </picture>
+                </a>
+            </div>
         </div>
-        <h1>LJH Research Group</h1>
-    </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
+                class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
+                aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button"
+                                                        aria-label="Go to slide 2"></span></div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
 </div>
 
-<div class="nav-wrapper">
+<div class="nav-wrapper" id="navBar">
     <div class="nav">
+        <div class="header">
+            <img src="/images/logo.png">
+            <h5>JHL Research Group</h5>
+        </div>
         <div class="pc-nav">
             <ul>
                 <li class="">
                     <a href="/index?id=0">Home</a>
                 </li>
                 <li class="dropdown">
-
-                    <a href="/index?id=1">
-                        Group </a>
+                    <a href="/index?id=1" >
+                        People </a>
                     <ul class="dropdown-menu">
-                        <li class="">
-
+                        <li class="dropdown-element">
                             <a href="/index?id=11">The group leader</a>
-
                         </li>
-                        <li class="">
-
+                        <li class="dropdown-element">
                             <a href="/index?id=12">Current Members</a>
-
                         </li>
-                        <li class="">
-
+                        <li class="dropdown-element">
                             <a href="/index?id=13">Group pictures</a>
-
                         </li>
-                        <li class="">
-
+                        <li class="dropdown-element">
                             <a href="/index?id=14">Alumni</a>
-
                         </li>
                     </ul>
                 </li>
@@ -96,91 +115,93 @@
                 </li>
             </ul>
         </div>
-        <div class="search">
-            <form action="./index?id=" method="post">
-                <input type="text" placeholder="Enter keyword here..." name="key">
-                <input type="submit" value="">
-            </form>
-        </div>
+        <!--<div class="search">-->
+        <!--<form action="./index?id=" method="post">-->
+        <!--<input type="text" placeholder="Enter keyword here..." name="key">-->
+        <!--<input type="submit" value="">-->
+        <!--</form>-->
+        <!--</div>-->
     </div>
-</div>
-
-<!--banner-->
-<div class="banner">
-    <!-- Swiper -->
-    <div class="swiper-container swiper-container1 swiper-container-horizontal" style="height: 100%;">
-        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-
-            <div class="swiper-slide swiper-slide-active" style="width: 1200px;">
-
-                <a href="/">
-                    <picture>
-                        <source srcset="/201809051150583335.png"
-                                media="(max-width:768px)">
-                        <img srcset="/201809051154199094.png">
-                    </picture>
-                </a>
-            </div>
-
-
-            <div class="swiper-slide swiper-slide-next" style="width: 1200px;">
-
-                <a href="/">
-                    <picture>
-                        <img srcset="/201812241431091639.jpg">
-                    </picture>
-                </a>
-            </div>
-
-        </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
-                class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
-                aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button"
-                                                        aria-label="Go to slide 2"></span></div>
-        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
 </div>
 
 <!--lab-->
-<div class="lab-wrapper">
-    <div class="lab">
-        <div class="left">
-            <img src="/images/201812201743286132.jpg">
-        </div>
-        <div class="right">
-            <h4>Introduction to the lab</h4>
-            <p th:text="简介"></p>
-        </div>
-    </div>
-</div>
-
-<!--public-->
-<div class="public-wrapper">
-    <div class="public">
-        <h4>Selected Publications</h4>
-        <div class="color"></div>
-        <div class="qiehuan">
-            <div class="swiper-container swiper-container2 swiper-container-horizontal">
-
-                <div class="swiper-wrapper"
-                     style="transform: translate3d(-4752px, 0px, 0px); transition-duration: 0ms;">
-                    <div class="swiper-slide" style="width: 1188px;" th:each="publicationBean:${publicationBeanList}">
-                        <div class="left">
-                            <a href="/"><img th:src="${publicationBean.getImgSrc()}"></a>
-                        </div>
-                        <div class="right">
-                            <p></p>
-                            <p style="text-align: justify;">
-                                <span style="font-family: &quot;times new roman&quot;; font-size: 18px;" th:text="${publicationBean.getContent()}">
-                                </span>
-                            </p><a href="/"
-                                   target="_blank" style="color:#ed6c00">(PDF)</a>
-                            <p></p>
+<div class="lab-wrapper" style="position: relative">
+    <div class="is-container banner-container">
+        <div data-v-71fc1ffe="" id="x6rcoc66g26o" class="zm-bannerChild-main"
+             style="position: absolute; width: 1200px; height: 500px; left: 0px; top: 0px;">
+            <div class="bgTitle"
+                 style="word-spacing: 0px; position: absolute; width: 800px; height: 61px; left: 300px; top: 50px; transform: rotate(0deg);">
+                <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; font-family: 微软雅黑; text-indent: 0px; font-style: normal; text-decoration: none; text-align: center; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%; color: rgb(221, 221, 221); font-weight: 700; font-size: 12px;">
+            <span style="color: rgb(221, 221, 221); font-size: 52px; font-weight: 700; text-indent: 0.01px; box-sizing: border-box; font-family: &quot;Work Sans Semi Bold&quot;; background-color: rgba(0, 0, 0, 0);"
+            >LAB INTRODUCTION</span></div>
+            </div>
+            <div class="fgTitle"
+                 style="word-spacing: 0px; position: absolute; width: 300px; height: 31px; left: 540.5px; top: 72.5px; transform: rotate(0deg);">
+                <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: center; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
+            <span style="font-size: 24px; text-indent: 0.01px; box-sizing: border-box; color: rgb(0, 79, 198); font-weight: 700; background-color: rgba(0, 0, 0, 0); font-family: 微软雅黑; font-style: normal; text-decoration: none; text-shadow: none; letter-spacing: 0px; line-height: normal;"
+                  id="" class="myZuMaEditor">Laboratory Introduction</span></div>
+            </div>
+            <div data-v-71fc1ffe="" class="is-container banner-container">
+                <div data-v-626ea1ea="" data-v-71fc1ffe="" class="zm-component-main"
+                     style="position: absolute; width: 520px; height: 300px; left: 580.5px; top: 121px;">
+                    <div data-v-626ea1ea="" class="zm-component-main-container is-container"
+                         style="background-color: rgba(51, 51, 51, 0); border: 0px solid rgb(246, 246, 246); border-radius: 0px; box-shadow: none;"></div>
+                    <div data-v-5722a7a6="" data-v-626ea1ea="" id="x4l6g16s70go" class="textCom"
+                         style="word-spacing: 0px; position: absolute; width: 522px; height: 92px; left: 0px; top: 40px; transform: rotate(0deg);">
+                        <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: left; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
+                            <span style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                                  id="myZuMaEditorL13" class="myZuMaEditor"><span
+                                    style="white-space: pre; letter-spacing: 2px; box-sizing: border-box;"
+                                    id="">	</span>林君浩博士具有实验和理论双重背景，对实验设计和理论计算融会贯通，以此研究了大量新兴二维材料里复杂缺陷的原子结构。通过结合实验原子图像和理论模拟，阐述了二维材料里各种缺陷的形成机理，并提出了部分缺陷结构能显著改善或增强材料的性能。这些工作在二维材料的电子与光学器件应用等方面有极其重要的意义。截至目前为止，林君浩博士已经以第一作者（含共同一作）或通讯作者在Nature， Nature Nanotechnology，Nature Materials，Nano Letters，PRL，Advanced Materials， ACS Nano等高影响期刊发表40余篇，总引用次数超过2200多次，H因子19。2018年全职加盟南方科技大学物理系。</span>
                         </div>
                     </div>
+                    <div data-v-626ea1ea="" id="xy02bddtopmp" class="zm-component-main-button"
+                         style="position: absolute; width: 80px; height: 30px; left: 0px; top: 350px; transform: rotate(0deg); cursor: pointer;">
+                        <div preserveaspectratio="none" class="zm-component-shapeD-main"
+                             style="font-family: 微软雅黑; font-size: 14px; font-weight: 300; font-style: normal; letter-spacing: 0px; padding-left: 0px; border-radius: 2px; border-width: 1px; transition: color 0.2s ease 0s;">
+                            <p style="display: inline-block;"><span style="white-space: nowrap; display: inline-block;"><a href="/index?id=2">Read More&gt;</a></span>
+                            </p><span><style scoped="">
+                #xy02bddtopmp .zm-component-shapeD-main {
+                    background: rgba(255, 255, 255, 0);
+                }
 
+                #xy02bddtopmp .zm-component-shapeD-main:hover {
+                    background: rgba(0, 79, 198, 0);
+                }
+
+                #xy02bddtopmp .zm-component-shapeD-main {
+                    color: #1b1b1b;
+                }
+
+                #xy02bddtopmp .zm-component-shapeD-main:hover {
+                    color: rgba(0, 79, 198, 1);
+                }
+
+                #xy02bddtopmp .zm-component-shapeD-main {
+                    border-color: rgba(27, 27, 27, 0);
+                }
+
+                #xy02bddtopmp .zm-component-shapeD-main:hover {
+                    border-color: rgba(0, 79, 198, 0);
+                }
+            </style></span></div>
+                    </div>
+                    <div data-v-5722a7a6="" data-v-626ea1ea="" id="xni56ecl38tg" class="textCom"
+                         style="word-spacing: 0px; position: absolute; width: 222px; height: 26px; left: 0px; top: 0px; transform: rotate(0deg);">
+                        <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: left; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
+                            <span style="font-size: 20px; text-indent: 0.01px; color: rgb(27, 27, 27); box-sizing: border-box; background-color: rgba(0, 0, 0, 0);"
+                                  id="myZuMaEditorL9" class="colorSelect"></span></div>
+                    </div>
                 </div>
 
+                <div data-v-d253b97a="" data-v-71fc1ffe="" id="x4gj1q34eo5o" class="zm-component-mains"
+                     style="position: absolute; width: 460px; height: 300px; left: 75px; top: 121px; transform: rotate(0deg); display: block;">
+                    <div data-v-d253b97a="" class="zm-component-img-main"
+                         style="border-style: solid; border-color: rgb(0, 0, 0); border-width: 0px; box-shadow: rgba(0, 79, 198, 0.6) -10px -10px 0px; border-radius: 0px;">
+                        <img src="default.png" data-v-d253b97a="" class="zm-component-img-content hoverType1 isTransition"
+                             style="object-fit: fill; width: 100%; height: 100%;"/>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -188,9 +209,21 @@
 
 <div class="news-wrapper">
     <div class="news">
-        <h4>Latest news</h4>
+        <div style="width: 1200px; height: 100px;  position: relative">
+            <div class="bgTitle"
+                 style="word-spacing: 0px; position: absolute; width: 602px; height: 61px; left: 300px; top: 50px; transform: rotate(0deg);">
+                <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; font-family: 微软雅黑; text-indent: 0px; font-style: normal; text-decoration: none; text-align: center; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%; color: rgb(221, 221, 221); font-weight: 700; font-size: 12px;">
+            <span style="color: rgb(221, 221, 221); font-size: 52px; font-weight: 700; text-indent: 0.01px; box-sizing: border-box; font-family: &quot;Work Sans Semi Bold&quot;; background-color: rgba(0, 0, 0, 0);"
+            >NEWS CENTER</span></div>
+            </div>
+            <div class="fgTitle"
+                 style="word-spacing: 0px; position: absolute; width: 300px; height: 31px; left: 540.5px; top: 72.5px; transform: rotate(0deg);">
+                <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: center; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
+            <span style="font-size: 24px; text-indent: 0.01px; box-sizing: border-box; color: rgb(0, 79, 198); font-weight: 700; background-color: rgba(0, 0, 0, 0); font-family: 微软雅黑; font-style: normal; text-decoration: none; text-shadow: none; letter-spacing: 0px; line-height: normal;"
+                  id="" class="myZuMaEditor">Latest news</span></div>
+            </div>
+        </div>
         <ul>
-
             <li th:each="newsBean:${newsBeanList}">
                 <a href="/index?id=6">
                     <div class="data">
@@ -205,17 +238,92 @@
 
         </ul>
         <h5>
-            <a href="/index?id=5">
-                <span style="color: #003F43;">Read More</span>
-                <img src="/images/more.png">
-            </a>
+            <div>
+                <a href="/index?id=5">
+                    <span style="font-family: 微软雅黑; font-style: normal; letter-spacing: 0px; padding-left: 0px; border-radius: 1px; border-width: 1px; transition: color 0.2s ease 0s;">Read More&gt;</span>
+                </a>
+            </div>
         </h5>
     </div>
+</div>
+<!--public-->
+<div class="public-wrapper">
+    <div class="public" style="position: relative">
+        <div class="bgTitle"
+             style="word-spacing: 0px; position: absolute; width: 602px; height: 61px; left: 300px; top: 50px; transform: rotate(0deg);">
+            <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; font-family: 微软雅黑; text-indent: 0px; font-style: normal; text-decoration: none; text-align: center; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%; color: rgb(221, 221, 221); font-weight: 700; font-size: 12px;">
+            <span style="color: rgb(221, 221, 221); font-size: 52px; font-weight: 700; text-indent: 0.01px; box-sizing: border-box; font-family: &quot;Work Sans Semi Bold&quot;; background-color: rgba(0, 0, 0, 0);"
+            >SELECT PUBLICATION</span></div>
+        </div>
+        <div class="fgTitle"
+             style="word-spacing: 0px; position: absolute; width: 300px; height: 31px; left: 540.5px; top: 72.5px; transform: rotate(0deg);">
+            <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: center; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
+            <span style="font-size: 24px; text-indent: 0.01px; box-sizing: border-box; color: rgb(0, 79, 198); font-weight: 700; background-color: rgba(0, 0, 0, 0); font-family: 微软雅黑; font-style: normal; text-decoration: none; text-shadow: none; letter-spacing: 0px; line-height: normal;"
+                  id="" class="myZuMaEditor">Select Publication</span></div>
+        </div>
+        <div class="color"></div>
+        <div class="qiehuan">
+            <div class="swiper-container swiper-container2 swiper-container-horizontal">
+
+                <div class="swiper-wrapper"
+                     style="transform: translate3d(-4752px, 0px, 0px); transition-duration: 0ms;">
+                    <div class="swiper-slide" style="width: 1188px;" th:each="publicationBean:${publicationBeanList}">
+                        <div class="left">
+                            <a href="/"><img th:src="${publicationBean.getImgSrc()}"></a>
+                        </div>
+                        <div class="right">
+                            <p></p>
+                            <p style="text-align: justify;">
+                                <span style="font-family: &quot;times new roman&quot;; font-size: 18px;"
+                                      th:text="${publicationBean.getContent()}">
+                                </span>
+                            </p><a href="/"
+                                   target="_blank" style="color:#ed6c00">(PDF)</a>
+                            <p></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </div>
 
 <!--底部-->
 <div class="footer">
-    <a href="/">Copyright</a> | <a href="http://www.baidu.com/">XXXXXX号-1</a>
+    <div class="contact">
+        <p>
+            Contact
+        </p>
+        <ul>
+            <li>
+                <p>Email: linjh@sustech.edu.cn</p>
+            </li>
+            <li>
+                <p>The research building 2 room 210,Southern University of Science and Technology, No 1088, Xueyuan Rd., Xili, Nanshan District, Shenzhen, Guangdong, China</p>
+            </li>
+        </ul>
+        <span style="font-size: 13px; color: #ffffff">JunHao Lin Group © 2019</span>
+    </div>
+    <div class="link">
+        <p>
+            Links
+        </p>
+        <ul>
+            <li>
+                <a href="http://www.sustech.edu.cn">SUSTech</a>
+            </li>
+            <li>
+                <a href="http://phy.sustech.edu.cn">The Department of Physics</a>
+            </li>
+
+        </ul>
+
+    </div>
 </div>
 
 <div class="gotop">
@@ -246,7 +354,6 @@
         });
     })
 </script>
-
 
 </body>
 </html>

@@ -1,6 +1,8 @@
 package com.cly.mara.bean;
 
-public class InterestBean {
+import java.io.Serializable;
+
+public class InterestBean implements Serializable {
     int iid;
     int uid;
     String interest;

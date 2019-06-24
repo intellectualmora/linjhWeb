@@ -5,11 +5,13 @@ import com.cly.mara.service.UserInfoService;
 import com.cly.mara.service.UserInfoServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
@@ -18,6 +20,45 @@ import java.util.UUID;
 public class ManagementController {
     UserInfoService userInfoService = new UserInfoServiceImpl();
     UserInfoBean userInfoBean;
+
+    @GetMapping(value = "/mIndex")
+    public String getMIndex(@RequestParam(value = "id") int id, Model model, HttpServletRequest request){
+        HttpSession session = request.getSession();
+        UserInfoBean userInfoBean = null;
+        try {
+            userInfoBean = (UserInfoBean) session.getAttribute("userInfoBean");
+        }catch (Exception e){
+            return "login";
+        }
+        switch (id){
+            case 0:
+                model.addAttribute("userInfoBean",userInfoBean);
+                return "management";
+            case 1:
+                model.addAttribute("userInfoBean",userInfoBean);
+                return "adduserinfo";
+            case 2:
+                model.addAttribute("userInfoBean",userInfoBean);
+                return "addalumni";
+            case 3:
+                model.addAttribute("userInfoBean",userInfoBean);
+                return "addpicture";
+            case 4:
+                model.addAttribute("userInfoBean",userInfoBean);
+                return "addpublication";
+            case 5:
+                model.addAttribute("userInfoBean",userInfoBean);
+                return "addbanner";
+            case 6:
+                model.addAttribute("userInfoBean",userInfoBean);
+                return "addnews";
+            default:
+                return "/";
+        }
+    }
+
+
+
 
     @PostMapping(value = "/upload")
     public String fileUpload(@RequestParam(value = "file") MultipartFile file,@RequestParam(value = "uid") int uid, Model model) {

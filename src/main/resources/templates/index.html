@@ -5,7 +5,7 @@
     <link rel="icon" type="images/jpg" href="./images/favicon.jpg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">-->
-    <title>JHL Research Group </title>
+    <title>Advanced Low dimensional Materials Lab </title>
     <!--     <title> 南方科技大学</title>-->
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -60,7 +60,7 @@
     <div class="nav">
         <div class="header">
             <img src="/images/logo.png">
-            <h5>JHL Research Group</h5>
+            <h5>Advanced Low dimensional Materials Lab</h5>
         </div>
         <div class="pc-nav">
             <ul>
@@ -97,7 +97,7 @@
                 </li>
                 <li class="">
 
-                    <a href="/index?id=4">Lab Resources</a>
+                    <a href="/index?id=4">Opening</a>
 
                 </li>
                 <li class="">
@@ -110,9 +110,9 @@
                     <a href="/index?id=6">Contact us</a>
 
                 </li>
-                <li class="">
-                    <a href="/index?id=7">Login</a>
-                </li>
+                <!--<li class="">-->
+                    <!--<a href="/index?id=7">Login</a>-->
+                <!--</li>-->
             </ul>
         </div>
         <!--<div class="search">-->
@@ -207,6 +207,48 @@
     </div>
 </div>
 
+<div class="public-wrapper">
+    <div class="public">
+        <div style="width: 1200px; height: 100px;  position: relative">
+            <div class="bgTitle"
+                 style="word-spacing: 0px; position: absolute; width: 602px; height: 61px; left: 300px; top: 50px; transform: rotate(0deg);">
+                <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; font-family: 微软雅黑; text-indent: 0px; font-style: normal; text-decoration: none; text-align: center; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%; color: rgb(221, 221, 221); font-weight: 700; font-size: 12px;">
+            <span style="color: rgb(221, 221, 221); font-size: 52px; font-weight: 700; text-indent: 0.01px; box-sizing: border-box; font-family: &quot;Work Sans Semi Bold&quot;; background-color: rgba(0, 0, 0, 0);"
+            >SELECT PUBLICATION</span></div>
+            </div>
+            <div class="fgTitle"
+                 style="word-spacing: 0px; position: absolute; width: 300px; height: 31px; left: 540.5px; top: 72.5px; transform: rotate(0deg);">
+                <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: center; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
+            <span style="font-size: 24px; text-indent: 0.01px; box-sizing: border-box; color: rgb(0, 79, 198); font-weight: 700; background-color: rgba(0, 0, 0, 0); font-family: 微软雅黑; font-style: normal; text-decoration: none; text-shadow: none; letter-spacing: 0px; line-height: normal;"
+                  id="" class="myZuMaEditor">Select Publication</span></div>
+            </div>
+        </div>
+        <div class="public-list" >
+            <div class="qiehuan">
+                <div class="swiper-container swiper-container2 swiper-container-horizontal">
+                    <div class="swiper-wrapper"
+                         style="transform: translate3d(0px, 0px, 0px); width: content-box; transition-duration: 0ms;">
+                        <div class="swiper-slide" style="width: 100%;" th:each="publicationBean:${publicationBeanList}">
+                            <div class="public-left"><img th:src="${publicationBean.getImgSrc()}"/></div>
+                            <div class="public-right">
+                                <p th:text="${publicationBean.getContent()}"></p>
+                                <a th:href="${publicationBean.getPdfUrl()}" target="_blank" style="color: #007aff">(PDF)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h5>
+            <div>
+                <a href="/index?id=3">
+                    <span style="font-family: 微软雅黑; font-style: normal; letter-spacing: 0px; padding-left: 0px; border-radius: 1px; border-width: 1px; transition: color 0.2s ease 0s;">Read More&gt;</span>
+                </a>
+            </div>
+        </h5>
+    </div>
+</div>
+
 <div class="news-wrapper">
     <div class="news">
         <div style="width: 1200px; height: 100px;  position: relative">
@@ -214,7 +256,7 @@
                  style="word-spacing: 0px; position: absolute; width: 602px; height: 61px; left: 300px; top: 50px; transform: rotate(0deg);">
                 <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; font-family: 微软雅黑; text-indent: 0px; font-style: normal; text-decoration: none; text-align: center; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%; color: rgb(221, 221, 221); font-weight: 700; font-size: 12px;">
             <span style="color: rgb(221, 221, 221); font-size: 52px; font-weight: 700; text-indent: 0.01px; box-sizing: border-box; font-family: &quot;Work Sans Semi Bold&quot;; background-color: rgba(0, 0, 0, 0);"
-            >NEWS CENTER</span></div>
+            >LATEST NEWS</span></div>
             </div>
             <div class="fgTitle"
                  style="word-spacing: 0px; position: absolute; width: 300px; height: 31px; left: 540.5px; top: 72.5px; transform: rotate(0deg);">
@@ -225,12 +267,12 @@
         </div>
         <ul>
             <li th:each="newsBean:${newsBeanList}">
-                <a href="/index?id=6">
+                <a th:href="'/newsInfo?nid='+${newsBean.getNid()}">
                     <div class="data">
                         <i th:text="${newsBean.getDay()}"></i>
                         <span th:text="${newsBean.getYear()}+'.'+${newsBean.getMonth()}"></span>
                     </div>
-                    <p th:text="${newsBean.getContent()}"></p>
+                    <p th:text="${newsBean.getTitle()}"></p>
                     <img th:src="${newsBean.getImgSrc()}">
                 </a>
             </li>
@@ -246,52 +288,7 @@
         </h5>
     </div>
 </div>
-<!--public-->
-<div class="public-wrapper">
-    <div class="public" style="position: relative">
-        <div class="bgTitle"
-             style="word-spacing: 0px; position: absolute; width: 602px; height: 61px; left: 300px; top: 50px; transform: rotate(0deg);">
-            <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; font-family: 微软雅黑; text-indent: 0px; font-style: normal; text-decoration: none; text-align: center; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%; color: rgb(221, 221, 221); font-weight: 700; font-size: 12px;">
-            <span style="color: rgb(221, 221, 221); font-size: 52px; font-weight: 700; text-indent: 0.01px; box-sizing: border-box; font-family: &quot;Work Sans Semi Bold&quot;; background-color: rgba(0, 0, 0, 0);"
-            >SELECT PUBLICATION</span></div>
-        </div>
-        <div class="fgTitle"
-             style="word-spacing: 0px; position: absolute; width: 300px; height: 31px; left: 540.5px; top: 72.5px; transform: rotate(0deg);">
-            <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: center; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
-            <span style="font-size: 24px; text-indent: 0.01px; box-sizing: border-box; color: rgb(0, 79, 198); font-weight: 700; background-color: rgba(0, 0, 0, 0); font-family: 微软雅黑; font-style: normal; text-decoration: none; text-shadow: none; letter-spacing: 0px; line-height: normal;"
-                  id="" class="myZuMaEditor">Select Publication</span></div>
-        </div>
-        <div class="color"></div>
-        <div class="qiehuan">
-            <div class="swiper-container swiper-container2 swiper-container-horizontal">
 
-                <div class="swiper-wrapper"
-                     style="transform: translate3d(-4752px, 0px, 0px); transition-duration: 0ms;">
-                    <div class="swiper-slide" style="width: 1188px;" th:each="publicationBean:${publicationBeanList}">
-                        <div class="left">
-                            <a href="/"><img th:src="${publicationBean.getImgSrc()}"></a>
-                        </div>
-                        <div class="right">
-                            <p></p>
-                            <p style="text-align: justify;">
-                                <span style="font-family: &quot;times new roman&quot;; font-size: 18px;"
-                                      th:text="${publicationBean.getContent()}">
-                                </span>
-                            </p><a href="/"
-                                   target="_blank" style="color:#ed6c00">(PDF)</a>
-                            <p></p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-</div>
 
 <!--底部-->
 <div class="footer">
@@ -303,11 +300,8 @@
             <li>
                 <p>Email: linjh@sustech.edu.cn</p>
             </li>
-            <li>
-                <p>The research building 2 room 210,Southern University of Science and Technology, No 1088, Xueyuan Rd., Xili, Nanshan District, Shenzhen, Guangdong, China</p>
-            </li>
         </ul>
-        <span style="font-size: 13px; color: #ffffff">JunHao Lin Group © 2019</span>
+        <span style="font-size: 13px; color: #000000">JunHao Lin Group © 2019</span>
     </div>
     <div class="link">
         <p>

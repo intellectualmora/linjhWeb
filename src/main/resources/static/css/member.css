@@ -118,16 +118,22 @@
     justify-content: space-between;
 }
 .main .center .right .one .all ul li a .pic{
-    border: 1px solid #eeeeee;
+
+    height: 150px;
+    width: 150px;
     /*width:120px;
     height: 156px;*/
 }
 .main .center .right .one .all ul li a .pic img{
     width: 100%;
     height:100%;
+    border: 1px solid #eeeeee;
+    border-radius: 50%;
+    object-fit: fill;
 }
 .main .center .right .one .all ul li a .word{
-    width:70%;
+    margin-top: 40px;
+    width: 60%;
 }
 .main .center .right .one .all ul li a .word h5{
     font-size: 14px;

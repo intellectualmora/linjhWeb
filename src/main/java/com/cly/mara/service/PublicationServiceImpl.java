@@ -21,8 +21,8 @@ public class PublicationServiceImpl implements PublicationService {
     @Override
     public List<PublicationBean> getRecentPublicationList() throws Exception {
         List<PublicationBean> publicationBeanList = publicationDao.fetchPublicationList();
-        if (publicationBeanList.size()>5){
-            publicationBeanList = publicationBeanList.subList(0,5);
+        if (publicationBeanList.size()>4){
+            publicationBeanList = publicationBeanList.subList(0,4);
         }
         return publicationBeanList;
     }

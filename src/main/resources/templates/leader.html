@@ -5,7 +5,7 @@
     <link rel="icon" type="images/jpg" href="/images/favicon.jpg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">-->
-    <title>JHL Research Group </title>
+    <title>Advanced Low dimensional Materials Lab </title>
     <!--     <title> 南方科技大学</title>-->
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -35,7 +35,7 @@
     <div class="nav">
         <div class="header">
             <img src="/images/logo.png">
-            <h5>JHL Research Group</h5>
+            <h5>Advanced Low dimensional Materials Lab</h5>
         </div>
         <div class="pc-nav">
             <ul>
@@ -72,7 +72,7 @@
                 </li>
                 <li class="">
 
-                    <a href="/index?id=4">Lab Resources</a>
+                    <a href="/index?id=4">Opening</a>
 
                 </li>
                 <li class="">
@@ -85,9 +85,9 @@
                     <a href="/index?id=6">Contact us</a>
 
                 </li>
-                <li class="">
-                    <a href="/index?id=7">Login</a>
-                </li>
+                <!--<li class="">-->
+                <!--<a href="/index?id=7">Login</a>-->
+                <!--</li>-->
             </ul>
         </div>
         <!--<div class="search">-->
@@ -130,99 +130,50 @@
                 </ul>
             </div>
             <div class="righto">
-                <div class="person">
-                    <div class="left">
-                        <div class="top">
-                            <img th:src="${userInfoBean.getImgSrc()}"
-                                 th:alt="'Prof. Dr.' + ${userInfoBean.getRealName() +','}">
-                        </div>
-                        <div class="bottom">
-                            <ul>
-                                <li>
-                                    Brief Introduction
-                                </li>
-                                <li>
-                                    Research Interests
-                                </li>
-                                <li>
-                                    Educational Background
-                                </li>
-                                <li>
-                                    Professional Experience
-                                </li>
-
-                                <li>
-                                    Honors &amp; Awards
-                                </li>
-                                <li>
-                                    Selected Publication
-                                </li>
-                            </ul>
-                        </div>
+                <div class="name">
+                    <p style="z-index: 5; color: #003f43; font-weight: bold; font-size: 22px;" th:text="${userInfoBean.getRealName()}"></p></div>
+                <div style="border-top: 1px solid; display: flex; padding-top: 10px; flex-wrap: wrap;">
+                    <div style="margin-right: 10px; height: 300px; width: 300px;">
+                        <img th:src="${userInfoBean.getImgSrc()}" style="object-fit: fill; width: 100%; height: 100%;"></div>
+                    <div style="font-size: 18px;margin-top: 90px;">
+                        <p style="padding-bottom: 15px; color: #003f43; " th:text="'Prof. Dr. '+${userInfoBean.getRealName()} +','"></p>
+                        <p style="padding-bottom: 15px; color: #003f43; " th:text="'Offices: '+${userInfoBean.getOffice()}"></p>
+                        <p style="padding-bottom: 15px; color: #003f43; " th:text="'Email: '+${userInfoBean.getEmail()}"></p>
+                        <p style="padding-bottom: 15px; color: #003f43; " th:text="'Address: '+${userInfoBean.getAddress()}"></p>
                     </div>
-                    <div class="right">
-                        <div class="top">
-                            <h4><i th:text="'Prof. Dr. ' + ${userInfoBean.getRealName()} +','"></i></h4>
-                            <ul>
-                                <li>
-                                    <span>Office:</span>
-                                    <i th:text="${userInfoBean.getOffice()}"></i>
-                                </li>
-                                <!--<li>
-                                    <span>Telephone:</span>
-                                    <i></i>
-                                </li>-->
-                                <li>
-                                    <span>Email:</span>
-                                    <i th:text="${userInfoBean.getEmail()}"></i>
-                                </li>
-                                <li>
-                                    <span>Address:</span>
-                                    <i th:text="${userInfoBean.getAddress()}"></i>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bot_list">
-                            <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;">
-                                    <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
-                                          th:text="${userInfoBean.getBrief()}"></span></p>
-                                <p><br></p>
-                            </div>
-                            <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;" th:each="interestBean:${interestBeanList}">
-                                    <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
-                                          th:text="'◆ '+${interestBean.getInterest()}"></span></p>
-                                <p><br></p>
-                            </div>
-                            <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em; margin-bottom: 10px;" th:each="educationBean:${educationBeanList}">
-                                    <span style="color: rgb(89, 89, 89); box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px;"
-                                          th:text="'◆ '+${educationBean.getEducation()}"></span></p>
-                                <p><br></p>
-                            </div>
-                            <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;" th:each="experienceBean:${experienceBeanList}">
-                                    <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
-                                          th:text="'◆ '+${experienceBean.getExperience()}"></span></p>
-                                <p><br></p>
-                            </div>
 
-                            <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: &quot;Microsoft YaHei UI&quot;; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify; line-height: 2em;" th:each="awardBean:${awardBeanList}">
-                                    <span style="box-sizing: border-box; font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);"
-                                          th:text="'◆ '+${awardBean.getAward()}"></span></p>
-                                <p><br></p>
-                            </div>
-
-                            <div class="bottom">
-                                <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(83, 83, 83); font-family: arial, helvetica, sans-serif; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); text-align: justify;" th:each="publicationBean:${publicationBeanList}">
-                                    <span style="font-family: &quot;times new roman&quot;; font-size: 18px; color: rgb(89, 89, 89);" th:text="'('+${publicationBeanList.indexOf(publicationBean)+1}+') '+${publicationBean.getContent()}">
-                                          </span>
-                                </p>
-                            </div>
-                        </div>
+                    <div style="width: 100%">
+                        <p style="width: 100%; margin-top: 10px; color: darkcyan; font-size:18px">Brief Introduction</p>
+                        <p style="width: 100%; margin-top: 10px; font-size: 16px;" th:text="${userInfoBean.getBrief()}"></p>
                     </div>
+
+                    <div style="width: 100%">
+                        <p style="width: 100%; margin-top: 10px; color: darkcyan; font-size:18px">Research Interests</p>
+                        <p style="width: 100%; margin-top: 10px; font-size: 16px;"  th:each="interestBean:${interestBeanList}" th:text="'◆ '+${interestBean.getInterest()}">
+                        </p>
+                    </div>
+
+                    <div style="width: 100%">
+                        <p style="width: 100%; margin-top: 10px; color: darkcyan; font-size:18px">Educational Background</p>
+                        <p style="width: 100%; margin-top: 10px; font-size: 16px;"  th:each="educationBean:${educationBeanList}" th:text="'◆ '+${educationBean.getEducation()}">
+                        </p>
+                    </div>
+
+                    <div style="width: 100%">
+                        <p style="width: 100%; margin-top: 10px; color: darkcyan; font-size:18px">Professional Experience</p>
+                        <p style="width: 100%; margin-top: 10px; font-size: 16px;"  th:each="experienceBean:${experienceBeanList}" th:text="'◆ '+${experienceBean.getExperience()}">
+                    </div>
+
+                    <div style="width: 100%">
+                        <p style="width: 100%; margin-top: 10px; color: darkcyan; font-size:18px">Honors &amp; Awards</p>
+                        <p style="width: 100%; margin-top: 10px; font-size: 16px;"  th:each="awardBean:${awardBeanList}" th:text="'◆ '+${awardBean.getAward()}">
+                    </div>
+
+                    <div style="width: 100%">
+                        <p style="width: 100%; margin-top: 10px; color: darkcyan; font-size:18px">Selected Publication</p>
+                        <p style="width: 100%; margin-top: 10px; font-size: 16px;"  th:each="publicationBean:${publicationBeanList}" th:text="'('+${publicationBeanList.indexOf(publicationBean)+1}+') '+${publicationBean.getContent()}">
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -238,11 +189,8 @@
             <li>
                 <p>Email: linjh@sustech.edu.cn</p>
             </li>
-            <li>
-                <p>The research building 2 room 210,Southern University of Science and Technology, No 1088, Xueyuan Rd., Xili, Nanshan District, Shenzhen, Guangdong, China</p>
-            </li>
         </ul>
-        <span style="font-size: 13px; color: #ffffff">JunHao Lin Group © 2019</span>
+        <span style="font-size: 13px; color: #000000">JunHao Lin Group © 2019</span>
     </div>
     <div class="link">
         <p>

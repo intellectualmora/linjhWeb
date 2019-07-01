@@ -31,6 +31,7 @@ public class PublicationDaoImpl implements PublicationDao {
             String pName = resultSet.getString("pName");
             int year = resultSet.getInt("year");
             int uid = resultSet.getInt("uid");
+            String pdfUrl = resultSet.getString("pdfUrl");
 
             PublicationBean publicationBean = new PublicationBean();
             publicationBean.setContent(content);
@@ -39,6 +40,7 @@ public class PublicationDaoImpl implements PublicationDao {
             publicationBean.setUid(uid);
             publicationBean.setpName(pName);
             publicationBean.setPid(pid);
+            publicationBean.setPdfUrl(pdfUrl);
 
             publicationBeanList.add(publicationBean);
 
@@ -63,6 +65,8 @@ public class PublicationDaoImpl implements PublicationDao {
             String content = resultSet.getString("content");
             String pName = resultSet.getString("pName");
             int uid = resultSet.getInt("uid");
+            String pdfUrl = resultSet.getString("pdfUrl");
+
 
             PublicationBean publicationBean = new PublicationBean();
             publicationBean.setContent(content);
@@ -71,6 +75,7 @@ public class PublicationDaoImpl implements PublicationDao {
             publicationBean.setUid(uid);
             publicationBean.setpName(pName);
             publicationBean.setPid(pid);
+            publicationBean.setPdfUrl(pdfUrl);
 
             publicationBeanList.add(publicationBean);
 
@@ -95,6 +100,8 @@ public class PublicationDaoImpl implements PublicationDao {
             String content = resultSet.getString("content");
             String pName = resultSet.getString("pName");
             int year = resultSet.getInt("year");
+            String pdfUrl = resultSet.getString("pdfUrl");
+
 
             PublicationBean publicationBean = new PublicationBean();
             publicationBean.setContent(content);
@@ -103,6 +110,7 @@ public class PublicationDaoImpl implements PublicationDao {
             publicationBean.setUid(uid);
             publicationBean.setpName(pName);
             publicationBean.setPid(pid);
+            publicationBean.setPdfUrl(pdfUrl);
 
             publicationBeanList.add(publicationBean);
 
@@ -126,6 +134,7 @@ public class PublicationDaoImpl implements PublicationDao {
             String content = resultSet.getString("content");
             String pName = resultSet.getString("pName");
             int year = resultSet.getInt("year");
+            String pdfUrl = resultSet.getString("pdfUrl");
 
             publicationBean.setContent(content);
             publicationBean.setImgSrc(imgSrc);
@@ -133,6 +142,7 @@ public class PublicationDaoImpl implements PublicationDao {
             publicationBean.setUid(uid);
             publicationBean.setpName(pName);
             publicationBean.setPid(pid);
+            publicationBean.setPdfUrl(pdfUrl);
         }
         dbutil.closeDBResource(connection, preparedStatement, resultSet);
         return publicationBean;

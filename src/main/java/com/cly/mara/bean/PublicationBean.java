@@ -9,7 +9,21 @@ public class PublicationBean implements Serializable {
     private int uid;
     private int year;
     private String content;
+    private String pdfUrl;
 
+
+
+    public String getpName() {
+        return pName;
+    }
+
+    public String getPdfUrl() {
+        return pdfUrl;
+    }
+
+    public void setPdfUrl(String pdfUrl) {
+        this.pdfUrl = pdfUrl;
+    }
 
     public int getYear() {
         return year;

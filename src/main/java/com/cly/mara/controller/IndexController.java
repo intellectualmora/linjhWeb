@@ -129,8 +129,8 @@ public class IndexController {
                     model.addAttribute("pageList",pageList);
                     model.addAttribute("year",0);
                     return "publication";
-                case 4:  //resources
-                    return "resources";
+                case 4:  //opening
+                    return "opening";
                 case 5:  //news
                     try {
                         newsBeanList = newsService.getNewsList();
@@ -151,9 +151,9 @@ public class IndexController {
                     return "news";
                 case 6:  //contact
                     return "contact";
-                case 7:  //login
-                    model.addAttribute("error",false);
-                    return "login";
+//                case 7:  //login
+//                    model.addAttribute("error",false);
+//                    return "login";
                 default:
                     try {
                         newsBeanList = newsService.getRecentNews();

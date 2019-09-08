@@ -20,9 +20,15 @@ public class PublicationController {
     double fpagesize = 20.0;
     @GetMapping(value = "/publicationPage")
     public String getPublicationPage(@RequestParam(name = "page", required = false, defaultValue = "1") int page, @RequestParam(name = "year", required = false, defaultValue = "0") int year, Model model, HttpServletRequest request) {
+        boolean language = false;
+        HttpSession session =request.getSession();//这就是session的创建
+        try{
+            language = (boolean)session.getAttribute("language");
+        }catch (Exception e){
+
+        }
         if(page!=1){
             boolean flag = true;
-            HttpSession session = request.getSession();
             try {
                 publicationBeanList = (List<PublicationBean>) session.getAttribute("publicationBeanList");
             }catch (Exception e){
@@ -36,7 +42,8 @@ public class PublicationController {
                     for(int i =0;i<pageNumber;i++){
                         pageList[i] = i+1;
                     }
-                    model.addAttribute("publicationBeanList", publicationBeanList.subList((page-1)*pagesize,Math.min(page*7,publicationBeanList.size())));
+                    model.addAttribute("language",language);
+                    model.addAttribute("publicationBeanList", publicationBeanList.subList((page-1)*pagesize,Math.min(page*pagesize,publicationBeanList.size())));
                     model.addAttribute("page",page);
                     model.addAttribute("pageList",pageList);
                     model.addAttribute("year",year);
@@ -50,8 +57,7 @@ public class PublicationController {
             }else{
                 publicationBeanList = publicationService.getPublicationList(year);
             }
-            HttpSession session = request.getSession();
-            session.setAttribute("publicationBeanList",publicationService);
+            session.setAttribute("publicationBeanList",publicationBeanList);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -60,21 +66,30 @@ public class PublicationController {
         for(int i =0;i<pageNumber;i++){
             pageList[i] = i+1;
         }
+        model.addAttribute("language",language);
         model.addAttribute("publicationBeanList", publicationBeanList.subList(0,Math.min(pagesize,publicationBeanList.size())));
-        model.addAttribute("page",1);
+        model.addAttribute("page",page);
         model.addAttribute("pageList",pageList);
         model.addAttribute("year",year);
         return "publication";
     }
 
     @GetMapping(value = "/publicationInfo")
-    public String getPublication(@RequestParam(name = "pid", required = false, defaultValue = "0") int pid, Model model) {
+    public String getPublication(@RequestParam(name = "pid", required = false, defaultValue = "0") int pid, Model model,HttpServletRequest request) {
         PublicationBean publicationBean = null;
+        int language =0;
+        HttpSession session =request.getSession();//这就是session的创建
+        try{
+            language = (int)session.getAttribute("language");
+        }catch (Exception e){
+
+        }
         try {
             publicationBean = publicationService.getPublication(pid);
         }catch (Exception e){
             e.printStackTrace();
         }
+        model.addAttribute("language",language);
         model.addAttribute("publicationBean", publicationBean);
         return "publicationInfo";
     }

@@ -1,4 +1,6 @@
-
+.banner{
+    margin-top: 5px;
+}
 .main-wrapper{
     width: 100%;
     background: #f7f7f7;
@@ -160,6 +162,13 @@
     font-size: 14px;
     color: #333;
 }
+.main .center .right .one .all ul li:hover a .word h5{
+    color: darkred;
+}
+
+.main .center .right .one .all ul li:hover a .word p{
+    color: darkred;
+}
 
 /*@media screen and (max-width:1200px) {
 	.main .center{
@@ -212,7 +221,6 @@
 		margin: 1rem 0;
 	}
 }*/
-
 
 
 

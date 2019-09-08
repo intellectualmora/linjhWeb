@@ -22,9 +22,15 @@ public class NewsController {
     double fpagesize = 7.0;
     @GetMapping(value = "/newsPage")
     public String getNewsPage(@RequestParam(name = "page", required = false, defaultValue = "1") int page, @RequestParam(name = "year", required = false, defaultValue = "0") int year, Model model, HttpServletRequest request) {
+        boolean language = false;
+        HttpSession session =request.getSession();//这就是session的创建
+        try{
+            language = (boolean)session.getAttribute("language");
+        }catch (Exception e){
+
+        }
         if(page!=1){
             boolean flag = true;
-            HttpSession session = request.getSession();
             try {
                 newsBeanList = (List<NewsBean>) session.getAttribute("newsBeanList");
             }catch (Exception e){
@@ -38,7 +44,8 @@ public class NewsController {
                     for(int i =0;i<pageNumber;i++){
                         pageList[i] = i+1;
                     }
-                    model.addAttribute("newsBeanList", newsBeanList.subList((page-1)*pagesize,Math.min(page*7,newsBeanList.size())));
+                    model.addAttribute("language",language);
+                    model.addAttribute("newsBeanList", newsBeanList.subList((page-1)*pagesize,Math.min(page*pagesize,newsBeanList.size())));
                     model.addAttribute("page",page);
                     model.addAttribute("pageList",pageList);
                     model.addAttribute("year",year);
@@ -52,7 +59,6 @@ public class NewsController {
             }else{
                 newsBeanList = newsService.getNewsList(year);
             }
-            HttpSession session = request.getSession();
             session.setAttribute("newsBeanList",newsBeanList);
         } catch (Exception e) {
             e.printStackTrace();
@@ -63,13 +69,20 @@ public class NewsController {
             pageList[i] = i+1;
         }
         model.addAttribute("newsBeanList", newsBeanList.subList(0,Math.min(pagesize,newsBeanList.size())));
-        model.addAttribute("page",1);
+        model.addAttribute("page",page);
         model.addAttribute("pageList",pageList);
         model.addAttribute("year",year);
         return "news";
     }
     @GetMapping(value = "/newsInfo")
-    public String getNewsInfo(@RequestParam(name = "nid", required = false, defaultValue = "0") int nid, Model model) {
+    public String getNewsInfo(@RequestParam(name = "nid", required = false, defaultValue = "0") int nid, Model model,HttpServletRequest request) {
+        boolean language = false;
+        HttpSession session =request.getSession();//这就是session的创建
+        try{
+            language = (boolean)session.getAttribute("language");
+        }catch (Exception e){
+
+        }
         NewsBean newsBean = null;
         try {
             newsBean = newsService.getNews(nid);
@@ -77,6 +90,7 @@ public class NewsController {
         }catch (Exception e){
             e.printStackTrace();
         }
+        model.addAttribute("language",language);
         return "newsInfo";
     }
 }

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 @Controller
 public class DefaultController {
@@ -20,8 +22,14 @@ public class DefaultController {
     List<BannerBean> bannerBeanList = null;
 
     @RequestMapping(value = "/")
-    public String setDefault (Model model) {
+    public String setDefault (Model model, HttpServletRequest request) {
+        boolean language = true;
+        HttpSession session =request.getSession();//这就是session的创建
+        try{
+            language = (boolean)session.getAttribute("language");
+        }catch (Exception e){
 
+        }
         try {
             newsBeanList = newsService.getRecentNews();
             publicationBeanList = publicationService.getRecentPublicationList();
@@ -29,6 +37,8 @@ public class DefaultController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        request.getSession().setAttribute("language",language);
+        model.addAttribute("language",language);
         model.addAttribute("bannerBeanList",bannerBeanList);
         model.addAttribute("newsBeanList", newsBeanList);
         model.addAttribute("publicationBeanList",publicationBeanList);

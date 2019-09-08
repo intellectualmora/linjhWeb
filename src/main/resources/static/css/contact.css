@@ -1,3 +1,6 @@
+.banner{
+    margin-top: 5px;
+}
 .main-wrapper{
     width: 100%;
     background: #fff;
@@ -53,10 +56,10 @@
     text-align: center;
     color: #003F43;
     line-height:45px;
-    font-size: 14px
+    font-size: 20px;
 }
 .main .center .right h5{
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     color: #003F43;
 }

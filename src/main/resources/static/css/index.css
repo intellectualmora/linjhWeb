@@ -1,4 +1,5 @@
 .banner{
+	margin-top: 5px;
 }
 .lab-wrapper{
 	width: 100%;
@@ -273,11 +274,11 @@
 	max-width: 1200px;
 	height: content-box;
 	box-sizing: border-box;
-	padding:1rem 1rem 3rem 1rem;
+	padding:1rem 1rem 3rem 10rem;
 }
 .public-list{
-	margin: 80px auto auto auto;
-	width: 80%;
+	margin: 40px auto auto 50px;
+	width: 100%;
 
 }
 
@@ -323,7 +324,7 @@
 	border-width: 1px;
 	width: 140px;
 	height: 40px;
-	margin:30px auto auto auto;
+	margin:30px auto auto 500px;
 }
 .public h5 div{
 	margin: 8px;

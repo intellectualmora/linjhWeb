@@ -53,7 +53,17 @@ public class IndexController {
 
     @GetMapping(value = "/index")
     public String getId (@RequestParam(name="id", required=false, defaultValue="0") int id, Model model, HttpServletRequest request) {
-            switch (id){
+        boolean language = true;
+        HttpSession session =request.getSession();//这就是session的创建
+
+        try{
+            language = (boolean)session.getAttribute("language");
+
+        }catch (Exception e){
+
+
+        }
+        switch (id){
                 case 0:   //home
                     try {
                         newsBeanList = newsService.getRecentNews();
@@ -62,6 +72,7 @@ public class IndexController {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                    model.addAttribute("language",language);
                     model.addAttribute("bannerBeanList",bannerBeanList);
                     model.addAttribute("newsBeanList", newsBeanList);
                     model.addAttribute("publicationBeanList",publicationBeanList);
@@ -78,6 +89,7 @@ public class IndexController {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                    model.addAttribute("language",language);
                     model.addAttribute("userInfoBean", userInfoBean);
                     model.addAttribute("publicationBeanList", publicationBeanList);
                     model.addAttribute("educationBeanList",educationBeanList);
@@ -91,6 +103,7 @@ public class IndexController {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                    model.addAttribute("language",language);
                     model.addAttribute("userInfoBeanList", userInfoBeanList);
                     return "member";
                 case 13:  //picture
@@ -99,22 +112,15 @@ public class IndexController {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                    model.addAttribute("language",language);
                     model.addAttribute("pictureBeanList", pictureBeanList);
                     return "picture";
-                case 14:   //alumni
-                    try {
-                        alumniBeanList =alumniService.getAlumniBeanList();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    model.addAttribute("alumniBeanList",alumniBeanList);
-                    return "alumni";
                 case 2:  //research
+                    model.addAttribute("language",language);
                     return "research";
                 case 3:  //publication
                     try {
                         publicationBeanList = publicationService.getPublicationList();
-                        HttpSession session =request.getSession();//这就是session的创建
                         session.setAttribute("publicationBeanList",publicationBeanList);
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -124,17 +130,18 @@ public class IndexController {
                     for(int i =0;i<pageNumber;i++){
                         pageList[i] = i+1;
                     }
+                    model.addAttribute("language",language);
                     model.addAttribute("publicationBeanList", publicationBeanList.subList(0,Math.min(20,publicationBeanList.size())));
                     model.addAttribute("page", 1);
                     model.addAttribute("pageList",pageList);
                     model.addAttribute("year",0);
                     return "publication";
                 case 4:  //opening
+                    model.addAttribute("language",language);
                     return "opening";
                 case 5:  //news
                     try {
                         newsBeanList = newsService.getNewsList();
-                        HttpSession session =request.getSession();//这就是session的创建
                         session.setAttribute("newsBeanList",newsBeanList);
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -144,16 +151,46 @@ public class IndexController {
                     for(int i =0;i<pageNumber;i++){
                         pageList[i] = i+1;
                     }
+                    model.addAttribute("language",language);
                     model.addAttribute("newsBeanList", newsBeanList.subList(0,Math.min(7,newsBeanList.size())));
                     model.addAttribute("page", 1);
                     model.addAttribute("pageList",pageList);
                     model.addAttribute("year",0);
                     return "news";
                 case 6:  //contact
+                    model.addAttribute("language",language);
                     return "contact";
-//                case 7:  //login
-//                    model.addAttribute("error",false);
-//                    return "login";
+                case 7:
+                    session.removeAttribute("language");
+                    session.setAttribute("language",false);
+                    try {
+                        newsBeanList = newsService.getRecentNews();
+                        publicationBeanList = publicationService.getRecentPublicationList();
+                        bannerBeanList = bannerService.getRecentBannerBeanList();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    model.addAttribute("language",false);
+                    model.addAttribute("bannerBeanList",bannerBeanList);
+                    model.addAttribute("newsBeanList", newsBeanList);
+                    model.addAttribute("publicationBeanList",publicationBeanList);
+                    return "index";
+                case 8:
+                    session.removeAttribute("language");
+                    session.setAttribute("language",true);
+                    try {
+                        newsBeanList = newsService.getRecentNews();
+                        publicationBeanList = publicationService.getRecentPublicationList();
+                        bannerBeanList = bannerService.getRecentBannerBeanList();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    model.addAttribute("language",true);
+                    model.addAttribute("bannerBeanList",bannerBeanList);
+                    model.addAttribute("newsBeanList", newsBeanList);
+                    model.addAttribute("publicationBeanList",publicationBeanList);
+                    return "index";
+
                 default:
                     try {
                         newsBeanList = newsService.getRecentNews();
@@ -161,6 +198,7 @@ public class IndexController {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                    model.addAttribute("language",language);
                     model.addAttribute("newsBeanList", newsBeanList);
                     model.addAttribute("publicationBeanList",publicationBeanList);
                     return "index";

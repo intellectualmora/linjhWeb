@@ -24,19 +24,6 @@
 
 <body style="">
 
-<!--<div class="header-wrapper" id="header">-->
-<!--<div class="header">-->
-<!--<div class="logo">-->
-<!--<a href="http://www.sustc.edu.cn/en/">-->
-<!--<img src="/images/logo.png" alt="LOGO">-->
-<!--</a>-->
-<!--</div>-->
-<!--<h1>LJH Research Group</h1>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--banner-->
-
 
 
 <div class="nav-wrapper" id="navBar">
@@ -108,9 +95,29 @@
     </div>
 </div>
 
+<!--<div class="banner">-->
+<!--    &lt;!&ndash; Swiper &ndash;&gt;-->
+<!--    <div class="swiper-container swiper-container1 swiper-container-horizontal" style="height: 100%;">-->
+<!--        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">-->
+<!--            <div class="swiper-slide" style="width: 1200px;" th:each="bannerBean:${bannerBeanList}">-->
+<!--                <a href="/">-->
+<!--                    <picture>-->
+<!--                        <img th:srcset="${bannerBean.getImgSrc()}">-->
+<!--                    </picture>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Add Pagination &ndash;&gt;-->
+<!--        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span-->
+<!--                class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"-->
+<!--                aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button"-->
+<!--                                                        aria-label="Go to slide 2"></span></div>-->
+<!--        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>-->
+<!--</div>-->
+
 <div class="banner">
     <!-- Swiper -->
-    <div class="swiper-container swiper-container1 swiper-container-horizontal" style="height: 100%;">
+    <div class="swiper-container" style="height: 100%;">
         <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
             <div class="swiper-slide" style="width: 1200px;" th:each="bannerBean:${bannerBeanList}">
                 <a href="/">
@@ -120,19 +127,18 @@
                 </a>
             </div>
         </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
-                class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
-                aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button"
-                                                        aria-label="Go to slide 2"></span></div>
-        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+<!--        <div class="swiper-pagination"></div>-->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
 </div>
+
 
 <!--lab-->
 <div class="lab-wrapper" style="position: relative">
     <div class="is-container banner-container">
         <div data-v-71fc1ffe="" id="x6rcoc66g26o" class="zm-bannerChild-main"
-             style="position: absolute; width: 1200px; height: 500px; left: 0px; top: 0px;">
+             style="position: absolute; width: 1200px; height: 500px; left: 80px; top: 0px;">
             <div class="bgTitle"
                  style="word-spacing: 0px; position: absolute; width: 800px; height: 61px; left: 300px; top: 50px; transform: rotate(0deg);">
                 <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; font-family: 微软雅黑; text-indent: 0px; font-style: normal; text-decoration: none; text-align: center; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%; color: rgb(221, 221, 221); font-weight: 700; font-size: 12px;">
@@ -215,7 +221,7 @@
                      style="position: absolute; width: 460px; height: 300px; left: 75px; top: 121px; transform: rotate(0deg); display: block;">
                     <div data-v-d253b97a="" class="zm-component-img-main"
                          style="border-style: solid; border-color: rgb(0, 0, 0); border-width: 0px; box-shadow: rgba(0, 79, 198, 0.6) -10px -10px 0px; border-radius: 0px;">
-                        <img src="default.png" data-v-d253b97a="" class="zm-component-img-content hoverType1 isTransition"
+                        <img src="research_title.gif" data-v-d253b97a="" class="zm-component-img-content hoverType1 isTransition"
                              style="object-fit: fill; width: 100%; height: 100%;"/>
                     </div>
                 </div>
@@ -251,6 +257,8 @@
                             <div class="public-left"><img th:src="${publicationBean.getImgSrc()}"/></div>
                             <div class="public-right">
                                 <p th:text="${publicationBean.getContent()}"></p>
+                                <p th:utext="${publicationBean.getAuthor()}"></p>
+                                <p th:utext="${publicationBean.getPublisher()}"></p>
                                 <a th:href="${publicationBean.getPdfUrl()}" target="_blank" style="color: #007aff">(PDF)</a>
                             </div>
                         </div>
@@ -359,30 +367,55 @@
     <img src="/images/gotop.png">
 </div>
 
-<script>
-    $(function () {
+<!--<script>-->
+<!--    $(function () {-->
 
-        var swiper = new Swiper('.swiper-container1', {
-            autoplay: true,//等同于以下设置
+<!--        var swiper = new Swiper('.swiper-container1', {-->
+<!--            autoplay: true,//等同于以下设置-->
+<!--            pagination: {-->
+<!--                el: '.swiper-pagination',-->
+<!--                clickable: true-->
+<!--            }-->
+<!--        });-->
+
+<!--        var swiper = new Swiper('.swiper-container2', {-->
+<!--            autoplay: true,//等同于以下设置-->
+<!--            navigation: {-->
+<!--                nextEl: '.swiper-button-next',-->
+<!--                prevEl: '.swiper-button-prev'-->
+<!--            },-->
+<!--            pagination: {-->
+<!--                el: '.swiper-pagination',-->
+<!--                clickable: true-->
+<!--            }-->
+<!--        });-->
+<!--    })-->
+<!--</script>-->
+<script src="/js/navclick.js"></script>
+
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction: 'horizontal', // 垂直切换选项
+            loop: true, // 循环模式选项
+
+            // 如果需要分页器
             pagination: {
                 el: '.swiper-pagination',
-                clickable: true
-            }
-        });
+            },
 
-        var swiper = new Swiper('.swiper-container2', {
-            autoplay: true,//等同于以下设置
+            // 如果需要前进后退按钮
             navigation: {
                 nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev'
+                prevEl: '.swiper-button-prev',
             },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true
-            }
-        });
-    })
-</script>
-<script src="/js/navclick.js"></script>
+
+            // 如果需要滚动条
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        })
+    </script>
+
+
 </body>
 </html>

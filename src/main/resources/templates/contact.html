@@ -14,10 +14,14 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/contact.css">
     <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
     <script src="/js/swiper.min.js"></script>
     <script src="/js/jquery.min.js"></script>
+    <script src="https://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script src="https://webapi.amap.com/maps?v=1.4.9&amp;key=fdaaec5835ba58414487a19ad77b7298"></script>
+    <style type="text/css">.amap-container{cursor:url(https://webapi.amap.com/theme/v1.3/openhand.cur),default;}.amap-drag{cursor:url(https://webapi.amap.com/theme/v1.3/closedhand.cur),default;}</style>
+    <script crossorigin="anonymous" id="amap_plus_js" src="https://webapi.amap.com/maps/modules?v=1.4.9&amp;key=fdaaec5835ba58414487a19ad77b7298&amp;vrs=1542089137938&amp;m=mouse,vectorlayer,overlay,wgl,sync" type="text/javascript"></script>
     <script src="/js/common.js"></script>
 
 </head>
@@ -125,7 +129,7 @@
 
                 <h6 th:unless="${language}">物理系</h6>
                 <h6 th:unless="${language}">南方科技大学</h6>
-                <h6 th:unless="${language}">中国深圳学苑大道1088号</h6>
+                <h6 th:unless="${language}">中国广东省深圳市南山区学苑大道1088号</h6>
                 <h6 th:unless="${language}">邮箱: linjh@sustech.edu.cn</h6>
                 <h4 th:unless="${language}">先进低维材料实验室</h4>
 
@@ -200,6 +204,7 @@
 
     })
 </script>
+<script src="/js/navclick.js"></script>
 
 </body>
 </html>

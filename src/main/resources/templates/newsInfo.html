@@ -14,7 +14,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/newsinfo.css">
     <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
     <script src="/js/swiper.min.js"></script>
     <script src="/js/jquery.min.js"></script>
@@ -115,7 +115,10 @@
         <div class="center">
             <h4 th:text="${newsBean.getTitle()}"></h4>
             <h5 th:text= "${newsBean.getYear()}+'-' +${newsBean.getMonth()}+'-'+${newsBean.getDay()}" ></h5>
-            <p th:text="${newsBean.getContent()}"></p>
+            <p style="margin-left: 20px" th:text="${newsBean.getContent()}"></p>
+            <div style="width: 100%; text-align: center;">
+                <img style="width: 500px" th:src="${newsBean.getImgSrc()}"/>
+            </div>
         </div>
     </div>
 </div>
@@ -163,6 +166,7 @@
 <div class="gotop">
     <img src="/images/gotop.png">
 </div>
+<script src="/js/navclick.js"></script>
 
 </body>
 </html>

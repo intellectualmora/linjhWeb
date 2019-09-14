@@ -21,7 +21,7 @@ public class NewsDaoImpl implements NewsDao {
     public List<NewsBean> fetchNewsList() throws Exception {
         List<NewsBean> newsBeanList=new ArrayList<>();
         connection = dbutil.getConnection();
-        String sql="select * from News n  order by nid desc";
+        String sql="select * from News n  order by year desc, month desc, day desc";
         preparedStatement=connection.prepareStatement(sql);
         resultSet=preparedStatement.executeQuery();
 
@@ -56,7 +56,7 @@ public class NewsDaoImpl implements NewsDao {
     public List<NewsBean> fetchNewsList(int year) throws Exception {
         List<NewsBean> newsBeanList=new ArrayList<>();
         connection = dbutil.getConnection();
-        String sql="select * from News n where year = ? order by nid desc";
+        String sql="select * from News n where year = ? order by month desc, day desc";
         preparedStatement=connection.prepareStatement(sql);
         preparedStatement.setInt(1,year);
         resultSet=preparedStatement.executeQuery();

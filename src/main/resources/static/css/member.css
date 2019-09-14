@@ -131,7 +131,7 @@
     height:100%;
     border: 1px solid #eeeeee;
     border-radius: 50%;
-    object-fit: fill;
+    object-fit: cover;
 }
 .main .center .right .one .all ul li a .word{
     margin-top: 40px;

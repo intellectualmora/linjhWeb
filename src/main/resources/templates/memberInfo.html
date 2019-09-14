@@ -14,7 +14,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/memberinfo.css">
     <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
     <script src="/js/swiper.min.js"></script>
     <script src="/js/jquery.min.js"></script>
@@ -184,7 +184,7 @@
                     <div style="width: 100%">
                         <p style="width: 100%; margin-top: 10px; color: darkcyan; font-size:18px" th:if="${language}">Selected Publication</p>
                         <p style="width: 100%; margin-top: 10px; color: darkcyan; font-size:18px" th:unless="${language}">发表论文</p>
-                        <p style="width: 100%; margin-top: 10px; font-size: 16px;"  th:each="publicationBean:${publicationBeanList}" th:text="'('+${publicationBeanList.indexOf(publicationBean)+1}+') '+${publicationBean.getContent()}">
+                        <p style="width: 100%; margin-top: 10px; font-size: 16px;"  th:each="publicationBean:${publicationBeanList}" th:utext="'('+${publicationBeanList.indexOf(publicationBean)+1}+') '+${publicationBean.getContent()}+' '+${publicationBean.getAuthor()}+' '+${publicationBean.getPublisher()}">
                     </div>
 
                 </div>
@@ -272,5 +272,7 @@
 
     })
 </script>
+<script src="/js/navclick.js"></script>
+
 </body>
 </html>

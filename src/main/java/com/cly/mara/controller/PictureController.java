@@ -20,10 +20,9 @@ public class PictureController {
     public String getAlbum(@RequestParam(name="year") int year , Model model, HttpServletRequest request){
         boolean language = false;
         HttpSession session =request.getSession();//这就是session的创建
-        try{
-            language = (boolean)session.getAttribute("language");
-        }catch (Exception e){
-
+        Object temp_lan = session.getAttribute("language");
+        if(temp_lan!=null) {
+            language = (boolean) temp_lan;
         }
         try {
            pictureBeanList = pictureService.getPictureBeanList(year);

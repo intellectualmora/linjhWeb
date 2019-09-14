@@ -31,10 +31,9 @@ public class UserInfoController {
         UserInfoBean newsBean = null;
         boolean language = false;
         HttpSession session =request.getSession();//这就是session的创建
-        try{
-            language = (boolean)session.getAttribute("language");
-        }catch (Exception e){
-
+        Object temp = session.getAttribute("language");
+        if(temp!=null){
+            language = (boolean)temp;
         }
         try {
             try {

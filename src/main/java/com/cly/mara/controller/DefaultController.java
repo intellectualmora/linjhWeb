@@ -23,12 +23,11 @@ public class DefaultController {
 
     @RequestMapping(value = "/")
     public String setDefault (Model model, HttpServletRequest request) {
-        boolean language = true;
+        boolean language = false;
         HttpSession session =request.getSession();//这就是session的创建
-        try{
-            language = (boolean)session.getAttribute("language");
-        }catch (Exception e){
-
+        Object temp = session.getAttribute("language");
+        if(temp!=null) {
+            language = (boolean) temp;
         }
         try {
             newsBeanList = newsService.getRecentNews();

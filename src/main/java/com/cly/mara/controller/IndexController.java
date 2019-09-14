@@ -34,7 +34,6 @@ public class IndexController {
     AwardService awardService = new AwardServiceImpl();
     InterestService interestService = new InterestServiceImpl();
     BannerService bannerService = new BannerServiceImpl();
-    AlumniService alumniService = new AlumniServiceImpl();
 
     List<NewsBean> newsBeanList = null;
     UserInfoBean userInfoBean = null;
@@ -46,22 +45,20 @@ public class IndexController {
     List<InterestBean> interestBeanList = null;
     List<AwardBean> awardBeanList = null;
     List<BannerBean> bannerBeanList = null;
-    List<AlumniBean> alumniBeanList = null;
 
     int pageNumber;
     int[] pageList;
 
     @GetMapping(value = "/index")
     public String getId (@RequestParam(name="id", required=false, defaultValue="0") int id, Model model, HttpServletRequest request) {
-        boolean language = true;
-        HttpSession session =request.getSession();//这就是session的创建
-
-        try{
-            language = (boolean)session.getAttribute("language");
-
-        }catch (Exception e){
-
-
+        boolean language = false;
+        HttpSession session = request.getSession();//这就是session的创建
+        Object temp = session.getAttribute("language");
+        System.out.println("time is "+request.getSession().getMaxInactiveInterval());
+        if(temp!=null) {
+            language = (boolean) temp;
+        }else{
+            System.out.println("language is null");
         }
         switch (id){
                 case 0:   //home
@@ -161,8 +158,8 @@ public class IndexController {
                     model.addAttribute("language",language);
                     return "contact";
                 case 7:
-                    session.removeAttribute("language");
                     session.setAttribute("language",false);
+                    language = (boolean)session.getAttribute("language");
                     try {
                         newsBeanList = newsService.getRecentNews();
                         publicationBeanList = publicationService.getRecentPublicationList();
@@ -170,14 +167,14 @@ public class IndexController {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    model.addAttribute("language",false);
+                    model.addAttribute("language",language);
                     model.addAttribute("bannerBeanList",bannerBeanList);
                     model.addAttribute("newsBeanList", newsBeanList);
                     model.addAttribute("publicationBeanList",publicationBeanList);
                     return "index";
                 case 8:
-                    session.removeAttribute("language");
                     session.setAttribute("language",true);
+                    language = (boolean)session.getAttribute("language");
                     try {
                         newsBeanList = newsService.getRecentNews();
                         publicationBeanList = publicationService.getRecentPublicationList();
@@ -185,7 +182,7 @@ public class IndexController {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    model.addAttribute("language",true);
+                    model.addAttribute("language",language);
                     model.addAttribute("bannerBeanList",bannerBeanList);
                     model.addAttribute("newsBeanList", newsBeanList);
                     model.addAttribute("publicationBeanList",publicationBeanList);
@@ -204,12 +201,5 @@ public class IndexController {
                     return "index";
             }
     }
-
-
-    @PostMapping("/index")
-    public void search (@RequestParam(name="id", required=false, defaultValue="0") int id, Model model) {
-        System.out.println(id);
-    }
-
 
 }

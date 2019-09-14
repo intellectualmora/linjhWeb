@@ -14,7 +14,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/research.css">
     <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
     <script src="/js/swiper.min.js"></script>
     <script src="/js/jquery.min.js"></script>
@@ -103,57 +103,85 @@
 
 <div class="main-wrapper">
     <div class="main">
-        <div class="top">
-            <img src="default.png">
-            <div class="word">
-                <p>TODO:</p>
+        <div th:unless="${language}" class="top" style="height: 564px">
+            <img src="research_title.gif">
+            <div class="word" style="height: 534px;">
+                <p style="padding-bottom: 17px">南方科技大学林君浩博士课题组由近十位博士后、博士与研究生组成，课题组利用高分辨扫描透射电镜（TEM/STEM）和第一性原理计算作为研究工具，致力于实验与理论相结合的手段研究新型二维材料中原子结构与材料性能之间的关联，实验室具有成熟的电镜表征与制样技术。目前实验室已经初步建成了一套总投资达800余万人民币的新型的手套箱互联系统，帮助我们在隔绝水氧与控制环境微粒度的条件下实现样品生长-转移-表征-器件的整个过程。同时实验室依托南方科技大学皮米中心的球差电镜与冷冻电镜中心，实现原子精度的实验表征。实验室也与国内外多所高校与科研机构开展合作伙伴关系，实验室中部分实验可以在北京大学、日本国立产业综合研究院，新加坡国立大学，美国橡树岭国家实验室等高端电镜平台以及其他合作课题组中开展并与国内外顶尖科研人员交流学习。</p>
+                <p> 我们的研究方向包括：</p>
+                <p> 1. 高分辨原位扫描透射电镜；</p>
+                <p> 2. 高空间分辨与高能量分辨的电子损失能谱（EELS）在材料中的应用；</p>
+                <p> 3. 新型敏感二维材料结构-性能之间的关联，缺陷结构的原子表征；</p>
+                <p> 4. 新型敏感二维材料的生长与表征。</p>
             </div>
-
+        </div>
+        <div th:if="${language}" class="top" style="height: 750px;">
+            <img src="research_title.gif">
+            <div class="word" style="height: 694px;">
+                <p style="font-size: 14px">Lin Junhao south university of science and technology group by nearly 10 post-doctoral, doctoral and graduate research using high resolution scanning transmission electron microscopy (TEM/STEM) and first principles calculation as a research tool, is committed to the means of experiment combined with theoretical research new two-dimensional material zhongyuan substructure and the link between the material properties, the laboratory has a mature electron microscopy characterization and sample preparation technique. At present, the laboratory has initially built a new glove box interconnection system with a total investment of more than 8 million RMB, which helps us to realize the whole process of sample growth, transfer, characterization and device under the condition of isolating water and oxygen and controlling environmental particulates. At the same time, the laboratory realizes the experimental characterization of atomic accuracy by relying on the spheroidal electron microscope and cryo-electron microscope center of picomey center of southern university of science and technology. Lab also with many universities and research institutions at home and abroad to develop partnerships, part of the experiment in laboratory in Beijing university, Japan's national industry research institute, national university of Singapore, the United States at oak ridge national laboratory and other high-end electron microscope platform and other cooperation in the team to carry out and learn to communicate with top researchers both at home and abroad.</p>
+                <p style="font-size: 14px">Our research interests include: </p>
+                <p style="font-size: 14px">1. High-resolution in situ scanning transmission electron microscope;</p>
+                <p style="font-size: 14px">2. Application of EELS in materials with high spatial resolution and high energy resolution;</p>
+                <p style="font-size: 14px">3. Association between structure and properties of new sensitive two-dimensional materials, atomic characterization of defect structures.</p>
+                <p style="font-size: 14px">4. Growth and characterization of new sensitive two-dimensional materials</p>
+            </div>
         </div>
         <ul>
             <li>
-                <h5>TODO:&nbsp;&nbsp;&nbsp;————</h5>
+                <h5>新型敏感材料的生长与表征:&nbsp;&nbsp;&nbsp;————</h5>
                 <div class="center">
                     <div class="word">
-                        <p>TODO</p>
+                        <p>二维材料的新奇物理特性是课题组的主要研究兴趣。我们主要使用CVD（Chemical Vapor Deposition）技术生长单层或少层的新型二维材料。鉴于目前大多数层状材料在单层的情况极易被氧化，我们的搭建了一套新型的手套箱互联系统与生长设备直接相连，可以在生长的整个过程以及后续的样品表征中隔绝水氧与控制环境微粒度。目前课题组内已开展了碲化物，新型过渡金属单层材料的CVD生长研究。课题组代表性工作：</p>
+                        <p>1. 利用熔融盐辅助的CVD技术制备多种二维过渡金属硫族化合物。A library of atomically thin metal chalcogenides，Nature，2018</p>
+                        <p>2. 发展直接合成大规模单层/少层WTe2和MoTe2的CVD方法。Large-Area and High-Quality 2D Transition Metal Telluride，Advanced Materials，2015</p>
+                        <p>3. 用含有1%W的Mo溶胶作为前驱体，在反应中形成的W氧化物促进MoS2原子层的生长，并最终让其生成P型半导体Patterned Growth of P-Type MoS2 Atomic Layers Using Sol–Gel as Precursor Advanced Functional Materials，2015</p>
+                        <p>4. 采用可伸缩的单步汽相生长法在不同的温度下由单层的MoS2制备了高度结晶化的垂直和平面WS2/MoS2 异质结，其中的横向异质结会形成本征p-n结。Vertical and in-plane heterostructures from WS2/MoS2 monolayers，Nature Materials，2014</p>
+                        <p><br></p>
                     </div>
                     <div class="pic">
-                        <img src="default.png" alt="default">
+                        <img src="research_c1.png" alt="default">
                     </div>
                 </div>
             </li>
             <li>
-                <h5>CMR materials&nbsp;&nbsp;&nbsp;————</h5>
+                <h5>复杂缺陷结构的原子结构解释与性能关联:&nbsp;&nbsp;&nbsp;————</h5>
                 <div class="center">
                     <div class="pic">
-                        <img src="default.png" alt="default">
+                        <img src="research_c2.png" alt="default">
                     </div>
                     <div class="word">
-                            <p><span>TODO:</span></p>
+                            <p>利用STEM成像的衬度量化分析技术，我们可以直接对二维材料中的复杂缺陷直接找去其对应的三维结构与化学成分，结合第一性原理计算，解释缺陷结构对二维材料物理性质的影响，从而建立材料结构和性能的关联。代表性论文：</p>
+                            <p>1. 从块状PdSe2中剥离出单层相，经过STEM图像分析和第一性原理计算，首次提出了二维材料层间融合机制。Novel Pd2Se3 Two-Dimensional Phase Driven by Interlayer Fusion in Layered PdSe2，Physical Review Letters，2017</p>
+                            <p>2. 利用STEM成像与分子动力学模拟，证明CVD生长的BLG（双层石墨烯）的AB/AC型堆垛晶界为一连续结构，并在原子尺度上呈现出波浪的结构以释放张力。AC/AB Stacking Boundaries in Bilayer Graphene，Nano Letters，2013</p>
                         <p><br></p>
                     </div>
                 </div>
             </li>
             <li>
-                <h5>TODO:&nbsp;&nbsp;&nbsp;————</h5>
+                <h5>原位动态过程的电镜表征:&nbsp;&nbsp;&nbsp;————</h5>
                 <div class="center">
                     <div class="word">
-                        <p><span>TODO:</span></p>
+                        <p>借助双球差校正电镜和环境球差电镜，我们能观测并记录二维材料在电镜下原子尺度的原位动态过程，比如电子束诱导下或温度改变时材料的结构变化和动力学过程等，并结合第一性原理计算给与理论支撑，从而设计出性能更好的材料。代表性论文：</p>
+                        <p>1.使用STEM的电子束将含有钼原子的立方 β-FeSe 诱导为六方1H-MoSe2。Electron-Beam-Induced Synthesis of Hexagonal 1H-MoSe2 from Square β-FeSe Decorated with Mo Adatoms ，Nano Letters 2018</p>
+                        <p>2.电子束在单层过渡金属二硫化物上打出60°GB和Inversion Domain。Vacancy-Induced Formation and Growth of Inversion Domains in Transition-Metal Dichalcogenide Monolayer ，ACS Nano 2015</p>
                         <p><br></p>
                     </div>
                     <div class="pic">
-                        <img src="default.png" alt="default">
+                        <img src="research_c3.png" alt="default">
                     </div>
                 </div>
             </li>
             <li>
-                <h5>TODO:&nbsp;&nbsp;&nbsp;————</h5>
+                <h5>高能量分辨率的电子损失能谱:&nbsp;&nbsp;&nbsp;————</h5>
                 <div class="center">
                     <div class="pic">
-                        <img src="default.png" alt="default">
+                        <img src="research_c4.png" alt="default">
                     </div>
                     <div class="word">
-                        <p><span>TODO:</span></p>
+                        <p>使用电镜中的高能量分辨率的电子损失能谱分析材料的原子结构和化学特性等，通过对材料进行区域扫描、线扫或单原子扫描，得到其对应的EELS谱并进行分析，最终获得材料所选部分的能带结构、元素种类、价态种类和样品厚度等信息。同时高能量分辨的电子损失能谱甚至能探索单个量子点的光学特性。代表论文：</p>
+                        <p>1.对于CsPbBr3纳米晶体中的能带的直接观察</p>
+                        <p>Direct Observation of Band Structure Modifications in Nanocrystals of CsPbBr3 Perovskite , Nano letters 2016</p>
+                        <p>2.使用最新的电子能量损失能谱法区分纯cs4pbbr6和cspbbr3纳米晶及其纳米杂化体的光学特性</p>
+                        <p>Hybridization of Single Nanocrystals of Cs4ObBr6 and CsPbBr3, Physical Chemistry C 2017</p>
                         <p><br></p>
                     </div>
                 </div>
@@ -206,6 +234,7 @@
 <div class="gotop">
     <img src="/images/gotop.png">
 </div>
+<script src="/js/navclick.js"></script>
 
 </body>
 </html>

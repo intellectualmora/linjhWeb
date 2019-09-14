@@ -16,31 +16,31 @@
 
 .main .top{
     width: 100%;
-    height: 634px;
+    height: 564px;
     position: relative;
     margin-bottom:2rem;
 }
 .main .top .word{
     float: right;
     width: 964px;
-    height: 624px;
+    height: 544px;
     box-shadow: 0 4px 30px rgba(0,0,0,.15);
     box-sizing: border-box;
     padding:20px 20px 20px 275px;
     background: url(../images/Research01.png) no-repeat left bottom;
 }
 .main .top .word p{
-    float: right;
-    font-size: 14px;
+    clear:left;
+    font-size: 17px;
     color: #003f43;
     line-height:28px;
     text-align: justify;
 }
 .main .top img{
     position: absolute;
-    left: 0;
+    left: -90px;
     top: 0;
-    width: 462px;
+    width: 570px;
 }
 .main ul li{
     margin: 1rem 0;
@@ -73,7 +73,7 @@
 }
 .main ul li .center .word p{
     color: #fff;
-    font-size: 14px;
+    font-size: 17px;
     text-align: justify;
 }
 

@@ -20,7 +20,7 @@ public class PublicationDaoImpl implements PublicationDao {
 
         List<PublicationBean> publicationBeanList =new ArrayList<>();
         connection = dbutil.getConnection();
-        String sql="select * from Publication p order by pid desc";
+        String sql="select * from Publication p order by year desc";
         preparedStatement=connection.prepareStatement(sql);
         resultSet=preparedStatement.executeQuery();
 
@@ -28,7 +28,8 @@ public class PublicationDaoImpl implements PublicationDao {
             int pid = resultSet.getInt("pid");
             String imgSrc = resultSet.getString("imgSrc");
             String content = resultSet.getString("content");
-            String pName = resultSet.getString("pName");
+            String author = resultSet.getString("author");
+            String publisher = resultSet.getString("publisher");
             int year = resultSet.getInt("year");
             int uid = resultSet.getInt("uid");
             String pdfUrl = resultSet.getString("pdfUrl");
@@ -38,7 +39,8 @@ public class PublicationDaoImpl implements PublicationDao {
             publicationBean.setImgSrc(imgSrc);
             publicationBean.setYear(year);
             publicationBean.setUid(uid);
-            publicationBean.setpName(pName);
+            publicationBean.setAuthor(author);
+            publicationBean.setPublisher(publisher);
             publicationBean.setPid(pid);
             publicationBean.setPdfUrl(pdfUrl);
 
@@ -54,7 +56,7 @@ public class PublicationDaoImpl implements PublicationDao {
 
         List<PublicationBean> publicationBeanList =new ArrayList<>();
         connection = dbutil.getConnection();
-        String sql="select * from Publication p where year = ? order by pid desc";
+        String sql="select * from Publication p where year = ?";
         preparedStatement=connection.prepareStatement(sql);
         preparedStatement.setInt(1, year);
         resultSet=preparedStatement.executeQuery();
@@ -63,7 +65,8 @@ public class PublicationDaoImpl implements PublicationDao {
             int pid = resultSet.getInt("pid");
             String imgSrc = resultSet.getString("imgSrc");
             String content = resultSet.getString("content");
-            String pName = resultSet.getString("pName");
+            String author = resultSet.getString("author");
+            String publisher = resultSet.getString("publisher");
             int uid = resultSet.getInt("uid");
             String pdfUrl = resultSet.getString("pdfUrl");
 
@@ -73,7 +76,8 @@ public class PublicationDaoImpl implements PublicationDao {
             publicationBean.setImgSrc(imgSrc);
             publicationBean.setYear(year);
             publicationBean.setUid(uid);
-            publicationBean.setpName(pName);
+            publicationBean.setAuthor(author);
+            publicationBean.setPublisher(publisher);
             publicationBean.setPid(pid);
             publicationBean.setPdfUrl(pdfUrl);
 
@@ -89,7 +93,7 @@ public class PublicationDaoImpl implements PublicationDao {
 
         List<PublicationBean> publicationBeanList =new ArrayList<>();
         connection = dbutil.getConnection();
-        String sql="select * from Publication p where uid = ? order by pid desc";
+        String sql="select * from Publication p where uid = ? order by year desc";
         preparedStatement=connection.prepareStatement(sql);
         preparedStatement.setInt(1, uid);
         resultSet=preparedStatement.executeQuery();
@@ -98,7 +102,8 @@ public class PublicationDaoImpl implements PublicationDao {
             int pid = resultSet.getInt("pid");
             String imgSrc = resultSet.getString("imgSrc");
             String content = resultSet.getString("content");
-            String pName = resultSet.getString("pName");
+            String author = resultSet.getString("author");
+            String publisher = resultSet.getString("publisher");
             int year = resultSet.getInt("year");
             String pdfUrl = resultSet.getString("pdfUrl");
 
@@ -108,7 +113,8 @@ public class PublicationDaoImpl implements PublicationDao {
             publicationBean.setImgSrc(imgSrc);
             publicationBean.setYear(year);
             publicationBean.setUid(uid);
-            publicationBean.setpName(pName);
+            publicationBean.setAuthor(author);
+            publicationBean.setPublisher(publisher);
             publicationBean.setPid(pid);
             publicationBean.setPdfUrl(pdfUrl);
 
@@ -123,7 +129,7 @@ public class PublicationDaoImpl implements PublicationDao {
     public PublicationBean fetchPublication(int pid) throws Exception {
 
         connection = dbutil.getConnection();
-        String sql="select * from Publication p where pid = ? order by pid desc";
+        String sql="select * from Publication p where pid = ?";
         preparedStatement=connection.prepareStatement(sql);
         preparedStatement.setInt(1, pid);
         resultSet=preparedStatement.executeQuery();
@@ -132,7 +138,8 @@ public class PublicationDaoImpl implements PublicationDao {
             int uid = resultSet.getInt("uid");
             String imgSrc = resultSet.getString("imgSrc");
             String content = resultSet.getString("content");
-            String pName = resultSet.getString("pName");
+            String author = resultSet.getString("author");
+            String publisher = resultSet.getString("publisher");
             int year = resultSet.getInt("year");
             String pdfUrl = resultSet.getString("pdfUrl");
 
@@ -140,7 +147,8 @@ public class PublicationDaoImpl implements PublicationDao {
             publicationBean.setImgSrc(imgSrc);
             publicationBean.setYear(year);
             publicationBean.setUid(uid);
-            publicationBean.setpName(pName);
+            publicationBean.setAuthor(author);
+            publicationBean.setPublisher(publisher);
             publicationBean.setPid(pid);
             publicationBean.setPdfUrl(pdfUrl);
         }

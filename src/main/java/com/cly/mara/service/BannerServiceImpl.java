@@ -12,8 +12,8 @@ public class BannerServiceImpl implements BannerService {
     @Override
     public List<BannerBean> getRecentBannerBeanList() throws Exception {
         List<BannerBean> bannerDaoList = bannerDao.fetchBannerBeanList();
-        if (bannerDaoList.size()>8){
-            bannerDaoList = bannerDaoList.subList(0,8);
+        if (bannerDaoList.size()>4){
+            bannerDaoList = bannerDaoList.subList(0,4);
         }
         return bannerDaoList;
     }

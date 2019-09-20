@@ -95,25 +95,6 @@
     </div>
 </div>
 
-<!--<div class="banner">-->
-<!--    &lt;!&ndash; Swiper &ndash;&gt;-->
-<!--    <div class="swiper-container swiper-container1 swiper-container-horizontal" style="height: 100%;">-->
-<!--        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">-->
-<!--            <div class="swiper-slide" style="width: 1200px;" th:each="bannerBean:${bannerBeanList}">-->
-<!--                <a href="/">-->
-<!--                    <picture>-->
-<!--                        <img th:srcset="${bannerBean.getImgSrc()}">-->
-<!--                    </picture>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; Add Pagination &ndash;&gt;-->
-<!--        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span-->
-<!--                class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"-->
-<!--                aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button"-->
-<!--                                                        aria-label="Go to slide 2"></span></div>-->
-<!--        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>-->
-<!--</div>-->
 
 <div class="banner">
     <!-- Swiper -->
@@ -135,7 +116,7 @@
 
 
 <!--lab-->
-<div class="lab-wrapper" style="position: relative">
+<div th:unless="${language}" class="lab-wrapper" style="position: relative">
     <div class="is-container banner-container">
         <div data-v-71fc1ffe="" id="x6rcoc66g26o" class="zm-bannerChild-main"
              style="position: absolute; width: 1200px; height: 500px; left: 80px; top: 0px;">
@@ -148,8 +129,6 @@
             <div class="fgTitle"
                  style="word-spacing: 0px; position: absolute; width: 300px; height: 31px; left: 540.5px; top: 72.5px; transform: rotate(0deg);">
                 <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: center; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
-            <span style="font-size: 24px; text-indent: 0.01px; box-sizing: border-box; color: rgb(0, 79, 198); font-weight: 700; background-color: rgba(0, 0, 0, 0); font-family: 微软雅黑; font-style: normal; text-decoration: none; text-shadow: none; letter-spacing: 0px; line-height: normal;"
-                  id="" class="myZuMaEditor" th:if="${language}">Laboratory Introduction</span>
                     <span style="font-size: 24px; text-indent: 0.01px; box-sizing: border-box; color: rgb(0, 79, 198); font-weight: 700; background-color: rgba(0, 0, 0, 0); font-family: 微软雅黑; font-style: normal; text-decoration: none; text-shadow: none; letter-spacing: 0px; line-height: normal;"
                           id="" class="myZuMaEditor" th:unless="${language}">实验室简介</span></div>
             </div>
@@ -161,28 +140,135 @@
                     <div data-v-5722a7a6="" data-v-626ea1ea="" id="x4l6g16s70go" class="textCom"
                          style="word-spacing: 0px; position: absolute; width: 522px; height: 92px; left: 0px; top: 40px; transform: rotate(0deg);">
                         <div th:unless="${language}" style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: left; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
-                            <span th:unless="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                            <p th:unless="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
                                   id="myZuMaEditorL13" class="myZuMaEditor">
                                 <span th:unless="${language}"
                                     style="white-space: pre; letter-spacing: 2px; box-sizing: border-box;"
-                                    id="">	</span>
-                                林君浩博士具有实验和理论双重背景，对实验设计和理论计算融会贯通，以此研究了大量新兴二维材料里复杂缺陷的原子结构。通过结合实验原子图像和理论模拟，阐述了二维材料里各种缺陷的形成机理，并提出了部分缺陷结构能显著改善或增强材料的性能。这些工作在二维材料的电子与光学器件应用等方面有极其重要的意义。截至目前为止，林君浩博士已经以第一作者（含共同一作）或通讯作者在Nature， Nature Nanotechnology，Nature Materials，Nano Letters，PRL，Advanced Materials， ACS Nano等高影响期刊发表40余篇，总引用次数超过2200多次，H因子19。2018年全职加盟南方科技大学物理系。</span>
+                                    id="">   </span>
+                                南方科技大学林君浩博士课题组由近十位博士后、博士与研究生组成，课题组利用高分辨扫描透射电镜（TEM/STEM）和第一性原理计算作为研究工具，致力于实验与理论相结合的手段研究新型二维材料中原子结构与材料性能之间的关联。</p>
+                            <p th:unless="${language}" style="margin-bottom:14px; font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                               id="myZuMaEditorL13" class="myZuMaEditor">
+                                 <span th:unless="${language}"
+                                       style="white-space: pre; letter-spacing: 2px; box-sizing: border-box;"
+                                       id="">   </span>
+                                实验室具有成熟的电镜表征与制样技术。目前实验室已经初步建成了一套总投资达800余万人民币的新型手套箱互联系统，帮助我们在隔绝水氧与控制环境微粒度的条件下实现从样品生长、转移、表征到器件制造的整个过程。同时实验室依托南方科技大学皮米电镜中心与冷冻电镜中心的多台球差电镜，能够实现原子精度的实验表征。实验室也与国内外多所高校与科研机构开展合作，实验室中部分实验可以在北京大学、日本国立产业综合研究院，新加坡国立大学，美国橡树岭国家实验室等高端电镜平台以及其他合作课题组中开展；能够提供与国内外顶尖科研人员交流学习的机会。</p>
+                            <p  th:unless="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                                id="myZuMaEditorL13" class="myZuMaEditor"> 我们的研究方向包括：</p>
+                            <p th:unless="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                               id="myZuMaEditorL13" class="myZuMaEditor"> 1. 高分辨原位扫描透射电镜；</p>
+                            <p th:unless="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                               id="myZuMaEditorL13" class="myZuMaEditor"> 2. 高空间分辨与高能量分辨的电子损失能谱（EELS）在材料中的应用；</p>
+                            <p th:unless="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                               id="myZuMaEditorL13" class="myZuMaEditor"> 3. 新型敏感二维材料结构-性能之间的关联，缺陷结构的原子表征；</p>
+                            <p th:unless="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                               id="myZuMaEditorL13" class="myZuMaEditor"> 4. 新型敏感二维材料的生长与表征。</p>
                         </div>
-                        <div th:if="${language}" style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: left; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
-                            <span th:if="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
-                                  id="myZuMaEditorL13" class="myZuMaEditor">
-                                <span th:if="${language}"
-                                        style="white-space: pre; letter-spacing: 2px; box-sizing: border-box;"
-                                        id="">	</span>
-                               林君浩博士具有实验和理论双重背景，对实验设计和理论计算融会贯通，以此研究了大量新兴二维材料里复杂缺陷的原子结构。通过结合实验原子图像和理论模拟，阐述了二维材料里各种缺陷的形成机理，并提出了部分缺陷结构能显著改善或增强材料的性能。这些工作在二维材料的电子与光学器件应用等方面有极其重要的意义。截至目前为止，林君浩博士已经以第一作者（含共同一作）或通讯作者在Nature， Nature Nanotechnology，Nature Materials，Nano Letters，PRL，Advanced Materials， ACS Nano等高影响期刊发表40余篇，总引用次数超过2200多次，H因子19。2018年全职加盟南方科技大学物理系。</span>
-                        </div>
-
                     </div>
                     <div data-v-626ea1ea="" id="xy02bddtopmp" class="zm-component-main-button"
-                         style="position: absolute; width: 80px; height: 30px; left: 0px; top: 350px; transform: rotate(0deg); cursor: pointer;">
+                         style="position: absolute; width: 80px; height: 30px; left: 0px; top: 650px; transform: rotate(0deg); cursor: pointer;">
                         <div preserveaspectratio="none" class="zm-component-shapeD-main"
                              style="font-family: 微软雅黑; font-size: 14px; font-weight: 300; font-style: normal; letter-spacing: 0px; padding-left: 0px; border-radius: 2px; border-width: 1px; transition: color 0.2s ease 0s;">
-                            <p style="display: inline-block;"><span style="white-space: nowrap; display: inline-block;"><a th:if="${language}" href="/index?id=2">Read More&gt;</a><a th:unless="${language}" href="/index?id=2">更多&gt;</a></span>
+                            <p style="display: inline-block;"><span style="white-space: nowrap; display: inline-block;"><a th:unless="${language}" href="/index?id=2">更多&gt;</a></span>
+                            </p><span><style scoped="">
+                #xy02bddtopmp .zm-component-shapeD-main {
+                    background: rgba(255, 255, 255, 0);
+                }
+
+                #xy02bddtopmp .zm-component-shapeD-main:hover {
+                    background: rgba(0, 79, 198, 0);
+                }
+
+                #xy02bddtopmp .zm-component-shapeD-main {
+                    color: #1b1b1b;
+                }
+
+                #xy02bddtopmp .zm-component-shapeD-main:hover {
+                    color: rgba(0, 79, 198, 1);
+                }
+
+                #xy02bddtopmp .zm-component-shapeD-main {
+                    border-color: rgba(27, 27, 27, 0);
+                }
+
+                #xy02bddtopmp .zm-component-shapeD-main:hover {
+                    border-color: rgba(0, 79, 198, 0);
+                }
+            </style></span></div>
+                    </div>
+                    <div data-v-5722a7a6="" data-v-626ea1ea="" id="xni56ecl38tg" class="textCom"
+                         style="word-spacing: 0px; position: absolute; width: 222px; height: 26px; left: 0px; top: 0px; transform: rotate(0deg);">
+                        <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: left; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
+                            <span style="font-size: 20px; text-indent: 0.01px; color: rgb(27, 27, 27); box-sizing: border-box; background-color: rgba(0, 0, 0, 0);"
+                                  id="myZuMaEditorL9" class="colorSelect"></span></div>
+                    </div>
+                </div>
+
+                <div data-v-d253b97a="" data-v-71fc1ffe="" id="x4gj1q34eo5o" class="zm-component-mains"
+                     style="position: absolute; width: 460px; height: 300px; left: 75px; top: 121px; transform: rotate(0deg); display: block;">
+                    <div data-v-d253b97a="" class="zm-component-img-main"
+                         style="border-style: solid; border-color: rgb(0, 0, 0); border-width: 0px; box-shadow: rgba(0, 79, 198, 0.6) -10px -10px 0px; border-radius: 0px;">
+                        <img src="research_title.gif" data-v-d253b97a="" class="zm-component-img-content hoverType1 isTransition"
+                             style="object-fit: fill; width: 100%; height: 100%;"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:if="${language}" class="en-lab-wrapper" style="position: relative">
+    <div class="is-container banner-container">
+        <div data-v-71fc1ffe="" id="x6rcoc66g26o" class="zm-bannerChild-main"
+             style="position: absolute; width: 1200px; height: 500px; left: 80px; top: 0px;">
+            <div class="bgTitle"
+                 style="word-spacing: 0px; position: absolute; width: 800px; height: 61px; left: 300px; top: 50px; transform: rotate(0deg);">
+                <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; font-family: 微软雅黑; text-indent: 0px; font-style: normal; text-decoration: none; text-align: center; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%; color: rgb(221, 221, 221); font-weight: 700; font-size: 12px;">
+            <span style="color: rgb(221, 221, 221); font-size: 52px; font-weight: 700; text-indent: 0.01px; box-sizing: border-box; font-family: &quot;Work Sans Semi Bold&quot;; background-color: rgba(0, 0, 0, 0);"
+            >LAB INTRODUCTION</span></div>
+            </div>
+            <div class="fgTitle"
+                 style="word-spacing: 0px; position: absolute; width: 300px; height: 31px; left: 540.5px; top: 72.5px; transform: rotate(0deg);">
+                <div style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: center; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
+                    <span style="font-size: 24px; text-indent: 0.01px; box-sizing: border-box; color: rgb(0, 79, 198); font-weight: 700; background-color: rgba(0, 0, 0, 0); font-family: 微软雅黑; font-style: normal; text-decoration: none; text-shadow: none; letter-spacing: 0px; line-height: normal;"
+                          id="" class="myZuMaEditor" th:if="${language}">Laboratory Introduction</span></div>
+            </div>
+            <div data-v-71fc1ffe="" class="is-container banner-container">
+                <div data-v-626ea1ea="" data-v-71fc1ffe="" class="zm-component-main"
+                     style="position: absolute; width: 520px; height: 300px; left: 580.5px; top: 121px;">
+                    <div data-v-626ea1ea="" class="zm-component-main-container is-container"
+                         style="background-color: rgba(51, 51, 51, 0); border: 0px solid rgb(246, 246, 246); border-radius: 0px; box-shadow: none;"></div>
+                    <div data-v-5722a7a6="" data-v-626ea1ea="" id="x4l6g16s70go" class="textCom"
+                         style="word-spacing: 0px; position: absolute; width: 522px; height: 92px; left: 0px; top: 40px; transform: rotate(0deg);">
+                        <div th:if="${language}" style="margin: 0px; padding-left: 2px; padding-top: 0px; padding-bottom: 0px; color: rgb(121, 121, 121); font-family: 微软雅黑; text-indent: 0px; font-style: normal; font-weight: normal; text-decoration: none; text-align: left; font-size: 12px; box-sizing: border-box; overflow-wrap: break-word; display: block; width: 100%;">
+                            <p th:if="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                               id="myZuMaEditorL13" class="myZuMaEditor">
+                                <span th:unless="${language}"
+                                      style="white-space: pre; letter-spacing: 2px; box-sizing: border-box;"
+                                      id="">   </span>
+                                Dr. Junhao LIN’s group has more than 10 personnel, including postdoctoral, doctoral and postgraduate students. Combing high resolution transmission electron microscopy/scanning transmission electron microscopy (TEM/STEM) and first-principles calculation as a powerful synergetic tool, the research team is devoted to the study of the relationship between atomic structure and material properties in new 2D materials by means of combining experiment with theory. </p>
+                            <p th:if="${language}" style="margin-bottom:14px; font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                               id="myZuMaEditorL13" class="myZuMaEditor">
+                                 <span th:unless="${language}"
+                                       style="white-space: pre; letter-spacing: 2px; box-sizing: border-box;"
+                                       id="">   </span>
+                                Laboratory members have proficient electron microscopic characterizations and sample preparation techniques. At present, a new glove box interconnection system with a total investment of more than 8 million RMB has been preliminarily built in the laboratory, which realizes a clean and water, oxygen insulated environment for the whole process from sample growth, transfer, characterization to device manufacturing. Relying on the Picometer Electron Microscope Center and the Cryo Electron Microscope Center at Southern University of Science and Technology, our lab can achieve structure characterizations in the atomic level. The laboratory also has long-term cooperation with many universities and scientific research institutes at home and abroad. Some experiments can be carried out in high-end electron microscopy platforms such as Peking University, Japan National Institute of Advanced Industrial Science and Technology (AIST), Singapore National University, Oak Ridge National Laboratory in the United States, and some other cooperative research groups, which provide opportunities to communicate and learn with top scientific researchers. </p>
+                            <p th:if="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                                id="myZuMaEditorL13" class="myZuMaEditor">Our research interests include:</p>
+                            <p th:if="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                               id="myZuMaEditorL13" class="myZuMaEditor">1. High resolution in-situ scanning electron microscopy;</p>
+                            <p th:if="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                               id="myZuMaEditorL13" class="myZuMaEditor">2. Applications of high spatial resolution and high energy resolution electron energy loss spectroscopy (EELS) in materials;</p>
+                            <p th:if="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                               id="myZuMaEditorL13" class="myZuMaEditor">3. The relationship between structure and properties of new sensitive 2D materials and the atomic characterization of defect structures;</p>
+                            <p th:if="${language}" style="font-size: 14px; text-indent: 0.01px; color: rgb(107, 107, 107); box-sizing: border-box; line-height: 2.2em; font-family: 微软雅黑; font-style: normal; font-weight: 400; text-decoration: none; text-shadow: none; letter-spacing: 2px; background-color: rgba(0, 0, 0, 0);"
+                               id="myZuMaEditorL13" class="myZuMaEditor">4. Growth and characterization of novel sensitive 2D materials.</p>
+                        </div>
+                    </div>
+                    <div data-v-626ea1ea="" id="xy02bddtopmp" class="zm-component-main-button"
+                         style="position: absolute; width: 80px; height: 30px; left: 0px; top: 1350px; transform: rotate(0deg); cursor: pointer;">
+                        <div preserveaspectratio="none" class="zm-component-shapeD-main"
+                             style="font-family: 微软雅黑; font-size: 14px; font-weight: 300; font-style: normal; letter-spacing: 0px; padding-left: 0px; border-radius: 2px; border-width: 1px; transition: color 0.2s ease 0s;">
+                            <p style="display: inline-block;"><span style="white-space: nowrap; display: inline-block;"><a th:if="${language}" href="/index?id=2">Read more&gt;</a></span>
                             </p><span><style scoped="">
                 #xy02bddtopmp .zm-component-shapeD-main {
                     background: rgba(255, 255, 255, 0);
@@ -245,7 +331,7 @@
             <span style="font-size: 24px; text-indent: 0.01px; box-sizing: border-box; color: rgb(0, 79, 198); font-weight: 700; background-color: rgba(0, 0, 0, 0); font-family: 微软雅黑; font-style: normal; text-decoration: none; text-shadow: none; letter-spacing: 0px; line-height: normal;" th:if="${language}"
                   id="" class="myZuMaEditor">Select Publication</span>
                     <span style="font-size: 24px; text-indent: 0.01px; box-sizing: border-box; color: rgb(0, 79, 198); font-weight: 700; background-color: rgba(0, 0, 0, 0); font-family: 微软雅黑; font-style: normal; text-decoration: none; text-shadow: none; letter-spacing: 0px; line-height: normal;"
-                          id="" class="myZuMaEditor" th:unless="${language}">刊登论文</span></div>
+                          id="" class="myZuMaEditor" th:unless="${language}">最新刊登论文</span></div>
             </div>
         </div>
         <div class="public-list" >
@@ -367,30 +453,6 @@
     <img src="/images/gotop.png">
 </div>
 
-<!--<script>-->
-<!--    $(function () {-->
-
-<!--        var swiper = new Swiper('.swiper-container1', {-->
-<!--            autoplay: true,//等同于以下设置-->
-<!--            pagination: {-->
-<!--                el: '.swiper-pagination',-->
-<!--                clickable: true-->
-<!--            }-->
-<!--        });-->
-
-<!--        var swiper = new Swiper('.swiper-container2', {-->
-<!--            autoplay: true,//等同于以下设置-->
-<!--            navigation: {-->
-<!--                nextEl: '.swiper-button-next',-->
-<!--                prevEl: '.swiper-button-prev'-->
-<!--            },-->
-<!--            pagination: {-->
-<!--                el: '.swiper-pagination',-->
-<!--                clickable: true-->
-<!--            }-->
-<!--        });-->
-<!--    })-->
-<!--</script>-->
 <script src="/js/navclick.js"></script>
 
     <script>

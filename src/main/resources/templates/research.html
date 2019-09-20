@@ -115,9 +115,9 @@
 
             </div>
         </div>
-        <div th:if="${language}" class="top" style="height: 750px;">
+        <div th:if="${language}" class="top" style="height: 1050px;">
             <img src="research_title.gif">
-            <div class="word" style="height: 694px;">
+            <div class="word" style="height: 994px;">
                 <p style="font-size: 14px; padding-bottom: 17px">Dr. Junhao LIN’s group has more than 10 personnel, including postdoctoral, doctoral and postgraduate students. Combing high resolution transmission electron microscopy/scanning transmission electron microscopy (TEM/STEM) and first-principles calculation as a powerful synergetic tool, the research team is devoted to the study of the relationship between atomic structure and material properties in new 2D materials by means of combining experiment with theory. </p>
                 <p style="font-size: 14px; padding-bottom: 17px">Laboratory members have proficient electron microscopic characterizations and sample preparation techniques. At present, a new glove box interconnection system with a total investment of more than 8 million RMB has been preliminarily built in the laboratory, which realizes a clean and water, oxygen insulated environment for the whole process from sample growth, transfer, characterization to device manufacturing. Relying on the Picometer Electron Microscope Center and the Cryo Electron Microscope Center at Southern University of Science and Technology, our lab can achieve structure characterizations in the atomic level. The laboratory also has long-term cooperation with many universities and scientific research institutes at home and abroad. Some experiments can be carried out in high-end electron microscopy platforms such as Peking University, Japan National Institute of Advanced Industrial Science and Technology (AIST), Singapore National University, Oak Ridge National Laboratory in the United States, and some other cooperative research groups, which provide opportunities to communicate and learn with top scientific researchers. </p>
                 <p style="font-size: 14px; padding-bottom: 17px">Our research interests include:
@@ -127,7 +127,7 @@
                 <p style="font-size: 14px; padding-bottom: 17px">4. Growth and characterization of novel sensitive 2D materials. </p>
             </div>
         </div>
-        <ul>
+        <ul th:unless="${language}">
             <li>
                 <h5>林君浩博士:&nbsp;&nbsp;&nbsp;————</h5>
                 <div class="center">
@@ -137,7 +137,7 @@
                         <p><br></p>
                     </div>
                     <div class="pic">
-                        <img src="research_c1.png" alt="default">
+<!--                        <img src="research_c1.png" alt="default">-->
                     </div>
                 </div>
             </li>
@@ -204,6 +204,87 @@
             </li>
 
         </ul>
+
+        <ul th:if="${language}">
+            <li>
+                <h5>Dr. Junhao Lin:&nbsp;&nbsp;&nbsp;————</h5>
+                <div class="center">
+                    <div class="word">
+                        <p>Dr. Junhao Lin obtained his PhD degree of Physics from Vanderbilt University, USA, in 2015. He conducted his PhD thesis research in Oak Ridge National Lab under the guidance of Prof. Wu Zhou and Prof. Sokrates Pantelides, and was trained in both theoretical density functional theory (DFT) and experimental scanning transmission electron microscopy (STEM), and combine these two techniques synergistically to investigate the structure-property correlations in two-dimensional (2D) materials. He had his postdoctoral wok as a JSPS fellow in AIST, Japan from 2015, hosted by Dr. Kazu Suenaga, and continue the research mostly in 2D materials with low-voltage monochromatic S/TEM. He is now an associate professor in the Department of Physics, Southern University of Science and Technology (SuSTech).</p>
+                        <p>His main research direction includes analysis of complex defect structures in novel layered materials, real time in-situ observation of the dynamical processes in structural transition of materials under various environmental stimulations, and the phonon behavior of 2D materials as probed by monochromatic valence electron energy loss spectroscopy (VEELS). He has published more 60 papers, including first or corresponding author paper in Nature, Nature Nanotechnology，Nature Materials，Nano Letters，PRL，Advanced Materials，ACS Nano and etc, with a total citation of 4200 times. H index 26.</p>
+                        <p><br></p>
+                    </div>
+                    <div class="pic">
+                        <!--                        <img src="research_c1.png" alt="default">-->
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <h5>Growth and Characterization of Novel Sensitive 2D Materials:   ————</h5>
+                <div class="center">
+                    <div class="word">
+                        <p>The novel physical properties of 2D materials are the main research interests of the research group. We mainly use Chemical Vapor Deposition (CVD) technique to grow new 2D materials with single or few layers. In view of the fact that most layered materials are easily oxidized in a single layer state, we have built a new glove box interconnection system which is directly connected with the growth equipment. It can isolate water and oxygen during the whole growth process and the subsequent sample characterization process while maintaining environmental cleanliness. At present, CVD growth of Telluride and other new transition metal dichalcogenide monolayers have been carried out in our research group.</p>
+                        <p>Representative papers:</p>
+                        <p>1. A library of atomically thin metal chalcogenides. Nature, 2018, 556(7701): 355.</p>
+                        <p>2. Large‐area and high‐quality 2D transition metal telluride. Advanced Materials, 2017, 29(3): 1603471.</p>
+                        <p>3. Patterned growth of P‐type MoS2 atomic layers using sol–gel as precursor. Advanced Functional Materials, 2016, 26(35): 6371-6379.</p>
+                        <p>4. Vertical and in-plane heterostructures from WS2/MoS2 monolayers. Nature materials, 2014, 13(12): 1135.</p>
+                        <p><br></p>
+                    </div>
+                    <div class="pic">
+                        <img src="research_c1.png" alt="default">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h5>Interpretation of the Atomic Structure of Complex Defect and Their Relation with the Properties:&nbsp;&nbsp;&nbsp;————</h5>
+                <div class="center">
+                    <div class="pic">
+                        <img src="research_c2.png" alt="default">
+                    </div>
+                    <div class="word">
+                        <p>Through the quantitative contrast analysis technique of STEM imaging, we can directly map out the chemical composition of complex defects in 2D materials. Combining with first-principle calculations, we can explain the influence of defect structure on the physical properties of 2D materials, so as to obtain the correlation between material structure and properties. </p>
+                        <p>Representative papers:</p>
+                        <p>1. Novel Pd2Se3 Two-Dimensional phase driven by interlayer fusion in layered PdSe2. Physical review letters, 2017, 119(1): 016101.</p>
+                        <p>2. AC/AB stacking boundaries in bilayer graphene. Nano letters, 2013, 13(7): 3262-3268.</p>
+                        <p><br></p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h5>In-situ Electron Microscopic Characterizations of Dynamic Process:&nbsp;&nbsp;&nbsp;————</h5>
+                <div class="center">
+                    <div class="word">
+                        <p>With the help of double spherical aberration correction electron microscopy and environmental TEM, we can observe and record in-situ dynamical processes of 2D materials at atomic scale, such as structural changes and dynamic processes induced by electron beam or temperature changes. By combining the first-principles calculations with theoretical support, it helps to design materials with better performance.</p>
+                        <p>Representative papers:</p>
+                        <p>1. Electron-beam-induced synthesis of hexagonal 1H-MoSe2 from square β-FeSe decorated with Mo adatoms. Nano letters, 2018, 18(3): 2016-2020.</p>
+                        <p>2. Vacancy-induced formation and growth of inversion domains in transition-metal dichalcogenide monolayer. ACS Nano, 2015, 9(5): 5189-5197.</p>
+                        <p><br></p>
+                    </div>
+                    <div class="pic">
+                        <img src="research_c3.png" alt="default">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h5>Electron Energy Loss Spectroscopy with High Energy Resolution:&nbsp;&nbsp;&nbsp;————</h5>
+                <div class="center">
+                    <div class="pic">
+                        <img src="research_c4.png" alt="default">
+                    </div>
+                    <div class="word">
+                        <p>The high energy resolution electron loss spectroscopy is used to analyze the atomic structure and chemical properties of materials. The corresponding EELS spectrum are obtained by 2D mapping, line scan or single atom scan spectrum. Finally, the band structure, chemical composition, valence and sample thickness of the selected region can be obtained. At the same time, high energy-resolved EELS can even explore the optical properties of a single quantum dot.</p>
+                        <p>Representative papers:</p>
+                        <p>1. Direct observation of band structure modifications in nanocrystals of CsPbBr3 perovskite. Nano letters, 2016, 16(11): 7198-7202.</p>
+                        <p>2. Hybridization of single nanocrystals of Cs4PbBr6 and CsPbBr3. The Journal of Physical Chemistry C, 2017, 121(35): 19490-19496.</p>
+                        <p><br></p>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
     </div>
 </div>
 <!--底部-->

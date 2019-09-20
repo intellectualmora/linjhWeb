@@ -4,7 +4,6 @@
 .main-wrapper{
     width: 100%;
     background: #fff;
-
 }
 .main{
     width: 100%;
@@ -27,7 +26,6 @@
     box-shadow: 0 4px 30px rgba(0,0,0,.15);
     box-sizing: border-box;
     padding:20px 20px 20px 275px;
-    background: url(../images/Research01.png) no-repeat left bottom;
 }
 .main .top .word p{
     clear:left;
@@ -116,9 +114,75 @@
 		padding: 1rem;
 	}
 }*/
+.emain{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 50px 0;
+}
 
-
-
+.emain .top{
+    width: 100%;
+    height: 764px;
+    position: relative;
+    margin-bottom:2rem;
+}
+.emain .top .word{
+    float: right;
+    width: 964px;
+    height: 744px;
+    box-shadow: 0 4px 30px rgba(0,0,0,.15);
+    box-sizing: border-box;
+    padding:20px 20px 20px 275px;
+}
+.emain .top .word p{
+    clear:left;
+    font-size: 17px;
+    color: #003f43;
+    line-height:28px;
+    text-align: justify;
+}
+.emain .top img{
+    position: absolute;
+    left: -90px;
+    top: 0;
+    width: 570px;
+}
+.emain ul li{
+    margin: 1rem 0;
+}
+.emain ul li:nth-child(2n) h5{
+    text-align: right;
+}
+.emain ul li h5{
+    font-size: 20px;
+    color: #003f43;
+    line-height: 2rem;
+}
+.emain ul li .center{
+    background: #003F43;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.emain ul li .center .pic{
+    width: 40%;
+    text-align: center;
+}
+.emain ul li .center .pic img{
+    width: 100%;
+}
+.emain ul li .center .word{
+    width: 60%;
+    box-sizing: border-box;
+    padding:1rem;
+}
+.emain ul li .center .word p{
+    color: #fff;
+    font-size: 17px;
+    text-align: justify;
+}
 
 
 

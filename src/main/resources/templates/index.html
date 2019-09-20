@@ -98,7 +98,7 @@
 
 <div class="banner">
     <!-- Swiper -->
-    <div class="swiper-container" style="height: 100%;">
+    <div class="swiper-container swiper-container1" style="height: 100%;">
         <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
             <div class="swiper-slide" style="width: 1200px;" th:each="bannerBean:${bannerBeanList}">
                 <a href="/">
@@ -349,6 +349,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
@@ -456,10 +457,9 @@
 <script src="/js/navclick.js"></script>
 
     <script>
-        var mySwiper = new Swiper ('.swiper-container', {
+        var mySwiper = new Swiper ('.swiper-container1', {
             direction: 'horizontal', // 垂直切换选项
-            loop: true, // 循环模式选项
-
+            autoplay:true,
             // 如果需要分页器
             pagination: {
                 el: '.swiper-pagination',
@@ -470,12 +470,22 @@
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+        });
 
-            // 如果需要滚动条
-            scrollbar: {
-                el: '.swiper-scrollbar',
+        var mySwiper2 = new Swiper ('.swiper-container2', {
+            direction: 'horizontal', // 垂直切换选项
+            autoplay:true,
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
             },
-        })
+
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
     </script>
 
 

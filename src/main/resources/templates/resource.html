@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:font-family="http://www.w3.org/1999/xhtml"
+      xmlns:font-size="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" type="images/jpg" href="./images/favicon.jpg">
@@ -14,7 +15,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/css/opening.css">
+    <link rel="stylesheet" type="text/css" href="/css/album.css">
     <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
     <script src="/js/swiper.min.js"></script>
     <script src="/js/jquery.min.js"></script>
@@ -22,7 +23,9 @@
 
 </head>
 
-<body>
+
+<body style="">
+
 
 <div class="nav-wrapper" id="navBar">
     <div class="nav">
@@ -101,52 +104,65 @@
     </a>
 </div>
 
-
-<div th:unless="${language}" class="main-wrapper">
+<div class="main-wrapper">
     <div class="main">
-        <div class="top">
-            <img src="hire.png">
-            <div class="word">
-                <p>实验室长期招聘博士后，研究助理教授。有如下任一方向背景或研究经历优先考虑：</p>
-                <p>1）透射电镜研究背景，物理、材料或相关专业博士学位</p>
-                <p>2）CVD二维材料生长及样品转移背景</p>
-                <p>3）拉曼光谱与原子力显微镜联用</p>
-                <p style="padding-bottom: 17px">同时具有优秀的英文写作以及口语交流能力，博士研究期间有相关独立工作经验，以第一作者发表过高水平研究论文。研究助理教授原则上需要有博士后经历。</p>
-                <p></p>
-                <p>实验室也同时长期招聘科研助理，具体要求如下：</p>
-                <p>1） 有物理、材料或相关专业硕士学位</p>
-                <p>2） 有二维材料生长或转移相关经验优先考虑</p>
-                <p style="padding-bottom: 17px">3） 有很好的团队合作精神，健康，热爱科研</p>
-                <p></p>
-                <p>有意向的申请人请将一份个人简历(含学习、工作和科研的经历), 以及主要科研成果清单（如论文论著、 成果证书或奖励），代表性研究论文1-2篇，发送到林老师邮箱。如果合适，会通知候选人进行后续面试。我们也欢迎优秀的博士生，硕士生，访问学生的申请。</p>
+        <div class="title">
+					<span>
+						<img src="/images/home.png" alt="">
+                                                <i><a href="/" style="color: #666666" th:if="${language}">Home</a>
+                                                    <a href="/" style="color: #666666" th:unless="${language}">主页</a> &gt;&gt;</i>
+					</span>
+            <span th:if="${language}">Photo album</span>
+            <span th:unless="${language}">相册</span>
+
+        </div>
+        <div class="center">
+            <div class="left">
+                <ul>
+                    <li>
+                        <a th:if="${language}" href="/index?id=11">The group leader</a>
+                        <a th:unless="${language}" href="/index?id=11">团队领导</a>
+
+                    </li>
+                    <li>
+                        <a th:if="${language}" href="/index?id=12">Current Members</a>
+                        <a th:unless="${language}" href="/index?id=12">成员名单</a>
+                    </li>
+                    <li  class="active">
+                        <a th:if="${language}" href="/index?id=13">Picture</a>
+                        <a th:unless="${language}" href="/index?id=13">团队图片</a>
+                    </li>
+                </ul>
             </div>
 
+            <div class="right">
+                <div class="title">
+                    <span th:text="${year}"></span>
+                    <!--<small>2018</small>-->
+                </div>
+                <div class="all">
+                    <ul>
+
+                        <li th:each="pictureBean:${pictureBeanList}">
+                            <div class="pic">
+                                <img th:src="${pictureBean.getImgSrc()}" th:alt="${pictureBean.getYear()}">
+                            </div>
+                            <div class="word">
+                                <h5 th:text="${pictureBean.getYear()}"></h5>
+                                <p><strong><span style="font-family: &quot;times new roman&quot;; font-size: 18px;" th:text="${pictureBean.getpName()}"> </span></strong></p></div>
+                        </li>
+
+                    </ul>
+
+                    <div class="page">
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<div th:if="${language}" class="main-wrapper">
-    <div class="emain">
-        <div class="top">
-            <img src="hire.png">
-            <div class="word">
-                <p>Our lab has multiple vacancies for postdoctoral researchers and research assistant professors. Background or research experience in any of the following directions is preferred:</p>
-                <p>1) Background in TEM research, PhD degree in physics, materials or related fields;</p>
-                <p>2) 2D material growth and sample transfer background;</p>
-                <p>3) Raman spectroscopy combined with atomic force microscopy (AFM).</p>
-                <p style="padding-bottom: 17px">Besides, the applicant should have excellent English writing and oral communication skills. The applicant is required to prove he/she has relevant independent work experience and has published high-level research papers as the first author during the PhD study. Research assistant professors need post-doctoral experience in principle.</p>
-                <p>The laboratory also recruits research assistants. The specific requirements are as follows:</p>
-                <p>1) Master's degree in physics, materials or related majors;</p>
-                <p>2) Experience in 2D material growth or transfer is preferred;</p>
-                <p>3) Good teamwork spirit, health, interested in scientific research.</p>
-                <p style="padding-bottom: 17px">Intentional applicants should submit a CV (including experience in study, work and research), as well as a list of major research results (such as papers, certificates or awards), 1 or 2 representative research papers, and send them to Dr Lin' email. If appropriate, the candidate will be notified for a follow-up interview.</p>
-                <p>We also welcome applications from excellent PhD students, master students and visiting students.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--底部-->
 <div class="footer">
     <div class="contact">
         <p th:if="${language}">
@@ -186,24 +202,6 @@
 
     </div>
 </div>
-
-<div class="gotop">
-    <img src="/images/gotop.png">
-</div>
-
-<script type="text/javascript">
-    $(function(){
-        $(".main .two .laball .lab1 .back").click(function(){
-            $(".main .two .laball .lab1").hide();
-            $(".main .two .laball .lab2").show()
-        })
-
-        $(".main .two .laball .lab2 .back").click(function(){
-            $(".main .two .laball .lab2").hide();
-            $(".main .two .laball .lab1").show()
-        })
-    })
-</script>
 <script src="/js/navclick.js"></script>
 
 </body>

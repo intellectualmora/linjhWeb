@@ -27,7 +27,6 @@
     box-shadow: 0 4px 30px rgba(0,0,0,.15);
     box-sizing: border-box;
     padding:20px 20px 20px 275px;
-    background: url(../images/Research01.png) no-repeat left bottom;
 }
 .main .top .word p{
     clear:left;
@@ -43,7 +42,7 @@
     width: 462px;
 }
 .main ul li{
-    margin: 1rem 0;
+    margin: 4rem 0;
 }
 .main ul li:nth-child(2n) h5{
     text-align: right;

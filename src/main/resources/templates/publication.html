@@ -175,9 +175,10 @@
                                             </span>
                                         </span>
                                     </span>
-                                    <span style="font-family: times new roman; font-size: 18px;"><p th:text="${publicationBean.getContent()}"></p>
+                                    <span style="font-family: times new roman; font-size: 18px;">
+                                        <strong th:text="${publicationBean.getContent()}"></strong>
                                         <p th:utext="${publicationBean.getAuthor()}"></p>
-                                        <strong th:utext="${publicationBean.getPublisher()}"></strong>
+                                        <i th:utext="${publicationBean.getPublisher()}"></i>
                                         <a style="color: #007aff" th:href="${publicationBean.getPdfUrl()}" target="_blank">(PDF)</a>
                                     </span>
 

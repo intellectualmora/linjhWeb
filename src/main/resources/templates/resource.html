@@ -15,7 +15,6 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/css/album.css">
     <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
     <script src="/js/swiper.min.js"></script>
     <script src="/js/jquery.min.js"></script>
@@ -106,60 +105,6 @@
 
 <div class="main-wrapper">
     <div class="main">
-        <div class="title">
-					<span>
-						<img src="/images/home.png" alt="">
-                                                <i><a href="/" style="color: #666666" th:if="${language}">Home</a>
-                                                    <a href="/" style="color: #666666" th:unless="${language}">主页</a> &gt;&gt;</i>
-					</span>
-            <span th:if="${language}">Photo album</span>
-            <span th:unless="${language}">相册</span>
-
-        </div>
-        <div class="center">
-            <div class="left">
-                <ul>
-                    <li>
-                        <a th:if="${language}" href="/index?id=11">The group leader</a>
-                        <a th:unless="${language}" href="/index?id=11">团队领导</a>
-
-                    </li>
-                    <li>
-                        <a th:if="${language}" href="/index?id=12">Current Members</a>
-                        <a th:unless="${language}" href="/index?id=12">成员名单</a>
-                    </li>
-                    <li  class="active">
-                        <a th:if="${language}" href="/index?id=13">Picture</a>
-                        <a th:unless="${language}" href="/index?id=13">团队图片</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="right">
-                <div class="title">
-                    <span th:text="${year}"></span>
-                    <!--<small>2018</small>-->
-                </div>
-                <div class="all">
-                    <ul>
-
-                        <li th:each="pictureBean:${pictureBeanList}">
-                            <div class="pic">
-                                <img th:src="${pictureBean.getImgSrc()}" th:alt="${pictureBean.getYear()}">
-                            </div>
-                            <div class="word">
-                                <h5 th:text="${pictureBean.getYear()}"></h5>
-                                <p><strong><span style="font-family: &quot;times new roman&quot;; font-size: 18px;" th:text="${pictureBean.getpName()}"> </span></strong></p></div>
-                        </li>
-
-                    </ul>
-
-                    <div class="page">
-
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 

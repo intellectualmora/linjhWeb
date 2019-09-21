@@ -34,6 +34,7 @@ public class IndexController {
     AwardService awardService = new AwardServiceImpl();
     InterestService interestService = new InterestServiceImpl();
     BannerService bannerService = new BannerServiceImpl();
+    ResourceService resourceService = new ResourceServiceImpl();
 
     List<NewsBean> newsBeanList = null;
     UserInfoBean userInfoBean = null;
@@ -45,6 +46,7 @@ public class IndexController {
     List<InterestBean> interestBeanList = null;
     List<AwardBean> awardBeanList = null;
     List<BannerBean> bannerBeanList = null;
+    List<ResourceBean> resourceBeanList = null;
 
     int pageNumber;
     int[] pageList;
@@ -187,8 +189,16 @@ public class IndexController {
                     model.addAttribute("newsBeanList", newsBeanList);
                     model.addAttribute("publicationBeanList",publicationBeanList);
                     return "index";
-
-                default:
+            case 9:
+                    try {
+                        resourceBeanList = resourceService.getResourceBeanList();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    model.addAttribute("resourceBeanList",resourceBeanList);
+                    model.addAttribute("language",language);
+                    return "resource";
+            default:
                     try {
                         newsBeanList = newsService.getRecentNews();
                         publicationBeanList = publicationService.getRecentPublicationList();

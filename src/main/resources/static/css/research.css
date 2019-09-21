@@ -42,15 +42,14 @@
     width: 462px;
 }
 .main ul li{
-    margin: 4rem 0;
+    margin: 6rem 0;
 }
-.main ul li:nth-child(2n) h5{
-    text-align: right;
-}
-.main ul li h5{
-    font-size: 20px;
+
+.main ul li h1{
+    font-size: 25px;
     color: #003f43;
     line-height: 2rem;
+    margin-bottom: 20px;
 }
 .main ul li .center{
     background: #003F43;
@@ -73,6 +72,19 @@
 .main ul li .center .word p{
     color: #fff;
     font-size: 17px;
+    line-height:28px;
+    text-align: justify;
+}
+
+.main ul li .center .word2{
+    width: 100%;
+    box-sizing: border-box;
+    padding:1rem;
+}
+.main ul li .center .word2 p{
+    color: #fff;
+    font-size: 17px;
+    line-height:28px;
     text-align: justify;
 }
 

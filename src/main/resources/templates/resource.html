@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/resource.css">
     <script src="/js/swiper.min.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/common.js"></script>
@@ -61,10 +62,13 @@
                     <a th:if="${language}">Research</a>
                     <a class="ch" th:unless="${language}">研究</a>
                 </li>
+                <li class="" onclick="nav(9)">
+                    <a class="mh" th:if="${language}">Resources</a>
+                    <a class="mh" th:unless="${language}">实验室设备</a>
+                </li>
                 <li class=""  onclick="nav(3)">
                     <a class="mh" th:if="${language}">Publication</a>
                     <a class="ch" th:unless="${language}">文章</a>
-
                 </li>
                 <li class="" onclick="nav(4)">
                     <a class="lh" th:if="${language}">Opening</a>
@@ -105,6 +109,30 @@
 
 <div class="main-wrapper">
     <div class="main">
+        <div class="title">
+            <!--<span>
+                <img src="images/home.png" alt="" />
+                <i>Home>></i>
+            </span>-->
+            <span>Advanced Low Dimensional Materials Lab</span>
+        </div>
+        <div class="center">
+            <div class="right">
+                <ul>
+                    <li th:each="resourceBean:${resourceBeanList}">
+                        <a href="#">
+                            <!--<p>X-ray diffractometer</p>-->
+                            <img th:src="${resourceBean.getImgSrc()}" th:alt="${resourceBean.getpName()}">
+                            <p>
+                            </p><p th:unless="language" th:text="${resourceBean.getpNameC()}"></p>
+                            <p th:if="language" th:text="${resourceBean.getpName()}"></p>
+                            <p></p>
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 

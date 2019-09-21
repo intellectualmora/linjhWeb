@@ -36,14 +36,4 @@ public class PublicationServiceImpl implements PublicationService {
     public PublicationBean getPublication(int pid) throws Exception {
         return publicationDao.fetchPublication(pid);
     }
-
-    @Override
-    public boolean addPublication(PublicationBean article) {
-        return false;
-    }
-
-    @Override
-    public boolean updatePublication(PublicationBean article) {
-        return false;
-    }
 }

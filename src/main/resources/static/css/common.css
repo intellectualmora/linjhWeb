@@ -82,7 +82,7 @@ html, body {
 .nav .pc-nav > ul > li {
     margin-left: 0.2vw;
     height: 60px;
-    width: 80px;
+    width: 70px;
     line-height: 60px;
     position: relative;
     padding-left: 1.5vw;
@@ -101,7 +101,7 @@ html, body {
     top: 47%;
     width: 0;
     height: 0;
-    left: 83%;
+    left: 90%;
     margin-left: -15px;
     content: " ";
     border-top: 6px solid  darkred ;
@@ -151,16 +151,14 @@ html, body {
     background: rgba(237, 108, 0, 0.8);
 }
 .mh{
-    margin-left: -0.3vw;
+    margin-left: -0.8vw;
 }
 .lh{
-    margin-left: 0.2vw;
 }
 .ch{
-    margin-left: 1vw;
+    margin-left: 0.7vw;
 }
 .zh{
-    margin-left: 0.5vw;
 }
 
 .footer {

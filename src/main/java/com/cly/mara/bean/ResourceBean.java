@@ -1,6 +1,8 @@
 package com.cly.mara.bean;
 
-public class ResourceBean {
+import java.io.Serializable;
+
+public class ResourceBean implements Serializable {
     private int resid;
     private String imgSrc;
     private String pName;

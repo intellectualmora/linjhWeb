@@ -20,7 +20,7 @@ public class PublicationDaoImpl implements PublicationDao {
 
         List<PublicationBean> publicationBeanList =new ArrayList<>();
         connection = dbutil.getConnection();
-        String sql="select * from Publication p order by year desc";
+        String sql="select * from Publication p order by year desc , pid desc";
         preparedStatement=connection.prepareStatement(sql);
         resultSet=preparedStatement.executeQuery();
 
@@ -56,7 +56,7 @@ public class PublicationDaoImpl implements PublicationDao {
 
         List<PublicationBean> publicationBeanList =new ArrayList<>();
         connection = dbutil.getConnection();
-        String sql="select * from Publication p where year = ?";
+        String sql="select * from Publication p where year = ? order by pid desc";
         preparedStatement=connection.prepareStatement(sql);
         preparedStatement.setInt(1, year);
         resultSet=preparedStatement.executeQuery();
@@ -93,7 +93,7 @@ public class PublicationDaoImpl implements PublicationDao {
 
         List<PublicationBean> publicationBeanList =new ArrayList<>();
         connection = dbutil.getConnection();
-        String sql="select * from Publication p where uid = ? order by year desc";
+        String sql="select * from Publication p where uid = ? order by year desc , pid desc";
         preparedStatement=connection.prepareStatement(sql);
         preparedStatement.setInt(1, uid);
         resultSet=preparedStatement.executeQuery();

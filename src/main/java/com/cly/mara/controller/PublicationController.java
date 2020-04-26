@@ -21,6 +21,9 @@ public class PublicationController {
     @GetMapping(value = "/publicationPage")
     public String getPublicationPage(@RequestParam(name = "page", required = false, defaultValue = "1") int page, @RequestParam(name = "year", required = false, defaultValue = "0") int year, Model model, HttpServletRequest request) {
         boolean language = false;
+        if(year== 202){
+            year = 2020;
+        }
         HttpSession session =request.getSession();//这就是session的创建
         Object temp_lan = session.getAttribute("language");
         if(temp_lan!=null) {
